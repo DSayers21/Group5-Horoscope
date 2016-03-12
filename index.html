@@ -17,12 +17,29 @@
          <h1>MirrorMirror</h1>
      </div>
 
-<div id="Start">
+<div id="Start" style="display: block">
     <img class="mask" src="img/mask.png" alt="" width="500" height="520">
-    <button type="button" id="startBtn" onclick="toggle_visibility('Start');">Start</button>
+    <button type="button" id="startBtn" onclick="toggle_visibility('Start'); toggle_visibility('Q1');">Start</button>
 </div>
 
+<div id="Q1" style="display: none">
+    <p>What is your name?<span>|</span></p>
+    <button type="button" class="Btn" id="Q1Btn" onclick="toggle_visibility('Q1'); toggle_visibility('Q2');">Continue</button>
+</div>
 
+<div id="Q2" style="display: none">
+    <p>What is your date of birth?<span>|</span></p>
+    <button type="button" class="Btn" id="Q2Btn" onclick="toggle_visibility('Q2'); toggle_visibility('Q3');">Continue</button>
+</div>
+
+<div id="Q3" style="display: none">
+    <p>How're you feeling?<span>|</span></p>
+    <button type="button" class="Btn" id="Q3Btn" onclick="toggle_visibility('Q3'); toggle_visibility('Answer');">Submit</button>
+</div>
+
+<div id="Answer" style="display: none">
+    <img class="load" src="img/horoscope-2016.png" alt="" width="500" height="500">
+</div>
 
 
 </body>

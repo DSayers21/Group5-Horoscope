@@ -14,3 +14,18 @@ C: 17-23
 D: 23-30
 E: 30+
 
+Starsigns:
+
+Capricorn
+Pisces
+Taurus
+Cancer
+Virgo
+Scorpio
+Aquarius
+Aries
+Gemini
+Leo
+Libra
+Sagittarius
+1 more for easter egg?

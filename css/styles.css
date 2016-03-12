@@ -1,5 +1,6 @@
 body {    
-    background-color: #272928; /* Background color of the image (so it blends in) */
+    background-color: #000000; /* Background color of the image (so it blends in) */
+
 }
 
 #Title {
@@ -14,28 +15,33 @@ body {
     font-size: 30px;
     padding-top: 30px;
 }
-
-.image {
+#Start {
     position: absolute;
-    top: 65%;
+    top: 50%;
     left: 50%;
+}
+#Start > .mask {
+        -webkit-transition: all 1s ease !important;
+    -moz-transition: all 1s ease !important;
+    -o-transition: all 1s ease !important;
+    -ms-transition: all 1s ease !important;
+        transition: all 1s ease !important;
     width: 400px;
-    height: 400px;
-    margin:-250px 0 0 -250px;
-    -webkit-animation:spin 10s linear infinite;
-    -moz-animation:spin 10s linear infinite;
-    animation:spin 10s linear infinite;
-    -webkit-transition: all 0.5s ease;
-     -moz-transition: all 0.5s ease;
-       -o-transition: all 0.5s ease;
-      -ms-transition: all 0.5s ease;
-          transition: all 0.5s ease;
+    height: 560px;
+    margin:-250px 0 75px -210px; /* Top, Left, Bottom, Right */
+}
+#startBtn {
+    margin-left: -100%;
 }
 
-.image:hover {
-    -webkit-filter: blur(5px);
-    filter: blur(5px);
+.mask:hover {
+    -webkit-filter: blur(2px);
+    filter: blur(2px);
   }
 @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
 @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+/*-webkit-animation:spin 10s linear infinite;
+    -moz-animation:spin 10s linear infinite;
+    animation:spin 10s linear infinite;*/

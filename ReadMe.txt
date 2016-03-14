@@ -29,3 +29,18 @@ Leo
 Libra
 Sagittarius
 1 more for easter egg?
+
+Interests?
+Sport
+Music
+Nature
+Knowledge
+Romance
+Family
+
+What was your favourite subject at school?
+Manually enter
+
+Jason Bradbury
+John Murray
+Bruce

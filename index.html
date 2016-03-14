@@ -17,29 +17,67 @@
          <h1>MirrorMirror</h1>
      </div>
 
-<div id="Start" style="display: block">
-    <img class="mask" src="img/mask.png" alt="" width="500" height="520">
-    <button type="button" id="startBtn" onclick="toggle_visibility('Start'); toggle_visibility('Q1');">Start</button>
-</div>
+	<div id="Start" style="display: block">
+		<img class="mask" src="img/mask.png" alt="" width="500" height="520">
+		<button type="button" id="startBtn" onclick="toggle_visibility('Start'); toggle_visibility('Q1');">Start</button>
+	</div>
 
-<div id="Q1" style="display: none">
-    <p>What is your name?<span>|</span></p>
-    <button type="button" class="Btn" id="Q1Btn" onclick="toggle_visibility('Q1'); toggle_visibility('Q2');">Continue</button>
-</div>
+	<div id="Q1" style="display: none">
+		<p>What is your name?</p>
+		
+		<form action="GetInput.asp">
+			Full name: <input type="text" name="fname" autofocus><br>
+			<button type="button" class="Btn" id="Q1Btn" onclick="toggle_visibility('Q1'); toggle_visibility('Q2');">Continue</button>
+		</form>
+	</div>
+	
+	<div id="Q2" style="display: none">
+		<p>What is your date of birth?</p>
+		
+		<form action="GetInput.asp">
+			Birth Date: <input type="text" name="dob" autofocus><br>
+			<button type="button" class="Btn" id="Q2Btn" onclick="toggle_visibility('Q2'); toggle_visibility('Q3');">Continue</button>
+		</form>
+	</div>
 
-<div id="Q2" style="display: none">
-    <p>What is your date of birth?<span>|</span></p>
-    <button type="button" class="Btn" id="Q2Btn" onclick="toggle_visibility('Q2'); toggle_visibility('Q3');">Continue</button>
-</div>
+	<div id="Q3" style="display: none">
+		<p>How're you feeling?</p>
+		
+		<form action="GetInput.asp">
+			Feelings: <input type="text" name="feelings" autofocus><br>
+			<button type="button" class="Btn" id="Q3Btn" onclick="toggle_visibility('Q3'); toggle_visibility('Q4');">Continue</button>
+		</form>
+	</div>
 
-<div id="Q3" style="display: none">
-    <p>How're you feeling?<span>|</span></p>
-    <button type="button" class="Btn" id="Q3Btn" onclick="toggle_visibility('Q3'); toggle_visibility('Answer');">Submit</button>
-</div>
-
-<div id="Answer" style="display: none">
-    <img class="load" src="img/horoscope-2016.png" alt="" width="500" height="500">
-</div>
-
+	<div id="Q4" style="display: none">
+		<p>What was your favourite subject at school?</p>
+		
+		<form action="GetInput.asp">
+			Subject: <input type="text" name="subject" autofocus><br>
+			<button type="button" class="Btn" id="Q4Btn" onclick="toggle_visibility('Q4'); toggle_visibility('Q5');">Continue</button>
+		</form>
+	</div>
+	
+	<div id="Q5" style="display: none">
+		<p>What is your favourite colour?</p>
+		
+		<form action="GetInput.asp">
+			Colour: <input type="text" name="colour" autofocus><br>
+			<button type="button" class="Btn" id="Q5Btn" onclick="toggle_visibility('Q5'); toggle_visibility('Q6');">Continue</button>
+		</form>
+	</div>
+	
+	<div id="Q6" style="display: none">
+		<p>Pick an interest which best describes you.</p>
+		
+		<form action="GetInput.asp">
+			Interest: <input type="text" name="interest" autofocus><br>
+			<button type="button" class="Btn" id="Q6Btn" onclick="toggle_visibility('Q6'); toggle_visibility('Answer');">Submit</button>
+		</form>
+	</div>
+	
+	<div id="Answer" style="display: none">
+		<img class="load" src="img/horoscope-2016.png" alt="" width="500" height="500">
+	</div>
 
 </body>

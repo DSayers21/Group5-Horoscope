@@ -43,21 +43,26 @@ body {
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 
 .Btn {
-    position: relative;
-    left: 50%;
+    position: fixed;
+	margin-top: 10%;
+    left: 40%;
+	right: 60%;
+	width: 20%;
+	height: 5%;
 }
 
 
-    p{
-  color: lime; 
-  font-family: 'Poiret One', cursive;
-  font-size: 40px;
-  position: relative;
-  left: 40%;
-  white-space: nowrap;
-  overflow: hidden;
-  width: 30em;
-  animation: type 4s steps(60, end); 
+p{
+	float: left;
+	color: lime; 
+	font-family: 'Poiret One', cursive;
+	font-size: 40px;
+	position: relative;
+	left: 30%;
+	white-space: nowrap;
+	overflow: hidden;
+	width: 50%;
+	animation: type 4s steps(60, end);
 }
 
 p:nth-child(2){
@@ -69,8 +74,25 @@ p a{
   text-decoration: none;
 }
 
+input{
+	float: right;
+	background-color: #1a1a1a;
+	color: lime; 
+	font-family: 'Poiret One', cursive;
+	font-size: 40px;
+	position: relative;
+	right: 30%;
+	margin-top: 1.9%;
+	white-space: nowrap;
+	overflow: hidden;
+	width: 10em;
+	animation: type 0s steps(60, end); 
+	outline-color: black;
+	border-color: black;
+}
+
 span{
-  animation: blink 1s infinite;
+  
   
 }
 
@@ -98,7 +120,7 @@ span{
 
 @keyframes type2{
   0%{width: 0;}
-  50%{width: 0;}
+  12%{width: 0;}
   100%{ width: 100; } 
 } 
 

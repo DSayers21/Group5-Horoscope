@@ -31,7 +31,18 @@ body {
     margin:-250px 0 75px -210px; /* Top, Left, Bottom, Right */
 }
 #startBtn {
-    margin-left: -100%;
+    margin-left: -87%;
+	width: 105px;
+	height: 50px;
+	background-color: black;
+	color: lime; 
+	
+	text-align: center;
+	font-family: 'Poiret One', cursive;
+	font-size: 20px;
+}
+#startBtn:hover{
+	background-color: #1a1a1a;
 }
 
 .mask:hover {
@@ -45,48 +56,61 @@ body {
 .Btn {
     position: absolute;
 	margin-top: 10%;
-    left: 50%;
-    margin-left: -25px;
-	width: 100px;
+
+	width: 105px;
 	height: 50px;
+	
+	align: center;
+    position: relative;
+    margin-left:  40%;
+    margin-right: 15%;
+	background-color: black;
+	color: lime; 
+	
+	text-align: center;
+	font-family: 'Poiret One', cursive;
+	font-size: 20px;
+}
+.Btn:hover {
+	background-color: #1a1a1a;
 }
 
+
 .form {
-    position: absolute;
-    left: 50%;
-    top: 65%;
-    margin-left: -275px;
+	align: center;
+    position: relative;
+    margin-left: 30%;
+    margin-right: 30%;
 }
 p{
-	float: left;
 	color: lime; 
+	text-align: center;
 	font-family: 'Poiret One', cursive;
 	font-size: 40px;
 	position: relative;
-	left: 50%;
-    margin-left: -190px;
+	margin-left: auto;
+    margin-right: auto;
     white-space: nowrap;
 	overflow: hidden;
-	width: 50%;
+	width: 100%;
 	animation: type 4s steps(60, end);
 }
 
 p:nth-child(2){
-  animation: type2 8s steps(60, end);
+	animation: type2 8s steps(60, end);
 }
 
 p a{
-  color: lime;
-  text-decoration: none;
+	color: lime;
+	text-decoration: none;
 }
 
 input{
+	
 	background-color: #1a1a1a;
 	color: lime; 
 	font-family: 'Poiret One', cursive;
 	font-size: 40px;
-	position: relative;
-	margin-top: 1.9%;
 	white-space: nowrap;
 	overflow: hidden;
 	width: 100%;

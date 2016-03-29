@@ -5,5 +5,30 @@ function toggle_visibility(id) {
        else
           e.style.display = 'block';
     }
-    
-    
+function Complete(){
+	var Fname = document.getElementById('fname').value;
+	var Dob = document.getElementById('dob').value;
+	var Feelings = document.getElementById('feelings').value;
+	var Subject = document.getElementById('subject').value;
+	var Colour = document.getElementById('colour').value;
+	var Interest = document.getElementById('interest').value;
+	
+	ConsoleTest(Fname, Dob, Feelings, Subject, Colour, Interest);
+	ResetInputs();
+}
+function ResetInputs(){
+	document.getElementById('fname').value = "";
+	document.getElementById('dob').value = "";
+	document.getElementById('feelings').value = "";
+	document.getElementById('subject').value = "";
+	document.getElementById('colour').value = "";
+	document.getElementById('interest').value = "";
+}
+function ConsoleTest(Fname, Dob, Feelings, Subject, Colour, Interest){
+	console.log(Fname);
+	console.log(Dob);
+	console.log(Feelings);
+	console.log(Subject);
+	console.log(Colour);
+	console.log(Interest);
+}

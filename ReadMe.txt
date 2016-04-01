@@ -1,20 +1,19 @@
 ***** README *****
 
-Mood:
+Mood: [DONE]
 
 1: Good
 2: Average
 3: Bad
 
-Age:
+Age: [DONE]
 
-A: 0-10
-B: 10-17
-C: 17-23
-D: 23-30
-E: 30+
+A: 0-17
+B: 18-24
+C: 25-39
+D: 40+
 
-Starsigns:
+Starsigns: [DONE]
 
 Capricorn
 Pisces
@@ -30,7 +29,7 @@ Libra
 Sagittarius
 1 more for easter egg?
 
-Interests?
+Interests? [DONE]
 Sport
 Music
 Nature
@@ -38,9 +37,20 @@ Knowledge
 Romance
 Family
 
-What was your favourite subject at school?
-Manually enter
+What was your favourite subject at school? [DONE]
+Maths
+English
+Science
+History
+Art
+Geography
+PE
+RE
+Technology
+Languages
+General
 
+[No custom fortunes yet]
 Jason Bradbury
 John Murray
 Bruce

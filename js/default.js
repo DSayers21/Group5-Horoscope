@@ -32,3 +32,11 @@ function ConsoleTest(Fname, Dob, Feelings, Subject, Colour, Interest){
 	console.log(Colour);
 	console.log(Interest);
 }
+
+$('.noEnterSubmit').bind('keypress', false);
+
+$('.noEnterSubmit').keypress(function(e){
+    if ( e.which == 13 ) return false;
+    //or...
+    if ( e.which == 13 ) e.preventDefault();
+});

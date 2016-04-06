@@ -40,3 +40,5 @@ $('.noEnterSubmit').keypress(function(e){
     //or...
     if ( e.which == 13 ) e.preventDefault();
 });
+
+console.log(horoscopeData[62].content);

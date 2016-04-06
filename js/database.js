@@ -1,7 +1,4 @@
-/* Database option 1 */
-var horoscope = TAFFY([{starsign:"capricorn", mood:"1", age: "a", content:"This is some content about capricorn, mood and their age, woo!"}]);
-/* Database option 2 */
-var horoscope1 = TAFFY([{starsign:"capricorn", content:"There's good news for capricorns this week"},
+var horoscopeData = [{starsign:"capricorn", content:"There's good news for capricorns this week"},
                         {starsign:"pisces", content:"Pisces should be on the lookout this week"},
                         {starsign:"taurus", content:"Those from Taurus have fortune in their favour soon."},
                         {starsign:"cancer", content:"Those under Cancer could find good tidings heading their way."},
@@ -64,7 +61,107 @@ var horoscope1 = TAFFY([{starsign:"capricorn", content:"There's good news for ca
                         {subject:"languages", content:"Your knowledge of other languages is likely to offer you an insight into other cultures. This can be of great boon to yourself and others around you. Don’t be afraid to use those skills."},
                         {subject:"languages", content:"Why not utilise your previous love of languages and take a trip abroad in the near future. Not only does this give you a chance to lose stress but also see how different cultures use language."},
                         {subject:"general", content:"Your past love of subjects can offer you an escape from the drudgery of the everyday. They could become the thing to revisit for a new outlet or even a new vocation."},
-                        {subject:"general", content:"Try to find a new way to explore your previous interests in the coming days. It may provide the answer to questions that have stumped you for a while now."}])
+                        {subject:"general", content:"Try to find a new way to explore your previous interests in the coming days. It may provide the answer to questions that have stumped you for a while now."}];
 
+console.log(horoscopeData);
+var horoscope = TAFFY(horoscopeData);
 
+var person = {fname:"John", lname:"Doe", age:25}; 
 
+function toggle_visibility(id) {
+       var e = document.getElementById(id);
+       if(e.style.display == 'block')
+          e.style.display = 'none';
+       else
+          e.style.display = 'block';
+    }
+function Complete(){
+	var Fname = document.getElementById('fname').value;
+	var Dob = document.getElementById('dob').value;
+	var Feelings = document.getElementById('feelings').value;
+	var Subject = document.getElementById('subject').value;
+	var Colour = document.getElementById('colour').value;
+	var Interest = document.getElementById('interest').value;
+	
+	ConsoleTest(Fname, Dob, Feelings, Subject, Colour, Interest);
+	ResetInputs();
+}
+function ResetInputs(){
+	document.getElementById('fname').value = "";
+	document.getElementById('dob').value = "";
+	document.getElementById('feelings').value = "";
+	document.getElementById('subject').value = "";
+	document.getElementById('colour').value = "";
+	document.getElementById('interest').value = "";
+}
+var output = "";
+function ConsoleTest(Fname, Dob, Feelings, Subject, Colour, Interest){
+    
+	console.log(Fname);
+    output += Fname;
+	console.log(Dob);
+    console.log(Feelings);
+    console.log(Subject);
+    if (Dob == "01/01") {
+        output += horoscopeData[0].content;
+    }
+    if (Dob == "01/02") {
+        output += horoscopeData[1].content;
+    }
+    if (Dob == "01/03") {
+        output += horoscopeData[2].content;
+    }
+    if (Dob == "01/04") {
+        output += horoscopeData[3].content;
+    }
+    if (Dob == "01/05") {
+        output += horoscopeData[4].content;
+    }
+    if (Dob == "01/06") {
+        output += horoscopeData[5].content;
+    }
+    if (Dob == "01/07") {
+        output += horoscopeData[6].content;
+    }
+    if (Dob == "01/08") {
+        output += horoscopeData[7].content;
+    }
+    if (Dob == "01/09") {
+        output += horoscopeData[8].content;
+    }
+    if (Dob == "01/10") {
+        output += horoscopeData[9].content;
+    }
+    if (Dob == "01/11") {
+        output += horoscopeData[10].content;
+    }
+    if (Dob == "01/12") {
+        output += horoscopeData[11].content;
+    }
+    if (Feelings == "Good")
+    {
+        output += horoscopeData[12].content;
+    }
+    if (Feelings == "Average")
+    {
+        output += horoscopeData[14].content;
+    }
+    if (Feelings == "Bad")
+    {
+        output += horoscopeData[16].content;
+    }
+    if (Subject == "history") {
+        output += horoscopeData[49].content;
+    }
+    
+}
+
+$('.noEnterSubmit').bind('keypress', false);
+
+$('.noEnterSubmit').keypress(function(e){
+    if ( e.which == 13 ) return false;
+    //or...
+    if ( e.which == 13 ) e.preventDefault();
+});
+
+console.log(horoscopeData[62].content);

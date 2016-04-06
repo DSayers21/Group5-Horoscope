@@ -33,12 +33,22 @@ function ConsoleTest(Fname, Dob, Feelings, Subject, Colour, Interest){
 	console.log(Interest);
 }
 
-$('.noEnterSubmit').bind('keypress', false);
+/*$('.noEnterSubmit').bind('keypress', false);
 
 $('.noEnterSubmit').keypress(function(e){
     if ( e.which == 13 ) return false;
     //or...
     if ( e.which == 13 ) e.preventDefault();
 });
+<<<<<<< HEAD
 
 console.log(horoscopeData[62].content);
+=======
+*/
+document.querySelector('form').onkeypress = checkEnter;
+function checkEnter(e){
+	e = e || event;
+	var txtArea = /textarea/i.test((e.target || e.srcElement).tagName);
+	return txtArea || (e.keyCode || e.which || e.charCode || 0) !== 13;
+}
+>>>>>>> origin/master

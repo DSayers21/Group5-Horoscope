@@ -25,58 +25,46 @@
 		<button type="button" id="startBtn" onclick="toggle_visibility('Start'); toggle_visibility('Q1');">Start</button>
 	</div>
 
-	<div id="Q1" style="display: none">
+	<div id="Q1" style="display: none" class = "form">
 		<p>What is your name?</p>
 		
-		<form action="GetInput.asp" class="form" class="noEnterSubmit">
-			Fullname: <input type="text" name="fname" id="fname" autofocus><br>
-			<button type="button" class="Btn" id="Q1Btn" onclick="toggle_visibility('Q1'); toggle_visibility('Q2');">Continue</button>
-		</form>
+		Fullname: <input type="text" name="fname" id="fname" autofocus><br>
+		<button type="button" class="Btn" id="Q1Btn" onclick="toggle_visibility('Q1'); toggle_visibility('Q2');">Continue</button>			
 	</div>
 	
-	<div id="Q2" style="display: none">
+	<div id="Q2" style="display: none" class = "form">
 		<p>What is your date of birth?</p>
 		
-		<form action="GetInput.asp" class="form" class="noEnterSubmit">
-			Birth Date: <input type="text" name="dob" id="dob" autofocus><br>
-			<button type="button" class="Btn" id="Q2Btn" onclick="toggle_visibility('Q2'); toggle_visibility('Q3');">Continue</button>
-		</form>
+		Birth Date: <input type="text" name="dob" id="dob" autofocus><br>
+		<button type="button" class="Btn" id="Q2Btn" onclick="toggle_visibility('Q2'); toggle_visibility('Q3');">Continue</button>
 	</div>
 
-	<div id="Q3" style="display: none">
+	<div id="Q3" style="display: none" class = "form">
 		<p>How're you feeling?</p>
 		
-		<form action="GetInput.asp" class="form" class="noEnterSubmit">
-			Feelings: <input type="text" name="feelings" id="feelings" autofocus><br>
-			<button type="button" class="Btn" id="Q3Btn" onclick="toggle_visibility('Q3'); toggle_visibility('Q4');">Continue</button>
-		</form>
+		Feelings: <input type="text" name="feelings" id="feelings" autofocus><br>
+		<button type="button" class="Btn" id="Q3Btn" onclick="toggle_visibility('Q3'); toggle_visibility('Q4');">Continue</button>
 	</div>
 
-	<div id="Q4" style="display: none">
+	<div id="Q4" style="display: none" class = "form">
 		<p>What was your favourite subject at school?</p>
 		
-		<form action="GetInput.asp" class="form" class="noEnterSubmit">
-			Subject: <input type="text" name="subject" id="subject" autofocus><br>
-			<button type="button" class="Btn" id="Q4Btn" onclick="toggle_visibility('Q4'); toggle_visibility('Q5');">Continue</button>
-		</form>
+		Subject: <input type="text" name="subject" id="subject" autofocus><br>
+		<button type="button" class="Btn" id="Q4Btn" onclick="toggle_visibility('Q4'); toggle_visibility('Q5');">Continue</button>
 	</div>
 	
-	<div id="Q5" style="display: none">
+	<div id="Q5" style="display: none" class = "form">
 		<p>What is your favourite colour?</p>
 		
-		<form action="GetInput.asp" class="form" class="noEnterSubmit">
-			Colour: <input type="text" name="colour" id="colour" autofocus><br>
-			<button type="button" class="Btn" id="Q5Btn" onclick="toggle_visibility('Q5'); toggle_visibility('Q6');">Continue</button>
-		</form>
+		Colour: <input type="text" name="colour" id="colour" autofocus><br>
+		<button type="button" class="Btn" id="Q5Btn" onclick="toggle_visibility('Q5'); toggle_visibility('Q6');">Continue</button>
 	</div>
 	
-	<div id="Q6" style="display: none">
+	<div id="Q6" style="display: none" class = "form">
 		<p>Pick an interest which best describes you.</p>
 		
-		<form action="GetInput.asp" class="form" class="noEnterSubmit">
-			Interest: <input type="text" name="interest" id="interest" autofocus><br>
-			<button type="button" class="Btn" id="Q6Btn" onclick="toggle_visibility('Q6'); toggle_visibility('Answer'); Complete();">Submit</button>
-		</form>
+		Interest: <input type="text" name="interest" id="interest" autofocus><br>
+		<button type="button" class="Btn" id="Q6Btn" onclick="toggle_visibility('Q6'); toggle_visibility('Answer'); Complete();">Submit</button>
 	</div>
 	
 	<div id="Answer" style="display: none">

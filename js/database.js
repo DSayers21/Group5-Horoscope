@@ -153,11 +153,8 @@ function ConsoleTest(Fname, Dob, Feelings, Subject, Colour, Interest){
     if (Subject == "history") {
         output += horoscopeData[49].content;
     }
-<<<<<<< HEAD
     document.getElementById("Answer").innerHTML = output;
-=======
     console.log(output);
->>>>>>> origin/master
 }
 
 $('.noEnterSubmit').bind('keypress', false);

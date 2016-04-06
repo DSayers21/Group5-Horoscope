@@ -96,9 +96,13 @@ function ResetInputs(){
 }
 var output = "";
 function ConsoleTest(Fname, Dob, Feelings, Subject, Colour, Interest){
+    Feelings = Feelings.toLowerCase();
+    Subject = Subject.toLowerCase();
+    Colour = Colour.toLowerCase();
+    //Interest = Interest.toLowerCase();
     
 	console.log(Fname);
-    output += Fname;
+    output += Fname + "- ";
 	console.log(Dob);
     console.log(Feelings);
     console.log(Subject);
@@ -138,22 +142,22 @@ function ConsoleTest(Fname, Dob, Feelings, Subject, Colour, Interest){
     if (Dob == "01/12") {
         output += horoscopeData[11].content;
     }
-    if (Feelings == "Good")
+    if (Feelings == "good")
     {
         output += horoscopeData[12].content;
     }
-    if (Feelings == "Average")
+    if (Feelings == "average")
     {
         output += horoscopeData[14].content;
     }
-    if (Feelings == "Bad")
+    if (Feelings == "bad")
     {
         output += horoscopeData[16].content;
     }
     if (Subject == "history") {
         output += horoscopeData[49].content;
     }
-    document.getElementById("Answer").innerHTML = output;
+    document.getElementById("Answer").innerHTML = "<p>" + output + "</p>";
     console.log(output);
 }
 

@@ -159,4 +159,89 @@ span{
 ::selection{
   background: black;
 }
+/*
+	Card Flip Animation
+	Source :: https://davidwalsh.name/css-flip
+*/
+.BoxGrid{
+	align: center;
+	display: block;
+	width: 100%;
+	height: 600px;
+
+	position: fixed;
+	top: 50%;
+	left: 0%;
+	margin-left: 5%;
+	margin-right: 35%;
+}
+/* entire container, keeps perspective */
+.flip-container {
+	perspective: 1000;
+}
+	/* flip the pane when hovered */
+	.flip-container:hover .flipper, .flip-container.hover .flipper {
+		transform: rotateY(180deg);
+	}
+
+.flip-container, .front, .back {
+	width: 300px;
+	height: 200px;
+	float: left;
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(180deg);
+}
+
+.box{
+    width: 100%;
+    height: 100%;
+	border: solid 1px silver;
+}
+.boxB{
+    width: 100%;
+    height: 100%;
+	border: solid 1px black;
+}
+.box p{
+	width: 100%;
+	height: 50%;
+	display: block;
+    color: white; 
+	text-align: center;
+	font-family: 'Poiret One', cursive;
+	font-size: 30px;
+	margin: 0;
+	margin-top: 25%;
+    white-space: normal;
+	overflow: show;
+	animation: none !important;
+	word-wrap: break-word;
+}
 

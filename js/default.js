@@ -31,6 +31,9 @@ function ConsoleTest(Fname, Dob, Feelings, Subject, Colour, Interest){
 	console.log(Subject);
 	console.log(Colour);
 	console.log(Interest);
+<<<<<<< HEAD
+}
+=======
 }
 
 /*$('.noEnterSubmit').bind('keypress', false);
@@ -52,3 +55,4 @@ function checkEnter(e){
 	return txtArea || (e.keyCode || e.which || e.charCode || 0) !== 13;
 }
 >>>>>>> origin/master
+>>>>>>> refs/remotes/origin/master

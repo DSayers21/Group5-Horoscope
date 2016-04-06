@@ -153,7 +153,7 @@ function ConsoleTest(Fname, Dob, Feelings, Subject, Colour, Interest){
     if (Subject == "history") {
         output += horoscopeData[49].content;
     }
-    
+    console.log(output);
 }
 
 $('.noEnterSubmit').bind('keypress', false);
@@ -163,5 +163,3 @@ $('.noEnterSubmit').keypress(function(e){
     //or...
     if ( e.which == 13 ) e.preventDefault();
 });
-
-console.log(horoscopeData[62].content);

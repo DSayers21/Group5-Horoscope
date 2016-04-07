@@ -62,8 +62,8 @@ body {
 	
 	align: center;
     position: relative;
-    margin-left:  40%;
-    margin-right: 15%;
+    left: 50%;
+    margin-left: -52.5px;
 	background-color: black;
 	color: lime; 
 	
@@ -79,8 +79,6 @@ body {
 .form {
 	align: center;
     position: relative;
-    margin-left: 30%;
-    margin-right: 30%;
 }
 p{
 	color: lime; 
@@ -93,7 +91,7 @@ p{
     white-space: nowrap;
 	overflow: hidden;
 	width: 100%;
-	animation: type 4s steps(60, end);
+	animation: type 2s steps(60, end);
 }
 #Answer > p {
     color: white;
@@ -111,7 +109,7 @@ p a{
 
 input{
 	
-	background-color: #1a1a1a;
+	background-color: #000000;
 	color: lime; 
 	font-family: 'Poiret One', cursive;
 	font-size: 40px;
@@ -121,6 +119,7 @@ input{
 	animation: type 0s steps(60, end); 
 	outline-color: black;
 	border-color: black;
+    text-align: center;
 }
 
 span{

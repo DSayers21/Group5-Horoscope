@@ -66,8 +66,6 @@ var horoscopeData = [{starsign:"capricorn", content:"There's good news for capri
 console.log(horoscopeData);
 var horoscope = TAFFY(horoscopeData);
 
-var person = {fname:"John", lname:"Doe", age:25}; 
-
 function toggle_visibility(id) {
        var e = document.getElementById(id);
        if(e.style.display == 'block')
@@ -161,10 +159,3 @@ function ConsoleTest(Fname, Dob, Feelings, Subject, Colour, Interest){
     console.log(output);
 }
 
-$('.noEnterSubmit').bind('keypress', false);
-
-$('.noEnterSubmit').keypress(function(e){
-    if ( e.which == 13 ) return false;
-    //or...
-    if ( e.which == 13 ) e.preventDefault();
-});

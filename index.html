@@ -5,10 +5,12 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" type="text/css" href="css/styles.css">
-        <script   src="https://code.jquery.com/jquery-2.2.2.js"   integrity="sha256-4/zUCqiq0kqxhZIyp4G0Gk+AOtCJsY1TA00k5ClsZYE="   crossorigin="anonymous"></script>
         <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
         <script type="text/javascript" src="js/taffy.js"></script>
         <script type="text/javascript" src="js/database.js"></script>
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script src="js/moment.min.js"></script> 
+        <script src="js/combodate.js"></script> 
   </head>
   
   <body>
@@ -35,6 +37,8 @@
 		<p>What is your date of birth?</p>
 		
 		Birth Date: <input type="text" name="dob" id="dob" autofocus><br>
+        
+        <input name="date_of_birth" value="15-05-1984" data-format="DD-MM-YYYY" data-template="D MMM YYYY"> 
 		<button type="button" class="Btn" id="Q2Btn" onclick="toggle_visibility('Q2'); toggle_visibility('Q3');">Continue</button>
 	</div>
 
@@ -157,4 +161,11 @@
 		<img class="load" src="img/horoscope-2016.png" alt="" width="500" height="500">
 	</div>
 
+<script>
+$('input').combodate({
+    minYear: 1975,
+    maxYear: 2013,
+    minuteStep: 10
+});   
+</script>
 </body>

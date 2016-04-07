@@ -1,3 +1,5 @@
+var hiddenYear;
+var hiddenDate;
 $(function ($)
 {
 	var month = {
@@ -9,11 +11,13 @@ $(function ($)
 	todayYear = today.getFullYear(),
     todayMonth = today.getMonth() + 1,
     todayDay = today.getDate();
+
     updateTheBirthDayValue = function(options, $selector, selectedYear, selectedMonth, selectedDay) {
       if ((selectedYear * selectedMonth * selectedDay) != 0) {
         if (selectedMonth<10) selectedMonth="0"+selectedMonth;
         if (selectedDay<10) selectedDay="0"+selectedDay;
-        hiddenDate = selectedYear + "-" + selectedMonth + "-" + selectedDay;
+        hiddenDate = Number(selectedMonth + selectedDay);
+        hiddenYear = (2016 - Number(selectedYear));
         $selector.val(hiddenDate);
 
         if (options.callback) {
@@ -30,7 +34,7 @@ $(function ($)
         	$year = $("<select class='birthYear "+options.sizeClass+"' name='"+parentId+"_birth[year]'></select>"),
           	$month = $("<select class='birthMonth "+options.sizeClass+"' name='"+parentId+"_birth[month]'></select>"),
           	$day = $("<select class='birthDate "+options.sizeClass+"' name='"+parentId+"_birth[day]'></select>")
-          	$birthday = $("<input class='birthDay' name='"+parentId+"_birthDay' type='hidden'/>");
+          	$birthday = $("<input class='birthDay' id='birth' name='"+parentId+"_birthDay' type='hidden'/>");
 
          // Add the option placeholders if specified
       	if (options.placeholder) {
@@ -136,7 +140,7 @@ $(function ($)
       	"monthFormat"   : "number",
       	"placeholder"   : true,
       	"defaultDate"   : false,
-      	"sizeClass"		: "span2",
+      	"sizeClass"		: "span1",
         'callback': false
 	} 
 }( jQuery ))

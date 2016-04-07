@@ -9,8 +9,10 @@
         <script type="text/javascript" src="js/taffy.js"></script>
         <script type="text/javascript" src="js/database.js"></script>
         <script type="text/javascript" src="js/jquery.min.js"></script>
-        <script src="js/moment.min.js"></script> 
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+        <script src="js/jquery-birthday-picker.js"></script> 
         <script src="js/combodate.js"></script> 
+        
   </head>
   
   <body>
@@ -35,10 +37,7 @@
 	
 	<div id="Q2" style="display: none" class = "form">
 		<p>What is your date of birth?</p>
-		
-		Birth Date: <input type="text" name="dob" id="dob" autofocus><br>
-        
-        <input name="date_of_birth" value="15-05-1984" data-format="DD-MM-YYYY" data-template="D MMM YYYY"> 
+            <div id="birthdayPicker"></div>
 		<button type="button" class="Btn" id="Q2Btn" onclick="toggle_visibility('Q2'); toggle_visibility('Q3');">Continue</button>
 	</div>
 
@@ -161,11 +160,9 @@
 		<img class="load" src="img/horoscope-2016.png" alt="" width="500" height="500">
 	</div>
 
-<script>
-$('input').combodate({
-    minYear: 1975,
-    maxYear: 2013,
-    minuteStep: 10
-});   
+<script type="text/javascript">
+    $("#birthdayPicker").birthdayPicker();
+    
+    
 </script>
 </body>

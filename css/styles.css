@@ -45,6 +45,11 @@ body {
 	background-color: #1a1a1a;
 }
 
+#div-date {
+    position: relative;
+    left: 50%;
+    margin-left:-72px;
+}
 .mask:hover {
     -webkit-filter: blur(2px);
     filter: blur(2px);
@@ -248,3 +253,19 @@ span{
 	word-wrap: break-word;
 }
 
+fieldset {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+select {
+    border: 1px solid #cccccc;
+    background-color: #ffffff;
+}
+
+#birthdayPicker {
+    position: relative;
+    left: 50%;
+    margin-left: -70px;
+}

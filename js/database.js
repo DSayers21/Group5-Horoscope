@@ -1,15 +1,15 @@
-var horoscopeData = [{starsign:"capricorn", content:"There's good news for capricorns this week"},
+var horoscopeData = [{starsign:"aries", content:"Aries will find good news in the days ahead."},                        
+                        {starsign:"taurus", content:"Those from Taurus have fortune in their favour soon."},                        
+                        {starsign:"gemini", content:"Those marked by Gemini could be greatened in the coming days."},                       
+                        {starsign:"cancer", content:"Those under Cancer could find good tidings heading their way."},                        
+                        {starsign:"leo", content:"Those of Leo may find joy in the next few days."},                        
+                        {starsign:"virgo", content:"Don’t worry Virgo as your luck is on the up."},                        
+                        {starsign:"libra", content:"Libra will be bringing you news in the coming weeks."},                        
+                        {starsign:"scorpio", content:"Scorpios should hold their heads high today."},                        
+                        {starsign:"sagittarius", content:"Sagittarius will be the bearer of fortune in the days ahead."},                        
+                        {starsign:"capricorn", content:"There's good news for capricorns this week"},                        
+                        {starsign:"aquarius", content:"Followers of Aquarius should find greater happiness soon."},                        
                         {starsign:"pisces", content:"Pisces should be on the lookout this week"},
-                        {starsign:"taurus", content:"Those from Taurus have fortune in their favour soon."},
-                        {starsign:"cancer", content:"Those under Cancer could find good tidings heading their way."},
-                        {starsign:"virgo", content:"Don’t worry Virgo as your luck is on the up."},
-                        {starsign:"scorpio", content:"Scorpios should hold their heads high today."},
-                        {starsign:"aquarius", content:"Followers of Aquarius should find greater happiness soon."},
-                        {starsign:"aries", content:"Aries will find good news in the days ahead."},
-                        {starsign:"gemini", content:"Those marked by Gemini could be greatened in the coming days."},
-                        {starsign:"leo", content:"Those of Leo may find joy in the next few days."},
-                        {starsign:"libra", content:"Libra will be bringing you news in the coming weeks."},
-                        {starsign:"sagittarius", content:"Sagittarius will be the bearer of fortune in the days ahead."},
                         {mood:"1", content:"Your good mood is something you shouldn’t keep to yourself, why not try improving someone else’s day as well."},
                         {mood:"1", content:"The happiness that currently flows through you reveals that your doubts are misplaced. Focus on that if they try to appear again."},
                         {mood:"2", content:"While your current mood might not seem the best it might turn out to simply be a symptom of contentment you currently feel. Don’t look too much into possible negative feelings you have."},
@@ -63,6 +63,11 @@ var horoscopeData = [{starsign:"capricorn", content:"There's good news for capri
                         {subject:"general", content:"Your past love of subjects can offer you an escape from the drudgery of the everyday. They could become the thing to revisit for a new outlet or even a new vocation."},
                         {subject:"general", content:"Try to find a new way to explore your previous interests in the coming days. It may provide the answer to questions that have stumped you for a while now."}];
 
+if (!String.prototype.contains) {
+    String.prototype.contains = function(s) {
+        return this.indexOf(s) > -1
+    }
+}
 console.log(horoscopeData);
 var horoscope = TAFFY(horoscopeData);
 
@@ -75,7 +80,8 @@ function toggle_visibility(id) {
     }
 function Complete(){
 	var Fname = document.getElementById('fname').value;
-	var Dob = document.getElementById('dob').value;
+	var Dob = Number(hiddenDate);
+    var Age = Number(hiddenYear);
 	var Feelings = document.getElementById('feelings').value;
 	var Subject = document.getElementById('subject').value;
 	var Colour = document.getElementById('colour').value;
@@ -86,7 +92,6 @@ function Complete(){
 }
 function ResetInputs(){
 	document.getElementById('fname').value = "";
-	document.getElementById('dob').value = "";
 	document.getElementById('feelings').value = "";
 	document.getElementById('subject').value = "";
 	document.getElementById('colour').value = "";
@@ -94,68 +99,159 @@ function ResetInputs(){
 }
 var output = "";
 function ConsoleTest(Fname, Dob, Feelings, Subject, Colour, Interest){
+    // Convert strings to lower case
     Feelings = Feelings.toLowerCase();
     Subject = Subject.toLowerCase();
     Colour = Colour.toLowerCase();
-    //Interest = Interest.toLowerCase();
-    
-	console.log(Fname);
+    // Add name to output (horoscope)
     output += Fname + "- ";
-	console.log(Dob);
-    console.log(Feelings);
-    console.log(Subject);
-    if (Dob == "01/01") {
+    // Star sign
+    if (Dob >= 321 && Dob <= 419) {
         output += horoscopeData[0].content;
     }
-    if (Dob == "01/02") {
+    if (Dob >= 420 && Dob <= 520) {
         output += horoscopeData[1].content;
     }
-    if (Dob == "01/03") {
+    if (Dob >= 521 && Dob <= 620) {
         output += horoscopeData[2].content;
     }
-    if (Dob == "01/04") {
+    if (Dob >= 621 && Dob <= 722) {
         output += horoscopeData[3].content;
     }
-    if (Dob == "01/05") {
+    if (Dob >= 723 && Dob <= 822) {
         output += horoscopeData[4].content;
     }
-    if (Dob == "01/06") {
+    if (Dob >= 823 && Dob <= 922) {
         output += horoscopeData[5].content;
     }
-    if (Dob == "01/07") {
+    if (Dob >= 923 && Dob <= 1022) {
         output += horoscopeData[6].content;
     }
-    if (Dob == "01/08") {
+    if (Dob >= 1023 && Dob <= 1121) {
         output += horoscopeData[7].content;
     }
-    if (Dob == "01/09") {
+    if (Dob >= 1122 && Dob <= 1221) {
         output += horoscopeData[8].content;
     }
-    if (Dob == "01/10") {
+    if (Dob >= 1222 && Dob <= 119) {
         output += horoscopeData[9].content;
     }
-    if (Dob == "01/11") {
+    if (Dob >= 120 && Dob <= 218) {
         output += horoscopeData[10].content;
     }
-    if (Dob == "01/12") {
+    if (Dob >= 219 && Dob <= 320) {
         output += horoscopeData[11].content;
     }
-    if (Feelings == "good")
+    //Word bank
+    var goodMood = "happy pleasured good gleeful delighted jovial jolly joking merry cheery cheerful glowing radiant carefree great fortunate lucky amazing horny sexy fantastic silly funny";
+    var averageMood = "ok acceptable agreable adequate passable satisfactory well okay average content fine decent";
+    var badMood = "irritated bad sad angry hurt mad hungover poor broke difficult crude retarded annoyed ill sick poorly failure failing rude dirty filthy indecent severe serious";
+    // Feelings  (containing the word bank)
+    if (goodMood.contains(Feelings))
     {
         output += horoscopeData[12].content;
     }
-    if (Feelings == "average")
+    if (averageMood.contains(Feelings))
     {
         output += horoscopeData[14].content;
     }
-    if (Feelings == "bad")
+    if (badMood.contains(Feelings))
     {
         output += horoscopeData[16].content;
     }
-    if (Subject == "history") {
-        output += horoscopeData[49].content;
+    // Ages
+    if (Age <= 17)
+    {
+        output += horoscopeData[18].content;
     }
+    if (Age >= 18 && Age <= 24)
+    {
+        output += horoscopeData[20].content;
+    }
+    if (Age >= 25 && Age <= 39)
+    {
+        output += horoscopeData[24].content;
+    }    
+    if (Age >= 40)
+    {
+        output += horoscopeData[28].content;
+    }
+    //Subjects
+    if (Subject == "maths") {
+        output += horoscopeData[42].content;    
+    }
+    if (Subject == "english") {
+        output += horoscopeData[44].content;
+    }
+    if (Subject == "science") {
+        output += horoscopeData[46].content;
+    }
+    if (Subject == "history") {
+        output += horoscopeData[48].content;
+    }
+    if (Subject == "art") {
+        output += horoscopeData[50].content;
+    }
+    if (Subject == "geography") {
+        output += horoscopeData[52].content;
+    }
+    if (Subject == "pe") {
+        output += horoscopeData[54].content;
+    }
+    if (Subject == "re") {
+        output += horoscopeData[56].content;
+    }
+    if (Subject == "technology") {
+        output += horoscopeData[58].content;
+    }
+    if (Subject == "languages") {
+        output += horoscopeData[60].content;
+    }
+    if (Subject.contains("maths english science history art geography pe re technology languages")) {
+        continue;
+    }// Failsafe
+        else
+        {
+            output += horoscopeData[62].content;
+        }
+    //Interests
+    if (Interest == "nature")
+    {
+        output += horoscopeData[31].content;
+    }
+    if (Interest == "music")
+    {
+        output += horoscopeData[33].content;
+    }
+    if (Interest == "sport")
+    {
+        output += horoscopeData[34].content;
+    }
+    if (Interest == "knowledge")
+    {
+        output += horoscopeData[36].content;
+    }
+    if (Interest == "family")
+    {
+        output += horoscopeData[38].content;
+    }
+    if (Interest == "romance")
+    {
+        output += horoscopeData[40].content;
+    }
+    
+    
+    //Finished
     document.getElementById("Answer").innerHTML = "<p>" + output + "</p>";
     console.log(output);
 }
 
+
+
+                        
+                        
+                        
+                        
+                        
+                        
+                        

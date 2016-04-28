@@ -32,27 +32,28 @@
 		<p>What is your name?</p>
 		
 		Fullname: <input type="text" name="fname" id="fname" autofocus><br>
-		<button type="button" class="Btn" id="Q1Btn" onclick="toggle_visibility('Q1'); toggle_visibility('Q2');">Continue</button>			
+		<button type="button" class="Btn" id="Q1Btn" onclick="toggle_visibility('Q1'); toggle_visibility('Q2'); userName();">Continue</button>			
 	</div>
 	
 	<div id="Q2" style="display: none" class = "form">
-		<p>What is your date of birth?</p>
+		<div id="userHello"></div>
+        <p>Could I ask what is your date of birth? I cant quite tell how old you are through this mirror..</p>
             <div id="birthdayPicker"></div>
-		<button type="button" class="Btn" id="Q2Btn" onclick="toggle_visibility('Q2'); toggle_visibility('Q3');">Continue</button>
+		<button type="button" class="Btn" id="Q2Btn" onclick="toggle_visibility('Q2'); toggle_visibility('Q3'); userAge();">Continue</button>
 	</div>
 
 	<div id="Q3" style="display: none" class = "form">
-		<p>How're you feeling?</p>
-		
+		<div id="userSign"></div>
+        <p>Anyway, How're you feeling?</p>
 		Feelings: <input type="text" name="feelings" id="feelings" autofocus><br>
-		<button type="button" class="Btn" id="Q3Btn" onclick="toggle_visibility('Q3'); toggle_visibility('Q4');">Continue</button>
+		<button type="button" class="Btn" id="Q3Btn" onclick="toggle_visibility('Q3'); toggle_visibility('Q4'); userFeelings();">Continue</button>
 	</div>
 
 	<div id="Q4" style="display: none" class = "form">
-		<p>What was your favourite subject at school?</p>
-		
+		<div id="userFeel"></div>
+        <p>What was your favourite subject at school?</p>
 		Subject: <input type="text" name="subject" id="subject" autofocus><br>
-		<button type="button" class="Btn" id="Q4Btn" onclick="toggle_visibility('Q4'); toggle_visibility('Q6');">Continue</button>
+		<button type="button" class="Btn" id="Q4Btn" onclick="toggle_visibility('Q4'); toggle_visibility('Q6'); userSubject();">Continue</button>
 	</div>
 	
 	<!--<div id="Q5" style="display: none" class = "form">
@@ -63,11 +64,12 @@
 	</div>-->
 	
 	<div id="Q6" style="display: none" class = "form">
+        <div id="userSub"></div>
 		<p>Pick an interest which best describes you.</p>
 		
 		<Interest: <input type="text" name="interest" id="interest" autofocus><br>
 		<div class="BoxGrid">
-			<div class="flip-container" ontouchstart="this.classList.toggle('hover');" onclick="toggle_visibility('Q6'); toggle_visibility('Answer'); Complete();">
+			<div class="flip-container" ontouchstart="this.classList.toggle('hover');" onclick="toggle_visibility('Q6'); toggle_visibility('Answer'); Interest = 'nature'; Complete();">
 				<div class="flipper">
 					<div class="front">
 						<div class="box">
@@ -81,7 +83,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="flip-container" ontouchstart="this.classList.toggle('hover');" onclick="toggle_visibility('Q6'); toggle_visibility('Answer'); Complete();">
+			<div class="flip-container" ontouchstart="this.classList.toggle('hover');" onclick="toggle_visibility('Q6'); toggle_visibility('Answer'); Interest = 'music'; Complete();">
 				<div class="flipper">
 					<div class="front">
 						<div class="box">
@@ -95,7 +97,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="flip-container" ontouchstart="this.classList.toggle('hover');" onclick="toggle_visibility('Q6'); toggle_visibility('Answer'); Complete();">
+			<div class="flip-container" ontouchstart="this.classList.toggle('hover');" onclick="toggle_visibility('Q6'); toggle_visibility('Answer'); Interest = 'sport'; Complete();">
 				<div class="flipper">
 					<div class="front">
 						<div class="box">
@@ -109,7 +111,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="flip-container" ontouchstart="this.classList.toggle('hover');" onclick="toggle_visibility('Q6'); toggle_visibility('Answer'); Complete();">
+			<div class="flip-container" ontouchstart="this.classList.toggle('hover');" onclick="toggle_visibility('Q6'); toggle_visibility('Answer'); Interest = 'knowledge'; Complete();">
 				<div class="flipper">
 					<div class="front">
 						<div class="box">
@@ -123,7 +125,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="flip-container" ontouchstart="this.classList.toggle('hover');" onclick="toggle_visibility('Q6'); toggle_visibility('Answer'); Complete();">
+			<div class="flip-container" ontouchstart="this.classList.toggle('hover');" onclick="toggle_visibility('Q6'); toggle_visibility('Answer'); Interest = 'family'; Complete();">
 				<div class="flipper">
 					<div class="front">
 						<div class="box">
@@ -137,7 +139,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="flip-container" ontouchstart="this.classList.toggle('hover');" onclick="toggle_visibility('Q6'); toggle_visibility('Answer'); Complete();">
+			<div class="flip-container" ontouchstart="this.classList.toggle('hover');" onclick="toggle_visibility('Q6'); toggle_visibility('Answer'); Interest = 'romance'; Complete();">
 				<div class="flipper">
 					<div class="front">
 						<div class="box">

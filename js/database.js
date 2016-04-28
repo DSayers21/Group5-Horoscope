@@ -56,8 +56,8 @@ var horoscopeData = [{starsign:"aries", content:"Aries will find good news in th
                         {subject:"PE", content:"Use your love of sports to try and bring people at your workplace together. This can help to form long lasting bonds but be careful to not overdo it as rivalries can be a major source of negativity. "},
                         {subject:"RE", content:"Your understanding of other views makes you a valuable person in defusing arguments. This allows you to help others reach harmony and work together for the greater good. "},
                         {subject:"RE", content:"Maybe now is the time to explore your old passion for other cultures or philosophies. Why not go on a trip abroad to find out more in person. "},
-                        {subject:"technology", content:"You seem to be a person who enjoys a more hands-on approach to life. If you work can’t be done this why, try an outlet that makes greater use of your skills. "},
                         {subject:"technology", content:"Your love of things technical means you should be better suited in helping others adapt to new items that are common. Why not spend a few days helping those who have issues with new technologies. "},
+                        {subject:"technology", content:"You seem to be a person who enjoys a more hands-on approach to life. If you work can’t be done this why, try an outlet that makes greater use of your skills. "},
                         {subject:"languages", content:"Your knowledge of other languages is likely to offer you an insight into other cultures. This can be of great boon to yourself and others around you. Don’t be afraid to use those skills. "},
                         {subject:"languages", content:"Why not utilise your previous love of languages and take a trip abroad in the near future. Not only does this give you a chance to lose stress but also see how different cultures use language. "},
                         {subject:"general", content:"Your past love of subjects can offer you an escape from the drudgery of the everyday. They could become the thing to revisit for a new outlet or even a new vocation. "},
@@ -82,9 +82,8 @@ function Complete(){
 	var Fname = document.getElementById('fname').value;
 	var Dob = Number(hiddenDate);
     var Age = Number(hiddenYear);
-	var Feelings = document.getElementById('feelings').value;
 	var Subject = document.getElementById('subject').value;
-	var Interest = "sport"; //document.getElementById('interest').value;
+	
 	
 	ConsoleTest(Fname, Dob, Feelings, Subject, Interest);
 	ResetInputs();
@@ -96,149 +95,125 @@ function ResetInputs(){
 	document.getElementById('interest').value = "";
 }
 var output = "";
-function ConsoleTest(Fname, Dob, Feelings, Subject, Interest, Age){
-    // Convert strings to lower case
-    Feelings = Feelings.toLowerCase();
-    Subject = Subject.toLowerCase();
-    // Add name to output (horoscope)
+
+function userName() 
+{
+    // Grab Value
+    var Fname = document.getElementById('fname').value;
+    // Add to horoscope
     output += Fname + "- ";
+    console.log(Fname);
+    // Add to HTML
+    document.getElementById('userHello').innerHTML = '<p>Its a pleasure to meet you, ' + Fname + '<br> My name is Dimitri, I will be operating the MirrorMirror today.</p>';
+}
+function userAge()
+{
     // Star sign
-    if (Dob >= 321 && Dob <= 419) {
-        output += horoscopeData[0].content;
-    }
-    if (Dob >= 420 && Dob <= 520) {
-        output += horoscopeData[1].content;
-    }
-    if (Dob >= 521 && Dob <= 620) {
-        output += horoscopeData[2].content;
-    }
-    if (Dob >= 621 && Dob <= 722) {
-        output += horoscopeData[3].content;
-    }
-    if (Dob >= 723 && Dob <= 822) {
-        output += horoscopeData[4].content;
-    }
-    if (Dob >= 823 && Dob <= 922) {
-        output += horoscopeData[5].content;
-    }
-    if (Dob >= 923 && Dob <= 1022) {
-        output += horoscopeData[6].content;
-    }
-    if (Dob >= 1023 && Dob <= 1121) {
-        output += horoscopeData[7].content;
-    }
-    if (Dob >= 1122 && Dob <= 1221) {
-        output += horoscopeData[8].content;
-    }
-    if (Dob >= 1222 && Dob <= 119) {
-        output += horoscopeData[9].content;
-    }
-    if (Dob >= 120 && Dob <= 218) {
-        output += horoscopeData[10].content;
-    }
-    if (Dob >= 219 && Dob <= 320) {
-        output += horoscopeData[11].content;
-    }
+    var Dob = Number(hiddenDate);
+    var userStar;
+    if (Dob >= 321 && Dob <= 419) { userStar="Aries"; output += horoscopeData[0].content; }
+    else if (Dob >= 420 && Dob <= 520) { userStar="Taurus"; output += horoscopeData[1].content; }
+    else if (Dob >= 521 && Dob <= 620) { userStar="Gemini"; output += horoscopeData[2].content; }
+    else if (Dob >= 621 && Dob <= 722) { userStar="Cancer"; output += horoscopeData[3].content; }
+    else if (Dob >= 723 && Dob <= 822) { userStar="Leo"; output += horoscopeData[4].content; }
+    else if (Dob >= 823 && Dob <= 922) { userStar="Virgo"; output += horoscopeData[5].content; }
+    else if (Dob >= 923 && Dob <= 1022) { userStar="Libra"; output += horoscopeData[6].content; }
+    else if (Dob >= 1023 && Dob <= 1121) { userStar="Scorpio"; output += horoscopeData[7].content; }
+    else if (Dob >= 1122 && Dob <= 1221) { userStar="Sagittarius"; output += horoscopeData[8].content; }
+    else if (Dob >= 1222 && Dob <= 119) { userStar="Capricorn"; output += horoscopeData[9].content; }
+    else if (Dob >= 120 && Dob <= 218) { userStar="Aquarius"; output += horoscopeData[10].content; }
+    else if (Dob >= 219 && Dob <= 320) { userStar="Pisces"; output += horoscopeData[11].content; }
+    // Age
+    var Age = Number(hiddenYear);
+    if (Age <= 17)              { output += horoscopeData[18].content; }
+    if (Age >= 18 && Age <= 24) { output += horoscopeData[20].content; }
+    if (Age >= 25 && Age <= 39) { output += horoscopeData[24].content; }    
+    if (Age >= 40)              { output += horoscopeData[28].content; }
+    // Debug
+    console.log(Dob);
+    console.log(userStar);
+    console.log(Age);
+    // Add to HTML
+    document.getElementById('userSign').innerHTML = '<p>Thanks for that, you are a ' + userStar + ' if i am correct? Wow, i didnt realise you are ' + Age + ', I really need to clean this glass.</p>';
+}
+function userFeelings()
+{
+    var Feelings = document.getElementById('feelings').value;
+    Feelings = Feelings.toLowerCase();
+    var Mood;
     //Word bank
     var goodMood = "happy pleasured good gleeful delighted jovial jolly joking merry cheery cheerful glowing radiant carefree great fortunate lucky amazing horny sexy fantastic silly funny";
     var averageMood = "ok acceptable agreable adequate passable satisfactory well okay average content fine decent";
     var badMood = "irritated bad sad angry hurt mad hungover poor broke difficult crude retarded annoyed ill sick poorly failure failing rude dirty filthy indecent severe serious";
     // Feelings  (containing the word bank)
-    if (goodMood.contains(Feelings))
-    {
-        output += horoscopeData[12].content;
-    }
-    if (averageMood.contains(Feelings))
-    {
-        output += horoscopeData[14].content;
-    }
-    if (badMood.contains(Feelings))
-    {
-        output += horoscopeData[16].content;
-    }
-    // Ages
-    if (Age <= 17)
-    {
-        output += horoscopeData[18].content;
-    }
-    if (Age >= 18 && Age <= 24)
-    {
-        output += horoscopeData[20].content;
-    }
-    if (Age >= 25 && Age <= 39)
-    {
-        output += horoscopeData[24].content;
-    }    
-    if (Age >= 40)
-    {
-        output += horoscopeData[28].content;
-    }
-    //Subjects
-    if (Subject == "maths") {
-        output += horoscopeData[42].content;    
-    }
-    if (Subject == "english") {
-        output += horoscopeData[44].content;
-    }
-    if (Subject == "science") {
-        output += horoscopeData[46].content;
-    }
-    if (Subject == "history") {
-        output += horoscopeData[48].content;
-    }
-    if (Subject == "art") {
-        output += horoscopeData[50].content;
-    }
-    if (Subject == "geography") {
-        output += horoscopeData[52].content;
-    }
-    if (Subject == "pe") {
-        output += horoscopeData[54].content;
-    }
-    if (Subject == "re") {
-        output += horoscopeData[56].content;
-    }
-    if (Subject == "technology") {
-        output += horoscopeData[58].content;
-    }
-    if (Subject == "languages") {
-        output += horoscopeData[60].content;
-    }
-    if (Subject.contains("maths english science history art geography pe re technology languages")) {
-        
-    }// Failsafe
+    if (Feelings.contains("happy") || Feelings.contains("pleasured") || Feelings.contains("good") || Feelings.contains("gleeful") || Feelings.contains("delighted") || Feelings.contains("jovial") 
+                                   || Feelings.contains("jolly")     || Feelings.contains("joking") || Feelings.contains("merry") || Feelings.contains("cheery") 
+                                   || Feelings.contains("cheerful")  || Feelings.contains("glowing") || Feelings.contains("radiant") || Feelings.contains("carefree") || Feelings.contains("great") 
+                                   || Feelings.contains("fortunate") || Feelings.contains("lucky") || Feelings.contains("amazing") || Feelings.contains("horny") || Feelings.contains("sexy") 
+                                   || Feelings.contains("fantastic") || Feelings.contains("silly") || Feelings.contains("funny")) { Mood = "good"; output += horoscopeData[12].content; }
+    else if (Feelings.contains(averageMood)) { Mood = "average"; output += horoscopeData[14].content; }
+    else if (Feelings.contains(badMood)) { Mood = "bad"; output += horoscopeData[16].content; }
+    console.log(Feelings);
+    console.log(Mood);
+    // Add to HTML
+    document.getElementById('userFeel').innerHTML = '<p>Thanks for letting me know that you are in a ' + Mood + ', that will help when making your horoscope.</p>';
+}
+function userSubject()
+{
+    var Subject = document.getElementById('subject').value;
+    Subject = Subject.toLowerCase();
+    console.log(Subject + " before");
+     //Subjects
+    if (Subject.contains("maths")) { Subject = "maths"; output += horoscopeData[42].content; }
+    else if (Subject.contains("english")) { Subject = "english"; output += horoscopeData[44].content; }
+    else if (Subject.contains("science")) { Subject = "science"; output += horoscopeData[46].content; }
+    else if (Subject.contains("history")) { Subject = "history"; output += horoscopeData[48].content; }
+    else if (Subject.contains("art")) { Subject = "art"; output += horoscopeData[50].content; }
+    else if (Subject.contains("geography")) { Subject = "geography"; output += horoscopeData[52].content; }
+    else if (Subject.contains("pe")) { Subject = "PE"; output += horoscopeData[54].content; }
+    else if (Subject.contains("religion")) { Subject = "RE" ; output += horoscopeData[56].content; }
+         if (Subject.contains("technology") || Subject.contains("it") || Subject.contains("ict") || Subject.contains("computer science")) { Subject = "IT"; output += horoscopeData[58].content; } // Catch for science 
+    else if (Subject.contains("french") || Subject.contains("german") || Subject.contains("latin")) { Subject = "languages"; output += horoscopeData[60].content; }
         else
         {
             output += horoscopeData[62].content;
         }
+     console.log(Subject + " after");   
+     document.getElementById('userSub').innerHTML = '<p>Thats cool that you liked ' + Subject + ' at school, I only liked fairytale class myself.</p>';
+}
+// Public so the HTML can see it 
+var Interest;
+
+function Complete(){
     //Interests
-    if (Interest == "nature")
+    
+    if (Interest == 'nature')
     {
         output += horoscopeData[31].content;
     }
-    if (Interest == "music")
+    if (Interest == 'music')
     {
         output += horoscopeData[33].content;
     }
-    if (Interest == "sport")
+    if (Interest == 'sport')
     {
         output += horoscopeData[34].content;
     }
-    if (Interest == "knowledge")
+    if (Interest == 'knowledge')
     {
         output += horoscopeData[36].content;
     }
-    if (Interest == "family")
+    if (Interest == 'family')
     {
         output += horoscopeData[38].content;
     }
-    if (Interest == "romance")
+    if (Interest == 'romance')
     {
         output += horoscopeData[40].content;
     }
-    
-    
     //Finished
+    console.log(Interest);
+    
     document.getElementById("Answer").innerHTML = "<p>" + output + "</p>";
     console.log(output);
 }

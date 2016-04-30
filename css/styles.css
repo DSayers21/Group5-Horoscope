@@ -6,10 +6,10 @@ body {
 #Title {
     text-align: center;
     padding-top: 0px;
-    font-family: 'Poiret One', cursive;
+    font-family: 'Black Chancery', cursive;
     font-size: 60px;
     font-weight: 400;
-    color: white;
+    color: #cccccc;
 }
 #Title > h3 {
     font-size: 30px;
@@ -35,10 +35,10 @@ body {
 	width: 105px;
 	height: 50px;
 	background-color: black;
-	color: lime; 
+	color: #e6e6e6; 
 	
 	text-align: center;
-	font-family: 'Poiret One', cursive;
+    font-family: 'Black Chancery', cursive;
 	font-size: 20px;
 }
 #startBtn:hover{
@@ -70,10 +70,10 @@ body {
     left: 50%;
     margin-left: -52.5px;
 	background-color: black;
-	color: lime; 
+	color: #e6e6e6; 
 	
 	text-align: center;
-	font-family: 'Poiret One', cursive;
+    font-family: 'Black Chancery', cursive;
 	font-size: 20px;
 }
 .Btn:hover {
@@ -92,9 +92,9 @@ IMG.CardImg {
     position: relative;
 }
 p{
-	color: lime; 
+	color: #e6e6e6; 
 	text-align: center;
-	font-family: 'Poiret One', cursive;
+    font-family: 'Black Chancery', cursive;
 	font-size: 40px;
 	position: relative;
 	margin-left: auto;
@@ -114,15 +114,15 @@ p:nth-child(2){
 }
 
 p a{
-	color: lime;
+	color: #e6e6e6;
 	text-decoration: none;
 }
 
 input{
 	
 	background-color: #000000;
-	color: lime; 
-	font-family: 'Poiret One', cursive;
+	color: #e6e6e6; 
+    font-family: 'Black Chancery', cursive;
 	font-size: 40px;
 	white-space: nowrap;
 	overflow: hidden;
@@ -245,9 +245,9 @@ span{
 	width: 100%;
 	height: auto;
 	display: block;
-    color: white; 
+    color: #e6e6e6; 
 	text-align: center;
-	font-family: 'Poiret One', cursive;
+    font-family: 'Black Chancery', cursive;
 	font-size: 30px;
 	margin: 0;
 	margin-top: 25%;

@@ -216,14 +216,5 @@ function Complete(){
     
     document.getElementById("Answer").innerHTML = "<p>" + output + "</p>";
     console.log(output);
+	ResetInputs();
 }
-
-
-
-                        
-                        
-                        
-                        
-                        
-                        
-                        

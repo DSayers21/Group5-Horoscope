@@ -17,25 +17,18 @@ body {
 }
 #Start {
     position: absolute;
+    text-align: center;
     top: 50%;
     left: 50%;
 }
-#Start > .mask {
-        -webkit-transition: all 1s ease !important;
-    -moz-transition: all 1s ease !important;
-    -o-transition: all 1s ease !important;
-    -ms-transition: all 1s ease !important;
-        transition: all 1s ease !important;
-    width: 400px;
-    height: 560px;
-    margin:-250px 0 75px -210px; /* Top, Left, Bottom, Right */
-}
 #startBtn {
-    margin-left: -87%;
+    margin-left: -100%;
 	width: 105px;
 	height: 50px;
 	background-color: black;
 	color: #e6e6e6; 
+	border-style: solid;
+	border-radius: 8px;
 	
 	text-align: center;
     font-family: 'Black Chancery', cursive;
@@ -50,10 +43,7 @@ body {
     left: 50%;
     margin-left:-72px;
 }
-.mask:hover {
-    -webkit-filter: blur(2px);
-    filter: blur(2px);
-  }
+
 @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
 @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
@@ -71,6 +61,8 @@ body {
     margin-left: -52.5px;
 	background-color: black;
 	color: #e6e6e6; 
+	border-style: solid;
+	border-radius: 8px;
 	
 	text-align: center;
     font-family: 'Black Chancery', cursive;

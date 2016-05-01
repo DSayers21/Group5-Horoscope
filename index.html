@@ -9,9 +9,16 @@
         <script type="text/javascript" src="js/taffy.js"></script>
         <script type="text/javascript" src="js/database.js"></script>
         <script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/typed.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
         <script src="js/jquery-birthday-picker.js"></script> 
-        <script src="js/combodate.js"></script> 
+        <script src="js/combodate.js"></script>
+		
+		 <script>
+			
+
+				
+    </script>
         
   </head>
   
@@ -24,51 +31,84 @@
      </div>
 
 	<div id="Start" style="display: block">
-		<button type="button" id="startBtn" onclick="toggle_visibility('Start'); toggle_visibility('Q1');">Start</button>
+		<button type="button" id="startBtn" onclick="toggle_visibility('Start'); toggle_visibility('Q1'); typedText('#typed-strings', '#typed');">Start</button>
 	</div>
 
-	<div id="Q1" style="display: none" class = "form">
-		<p>What is your name?</p>
+	<div id="Q1" style="display: none" class="form">
+		<div class="type-wrap">
+            <div id="typed-strings">
+				<p>Welcome to MirrorMirror,</p>
+                <p>No. K'm</p>
+                <p>No. I'm not from snow white, <br>that was my grandfather. </p>
+                <p>Anyway, i do horoscopes.</p>
+                <p>Could i ask what your name is first?</p>
+            </div>
+            <span id="typed" style="white-space:pre;"></span>
+        </div>
 		
 		Fullname: <input type="text" name="fname" id="fname" autofocus><br>
-		<button type="button" class="Btn" id="Q1Btn" onclick="toggle_visibility('Q1'); toggle_visibility('Q2'); userName();">Continue</button>			
+		<button type="button" class="Btn" id="Q1Btn" onclick="toggle_visibility('Q1'); toggle_visibility('Q2'); userName(); typedText('#typed-Q2', '#typedQ2');">Continue</button>			
 	</div>
 	
 	<div id="Q2" style="display: none" class = "form">
 		<div id="userHello"></div>
-        <p>Could I ask what is your date of birth? I cant quite tell how old you are through this mirror..</p>
+		<div class="type-wrap">
+            <div id="typed-Q2">
+				<div id="FirstName"></div>
+				<p>My name is Dimitri, <br>I will be operating the MirrorMirror today.</p>
+                <p>Could I ask what is your date of birth?</p>
+				<p>I cant quite tell how old you are through<br> this mirror..</p>
+            </div>
+            <span id="typedQ2" style="white-space:pre;"></span>
+        </div>
+        
             <div id="birthdayPicker"></div>
-		<button type="button" class="Btn" id="Q2Btn" onclick="toggle_visibility('Q2'); toggle_visibility('Q3'); userAge();">Continue</button>
+		<button type="button" class="Btn" id="Q2Btn" onclick="toggle_visibility('Q2'); toggle_visibility('Q3'); userAge(); typedText('#typed-Q3', '#typedQ3');">Continue</button>
 	</div>
 
 	<div id="Q3" style="display: none" class = "form">
-		<div id="userSign"></div>
-        <p>Anyway, How're you feeling?</p>
+		<div class="type-wrap">
+            <div id="typed-Q3">
+				<div id="userSign"></div>
+				<p>Anyway, How're you feeling?</p>
+            </div>
+            <span id="typedQ3" style="white-space:pre;"></span>
+        </div>
 		Feelings: <input type="text" name="feelings" id="feelings" autofocus><br>
-		<button type="button" class="Btn" id="Q3Btn" onclick="toggle_visibility('Q3'); toggle_visibility('Q4'); userFeelings();">Continue</button>
+		<button type="button" class="Btn" id="Q3Btn" onclick="toggle_visibility('Q3'); toggle_visibility('Q4'); userFeelings(); typedText('#typed-Q4', '#typedQ4')">Continue</button>
 	</div>
 
 	<div id="Q4" style="display: none" class = "form">
-		<div id="userFeel"></div>
-        <p>What was your favourite subject at school?</p>
+		
+		<div class="type-wrap">
+            <div id="typed-Q4">
+				<div id="userFeel"></div>
+				<p>When you went to school,</p>
+				<p>What was your favourite subject?</p>
+            </div>
+            <span id="typedQ4" style="white-space:pre;"></span>
+        </div>
+        
 		Subject: <input type="text" name="subject" id="subject" autofocus><br>
-		<button type="button" class="Btn" id="Q4Btn" onclick="toggle_visibility('Q4'); toggle_visibility('Q6'); userSubject();">Continue</button>
+		<button type="button" class="Btn" id="Q4Btn" onclick="toggle_visibility('Q4'); toggle_visibility('Q6'); userSubject(); typedText('#typed-Q5', '#typedQ5')">Continue</button>
 	</div>
 	
-	<!--<div id="Q5" style="display: none" class = "form">
-		<p>What is your favourite colour?</p>
-		
-		Colour: <input type="text" name="colour" id="colour" autofocus><br>
-		<button type="button" class="Btn" id="Q5Btn" onclick="toggle_visibility('Q5'); toggle_visibility('Q6');">Continue</button>
-	</div>-->
-	
 	<div id="Q6" style="display: none" class = "form">
-        <div id="userSub"></div>
-		<p>Pick an interest which best describes you.</p>
+        <div class="type-wrap">
+            <div id="typed-Q5">
+				<div id="userSub"></div>
+				<p>Ive made some cards, but you need to <br>hover on them to see them.</p>
+				<p>Doo me a fav</p>
+				<p>Do me a favour and pick your favourite?<br> We're nearly finished.</p>
+            </div>
+            <span id="typedQ5" style="white-space:pre;"></span>
+        </div>
+		
+		
 		
 		<Interest: <input type="text" name="interest" id="interest" autofocus><br>
 		<div class="BoxGrid">
-			<div class="flip-container" ontouchstart="this.classList.toggle('hover');" onclick="toggle_visibility('Q6'); toggle_visibility('Answer'); Interest = 'nature'; Complete();">
+			<div class="flip-container" ontouchstart="this.classList.toggle('hover');" onclick="toggle_visibility('Q6'); toggle_visibility('Answer'); Interest = 'nature'; Complete(); typedText('#typed-Q6', '#typedQ6')">
 				<div class="flipper">
 					<div class="front">
 						<div class="box">
@@ -82,7 +122,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="flip-container" ontouchstart="this.classList.toggle('hover');" onclick="toggle_visibility('Q6'); toggle_visibility('Answer'); Interest = 'music'; Complete();">
+			<div class="flip-container" ontouchstart="this.classList.toggle('hover');" onclick="toggle_visibility('Q6'); toggle_visibility('Answer'); Interest = 'music'; Complete(); typedText('#typed-Q6', '#typedQ6')">
 				<div class="flipper">
 					<div class="front">
 						<div class="box">
@@ -96,7 +136,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="flip-container" ontouchstart="this.classList.toggle('hover');" onclick="toggle_visibility('Q6'); toggle_visibility('Answer'); Interest = 'sport'; Complete();">
+			<div class="flip-container" ontouchstart="this.classList.toggle('hover');" onclick="toggle_visibility('Q6'); toggle_visibility('Answer'); Interest = 'sport'; Complete(); typedText('#typed-Q6', '#typedQ6')">
 				<div class="flipper">
 					<div class="front">
 						<div class="box">
@@ -110,7 +150,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="flip-container" ontouchstart="this.classList.toggle('hover');" onclick="toggle_visibility('Q6'); toggle_visibility('Answer'); Interest = 'knowledge'; Complete();">
+			<div class="flip-container" ontouchstart="this.classList.toggle('hover');" onclick="toggle_visibility('Q6'); toggle_visibility('Answer'); Interest = 'knowledge'; Complete(); typedText('#typed-Q6', '#typedQ6')">
 				<div class="flipper">
 					<div class="front">
 						<div class="box">
@@ -124,7 +164,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="flip-container" ontouchstart="this.classList.toggle('hover');" onclick="toggle_visibility('Q6'); toggle_visibility('Answer'); Interest = 'family'; Complete();">
+			<div class="flip-container" ontouchstart="this.classList.toggle('hover');" onclick="toggle_visibility('Q6'); toggle_visibility('Answer'); Interest = 'family'; Complete(); typedText('#typed-Q6', '#typedQ6')">
 				<div class="flipper">
 					<div class="front">
 						<div class="box">
@@ -138,7 +178,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="flip-container" ontouchstart="this.classList.toggle('hover');" onclick="toggle_visibility('Q6'); toggle_visibility('Answer'); Interest = 'romance'; Complete();">
+			<div class="flip-container" ontouchstart="this.classList.toggle('hover');" onclick="toggle_visibility('Q6'); toggle_visibility('Answer'); Interest = 'romance'; Complete(); typedText('#typed-Q6', '#typedQ6')">
 				<div class="flipper">
 					<div class="front">
 						<div class="box">
@@ -155,14 +195,18 @@
 		</div>
 	</div>
 	
-	<div id="Answer" style="display: none">
-        <p>..</p>
-		<img class="load" src="img/horoscope-2016.png" alt="" width="500" height="500">
+	<div id="Answer" style="display: none; width: 90%;" >
+		<div class="type-wrap">
+            <div id="typed-Q6">
+				<div id="userAns"></div>
+				<p>I hope you found that useful, thankyou and goodbye.</p>
+            </div>
+            <span id="typedQ6" style="white-space:pre;"></span>
+        </div>
 	</div>
 
 <script type="text/javascript">
     $("#birthdayPicker").birthdayPicker();
-    
     
 </script>
 </body>

@@ -79,12 +79,15 @@ IMG.CardImg {
     margin-right: auto;
 }
 
+.type-wrap {
+	text-align: center;
+}
 .form {
 	align: center;
     position: relative;
 }
-p{
-	color: #e6e6e6; 
+p, span{
+	color: #e6e6e6 !important; 
 	text-align: center;
     font-family: 'Black Chancery', cursive;
 	font-size: 40px;
@@ -94,15 +97,10 @@ p{
     white-space: nowrap;
 	overflow: hidden;
 	width: 100%;
-	animation: type 2s steps(60, end);
 }
 #Answer > p {
     color: white;
     white-space: normal !important;
-}
-
-p:nth-child(2){
-	animation: type2 8s steps(60, end);
 }
 
 p a{
@@ -110,7 +108,7 @@ p a{
 	text-decoration: none;
 }
 
-input{
+input, span{
 	
 	background-color: #000000;
 	color: #e6e6e6; 
@@ -119,15 +117,9 @@ input{
 	white-space: nowrap;
 	overflow: hidden;
 	width: 100%;
-	animation: type 0s steps(60, end); 
 	outline-color: black;
 	border-color: black;
     text-align: center;
-}
-
-span{
-  
-  
 }
 
 .load {
@@ -265,3 +257,39 @@ select {
     left: 50%;
     margin-left: -70px;
 }
+
+/* code for animated blinking cursor */
+        .typed-cursor{
+            opacity: 1;
+            font-weight: 100;
+            -webkit-animation: blink 0.7s infinite;
+            -moz-animation: blink 0.7s infinite;
+            -ms-animation: blink 0.7s infinite;
+            -o-animation: blink 0.7s infinite;
+            animation: blink 0.7s infinite;
+        }
+        @-keyframes blink{
+            0% { opacity:1; }
+            50% { opacity:0; }
+            100% { opacity:1; }
+        }
+        @-webkit-keyframes blink{
+            0% { opacity:1; }
+            50% { opacity:0; }
+            100% { opacity:1; }
+        }
+        @-moz-keyframes blink{
+            0% { opacity:1; }
+            50% { opacity:0; }
+            100% { opacity:1; }
+        }
+        @-ms-keyframes blink{
+            0% { opacity:1; }
+            50% { opacity:0; }
+            100% { opacity:1; }
+        }
+        @-o-keyframes blink{
+            0% { opacity:1; }
+            50% { opacity:0; }
+            100% { opacity:1; }
+        }

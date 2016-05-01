@@ -1,75 +1,112 @@
-var horoscopeData = [{starsign:"aries", content:"Aries will find good news in the days ahead. "},                        
-                        {starsign:"taurus", content:"Those from Taurus have fortune in their favour soon. "},                        
-                        {starsign:"gemini", content:"Those marked by Gemini could be greatened in the coming days. "},                       
-                        {starsign:"cancer", content:"Those under Cancer could find good tidings heading their way. "},                        
-                        {starsign:"leo", content:"Those of Leo may find joy in the next few days. "},                        
-                        {starsign:"virgo", content:"Don’t worry Virgo as your luck is on the up. "},                        
-                        {starsign:"libra", content:"Libra will be bringing you news in the coming weeks. "},                        
-                        {starsign:"scorpio", content:"Scorpios should hold their heads high today. "},                        
-                        {starsign:"sagittarius", content:"Sagittarius will be the bearer of fortune in the days ahead. "},                        
-                        {starsign:"capricorn", content:"There's good news for capricorns this week. "},                        
-                        {starsign:"aquarius", content:"Followers of Aquarius should find greater happiness soon."},                        
-                        {starsign:"pisces", content:"Pisces should be on the lookout this week. "},
-                        {mood:"1", content:"Your good mood is something you shouldn’t keep to yourself, why not try improving someone else’s day as well. "},
-                        {mood:"1", content:"The happiness that currently flows through you reveals that your doubts are misplaced. Focus on that if they try to appear again. "},
-                        {mood:"2", content:"While your current mood might not seem the best it might turn out to simply be a symptom of contentment you currently feel. Don’t look too much into possible negative feelings you have. "},
-                        {mood:"2", content:"Though you may not currently feel at your best this isn’t a bad thing. We all experience ups and downs and that means your future looks bright. "},
-                        {mood:"3", content:"Your mood may be dark at the current moment but don’t fear as every day offers new opportunities to improve it. Don’t allow your mood to stop you from experiencing those opportunities. "},
-                        {mood:"3", content:"Though things right now may seem bleak don’t fret. Everyone experiences bad days and understand how it can be. Why not spend times with your friends and loved ones to see if your mood improves. "},
-                        {age:"a", content:"You may often find yourself cursing your youthful nature but you shouldn’t take it for granted. These are your most responsibility-free years of your life and you’re unlikely to ever be so carefree again. "},
-                        {age:"a", content:"Your current age gives you the most opportunity to try out new things. Don’t miss this chance to find out what you want to do with your life. "},
-                        {age:"b", content:"Despite your young age you will be required to make some serious choices in the coming months. Now is the time to show people who you want to be. "},
-                        {age:"b", content:"Though you have seen few years you shouldn’t be dissuaded from aiming high. A risk every now and then can make a positive difference in your life. "},
-                        {age:"b", content:"You may sometimes feel you are looked down on due to your youth but fear not. Now is the best time to learn new and skills and make connections that can help you well into the future. "},
-                        {age:"b", content:"Your low number of years and lack of experience may be viewed by many as a weakness but it also allows you the opportunity for fresh ideas and ways of thinking that others may have missed. "},
-                        {age:"c", content:"Now might be the time to seek a change in your life. Complacency can lead to missed opportunities and lost chances. "},
-                        {age:"c", content:"By now you have found a sense of stability in your life but that shouldn’t mean you can’t seek new adventures. Maybe it’s time to learn a new skill that could benefit you in the future. "},
-                        {age:"c", content:"You probably enjoy the routine of your life but also find yourself anxious to try new experiences. A holiday may benefit you if just for a change of pace. "},
-                        {age:"c", content:"The normalcy of your life allows you to plan ahead but the repetitive nature of it can remove some of the fun it once had. Now might be the time to find a new hobby. "},
-                        {age:"d", content:"You may feel outdone by those younger than yourself but remember that experience has its own benefits. "},
-                        {age:"d", content:"While you may feel that you are set in your ways it is never too late to learn something new. Why not try to learn a new skill or hobby. "},
-                        {age:"d", content:"Your age, while on the surface may feel to be a burden, is one of your greatest assets. Your years of knowledge and experience put you at a distinct advantage in your field. "},
-                        {interest:"nature", content:"Your observational nature will come in handy in the near future. Don’t overlook the finer details over the coming days. "},
-                        {interest:"nature", content:"Though you may prefer a non-intrusive approach to disagreements you may need to take a more active role. Sometimes you must intervene to make a real difference. "},
-                        {interest:"music", content:"This week try finding a rhythm in your work. This should help you to complete tasks more quickly. "},
-                        {interest:"sport", content:"You value teamwork within your work but don’t forget, sometimes you will find tasks that are much better undertaken in solitude. "},
-                        {interest:"sport", content:"Don’t try to do things alone. Dividing up a task in a group will not only finish it faster but allow others to show their expertise in key areas. "},
-                        {interest:"knowledge", content:"Try to do tasks in more detail this week. Not only does this mean more will get done but you may learn something new in the process. "},
-                        {interest:"knowledge", content:"Try to find a new way of doing things this week. Not only does this help shake things up but could add new knowledge to your repertoire. "},
-                        {interest:"family", content:"Don’t forget to take the advice of those close around you. While they may not be familiar with the specifics of the current issue in your life their experience is likely to help you in the future. "},
-                        {interest:"family", content:"Those closest to you are your greatest asset. Never overlook them for help when you need it as they’ll always be willing to offer it. "},
-                        {interest:"romance", content:"Listen to the person you are closest to in the coming days. They’re likely to have an insight into your current preoccupations. "},
-                        {interest:"romance", content:"The person you care for most is likely to know you better than yourself. Listen to their advice in the coming days and head their warnings. "},
-                        {subject:"maths", content:"Your positive experience with numbers can be useful in a variety of areas, today is the time for you to use the knowledge you gained in this area towards financial possibilities. "},
-                        {subject:"maths", content:"Your ability with statistics should be useful in many ways you may have overlooked previously. A career in finances could bring substantial rewards your way."},
-                        {subject:"english", content:"Your study of many texts will provide you great benefit in the coming months. Never fail to look for hidden meaning in what others write as you may ward off negative repercussions in doing so. "},
-                        {subject:"english", content:"You love for the written word offers a great way to escape from the ordinary. Now seems to be a good time to indulge in reading once again. "},
-                        {subject:"science", content:"Though you may prefer looking at how each individual part never lose sight of the whole. The bigger picture can often reveal more information than expected. "},
-                        {subject:"science", content:"You history of looking in depth at how things are made up can be a boon today. Try to understand why key events are in motion and other will be grateful for it. "},
-                        {subject:"history", content:"An interest in the past gives you a unique insight in a world that looks towards the future, today may be a historical day for many people and could be for you if you offer them your insight. "},
-                        {subject:"history", content:"Your love for things historical provides a calling you may want to pay more attention to. Now could be a great time to visit something archaeological. "},
-                        {subject:"art", content:"Your passion for creativity should help you in coming up with new ways of completing your work or resolving differences with others. While it may seem unorthodox to begin with these new ideas can lead to great rewards. "},
-                        {subject:"art", content:"Your creative nature not only can help solve a variety of problems in ways others might have overlooked but allows you to express yourself in new ways. Now may be the time to let your creativity flow free. "},
-                        {subject:"geography", content:"Whether this interest comes from wanting to travel or not, today might be the day to start planning a voyage, time to tick a box on a list of things to do. "},
-                        {subject:"geography", content:"Your awareness of the things around you gives you an incentive to explore. Why not take a small break sometime soon and go on an adventure. "},
-                        {subject:"PE", content:"Today is your day to be active and work off any stress you currently feel but be careful with over doing it you will need some strength to remain for tomorrow. "},
-                        {subject:"PE", content:"Use your love of sports to try and bring people at your workplace together. This can help to form long lasting bonds but be careful to not overdo it as rivalries can be a major source of negativity. "},
-                        {subject:"RE", content:"Your understanding of other views makes you a valuable person in defusing arguments. This allows you to help others reach harmony and work together for the greater good. "},
-                        {subject:"RE", content:"Maybe now is the time to explore your old passion for other cultures or philosophies. Why not go on a trip abroad to find out more in person. "},
-                        {subject:"technology", content:"Your love of things technical means you should be better suited in helping others adapt to new items that are common. Why not spend a few days helping those who have issues with new technologies. "},
-                        {subject:"technology", content:"You seem to be a person who enjoys a more hands-on approach to life. If you work can’t be done this why, try an outlet that makes greater use of your skills. "},
-                        {subject:"languages", content:"Your knowledge of other languages is likely to offer you an insight into other cultures. This can be of great boon to yourself and others around you. Don’t be afraid to use those skills. "},
-                        {subject:"languages", content:"Why not utilise your previous love of languages and take a trip abroad in the near future. Not only does this give you a chance to lose stress but also see how different cultures use language. "},
-                        {subject:"general", content:"Your past love of subjects can offer you an escape from the drudgery of the everyday. They could become the thing to revisit for a new outlet or even a new vocation. "},
-                        {subject:"general", content:"Try to find a new way to explore your previous interests in the coming days. It may provide the answer to questions that have stumped you for a while now. "}];
+var horoscopeData = [{starsign:"aries", content:"Aries will find good news in the days ahead.<br> "},                        
+                        {starsign:"taurus", content:"Those from Taurus have fortune in their favour soon.<br> "},                        
+                        {starsign:"gemini", content:"Those marked by Gemini could be greatened in the coming days.<br> "},                       
+                        {starsign:"cancer", content:"Those under Cancer could find good tidings heading their way.<br> "},                        
+                        {starsign:"leo", content:"Those of Leo may find joy in the next few days.<br> "},                        
+                        {starsign:"virgo", content:"Don’t worry Virgo as your luck is on the up.<br> "},                        
+                        {starsign:"libra", content:"Libra will be bringing you news in the coming weeks.<br> "},                        
+                        {starsign:"scorpio", content:"Scorpios should hold their heads high today.<br> "},                        
+                        {starsign:"sagittarius", content:"Sagittarius will be the bearer of fortune in the days ahead.<br> "},                        
+                        {starsign:"capricorn", content:"There's good news for capricorns this week.<br> "},                        
+                        {starsign:"aquarius", content:"Followers of Aquarius should find greater happiness soon.<br>"},                        
+                        {starsign:"pisces", content:"Pisces should be on the lookout this week.<br> "},
+                        {mood:"1", content:"<p>Your good mood is something you <br>shouldn’t keep to yourself,<br> why not try improving someone else’s day as well. </p>"},
+                        {mood:"1", content:"<p>The happiness that currently flows <br>through you reveals that your<br> doubts are misplaced. Focus on that if they try to appear again.</p> "},
+                        {mood:"2", content:"<p>While your current mood might not seem <br>the best it might turn out<br> to simply be a symptom of contentment you currently feel.<br> Don’t look too much into possible negative feelings you have. </p>"},
+                        {mood:"2", content:"<p>Though you may not currently feel at your<br> best this isn’t a bad thing.<br> We all experience ups and downs and that means your <br>future looks bright.</p> "},
+                        {mood:"3", content:"<p>Your mood may be dark at the current <br>moment but don’t fear as every day<br> offers new opportunities to improve it. Don’t allow <br>your mood to stop you from experiencing those opportunities.</p> "},
+                        {mood:"3", content:"<p>Though things right now may seem bleak<br> don’t fret. Everyone experiences<br> bad days and understand how it can be. Why not spend <br>times with your friends and loved ones to see if your mood improves. </p>"},
+                        {age:"a", content:"<p>You may often find yourself cursing your<br> youthful nature but you shouldn’t<br> take it for granted. These are your most <br>responsibility-free years of your life<br> and you’re unlikely to ever be so carefree again.</p> "},
+                        {age:"a", content:"<p>Your current age gives you the most <br>opportunity to try out new things.<br> Don’t miss this chance to find out what you want to<br> do with your life. </p>"},
+                        {age:"b", content:"<p>Despite your young age you will be <br>required to make some serious choices in<br> the coming months. Now is the time to show people<br> who you want to be. </p>"},
+                        {age:"b", content:"<p>Though you have seen few years you <br>shouldn’t be dissuaded from aiming high.<br> A risk every now and then can make a positive <br>difference in your life. </p>"},
+                        {age:"b", content:"<p>You may sometimes feel you are looked<br> down on due to your youth but fear not.<br> Now is the best time to learn new and skills <br>and make connections that can help you well into the future. </p>"},
+                        {age:"b", content:"<p>Your low number of years and lack of<br> experience may be viewed by many as a<br> weakness but it also allows you the opportunity for<br> fresh ideas and ways of thinking that others may have missed. </p>"},
+                        {age:"c", content:"<p>Now might be the time to seek a <br>change in your life. Complacency can <br>lead to missed opportunities and lost chances. </p>"},
+                        {age:"c", content:"<p>By now you have found a sense of <br>stability in your life but that shouldn’t<br> mean you can’t seek new adventures. Maybe it’s time<br> to learn a new skill that could benefit you in the future.</p> "},
+                        {age:"c", content:"<p>You probably enjoy the routine of your<br> life but also find yourself anxious<br> to try new experiences. A holiday may benefit you if<br> just for a change of pace. </p>"},
+                        {age:"c", content:"<p>The normalcy of your life allows you<br> to plan ahead but the repetitive <br>nature of it can remove some of the fun it once had.<br> Now might be the time to find a new hobby.</p> "},
+                        {age:"d", content:"<p>You may feel outdone by those <br>younger than yourself but remember that<br> experience has its own benefits. </p>"},
+                        {age:"d", content:"<p>While you may feel that you are <br>set in your ways it is never too late<br> to learn something new.<br> Why not try to learn a new skill or hobby.</p> "},
+                        {age:"d", content:"<p>Your age, while on the surface may<br> feel to be a burden, is one of your<br> greatest assets. Your years of knowledge and <br>experience put you at a distinct advantage in your field. </p>"},
+                        {interest:"nature", content:"<p>Your observational nature<br> will come in handy in the near future.<br> Don’t overlook the finer details over the <br>coming days. </p>"},
+                        {interest:"nature", content:"<p>Though you may prefer a <br>non-intrusive approach to disagreements<br> you may need to take a more active role. <br>Sometimes you must intervene to make a real difference. </p>"},
+                        {interest:"music", content:"<p>This week try finding a <br>rhythm in your work. This should help you<br> to complete tasks more quickly. </p>"},
+                        {interest:"sport", content:"<p>You value teamwork within your<br> work but don’t forget, sometimes you<br> will find tasks that are much better undertaken in solitude. </p>"},
+                        {interest:"sport", content:"<p>Don’t try to do things alone.<br> Dividing up a task in a group will<br> not only finish it faster but allow others <br>to show their expertise in key areas. </p>"},
+                        {interest:"knowledge", content:"<p>Try to do tasks in more<br> detail this week. Not only does<br> this mean more will get done but you may learn <br>something new in the process. </p>"},
+                        {interest:"knowledge", content:"<p>Try to find a new way<br> of doing things this week. Not only<br> does this help shake things up but could add <br>new knowledge to your repertoire. </p>"},
+                        {interest:"family", content:"<p>Don’t forget to take the advice<br> of those close around you.<br> While they may not be familiar with the specifics<br> of the current issue in your life their experience<br> is likely to help you in the future. </p>"},
+                        {interest:"family", content:"<p>Those closest to you are <br>your greatest asset. Never overlook<br> them for help when you need it as they’ll always<br> be willing to offer it.</p> "},
+                        {interest:"romance", content:"<p>Listen to the person you <br>are closest to in the coming days.<br> They’re likely to have an insight into your <br>current preoccupations. </p>"},
+                        {interest:"romance", content:"<p>The person you care for most is likely to know you <br>better than yourself. Listen to their advice in the coming<br> days and head their warnings. </p>"},
+                        {subject:"maths", content:"<p>Your positive experience with numbers can be useful <br>in a variety of areas, today is the time for you to use the <br>knowledge you gained in this area towards financial possibilities. </p>"},
+                        {subject:"maths", content:"<p>Your ability with statistics should be useful in many<br> ways you may have overlooked previously. A career in finances<br> could bring substantial rewards your way.</p>"},
+                        {subject:"english", content:"<p>Your study of many texts will provide you great benefit<br> in the coming months. Never fail to look for hidden meaning <br>in what others write as you may ward off negative repercussions in doing so.</p> "},
+                        {subject:"english", content:"<p>You love for the written word offers a great way to<br> escape from the ordinary. Now seems to be a good time to indulge <br>in reading once again.</p> "},
+                        {subject:"science", content:"<p>Though you may prefer <br>looking at how each individual<br> part never lose sight of the whole. The bigger picture can often<br> reveal more information than expected.</p> "},
+                        {subject:"science", content:"<p>You history of looking in depth at how things are<br> made up can be a boon today. Try to understand why key events are in<br> motion and other will be grateful for it.</p> "},
+                        {subject:"history", content:"<p>An interest in the past gives you a unique insight<br> in a world that looks towards the future, today may be a historical<br> day for many people and could be for you if you offer them your insight.</p> "},
+                        {subject:"history", content:"<p>Your love for things historical provides a calling<br> you may want to pay more attention to. Now could be a great time to<br> visit something archaeological.</p> "},
+                        {subject:"art", content:"<p>Your passion for creativity should help you in coming<br> up with new ways of completing your work or resolving differences with<br> others. While it may seem unorthodox to begin with these new ideas can lead to great rewards.</p> "},
+                        {subject:"art", content:"<p>Your creative nature not only can help solve a variety<br> of problems in ways others might have overlooked but allows you to <br>express yourself in new ways. Now may be the time to let your creativity flow free.</p> "},
+                        {subject:"geography", content:"<p>Whether this interest comes from wanting to travel<br> or not, today might be the day to start planning a voyage, time to<br> tick a box on a list of things to do. </p>"},
+                        {subject:"geography", content:"<p>Your awareness of the things around you gives you<br> an incentive to explore. Why not take a small break sometime soon <br>and go on an adventure. </p>"},
+                        {subject:"PE", content:"<p>Today is your day to be active and work off any stress you<br> currently feel but be careful with over doing it you will <br>need some strength to remain for tomorrow. </p>"},
+                        {subject:"PE", content:"<p>Use your love of sports to try and bring people at your <br>workplace together. This can help to form long lasting bonds <br>but be careful to not overdo it as rivalries can be a major source of negativity. </p>"},
+                        {subject:"RE", content:"<p>Your understanding of other views <br>makes you a valuable person<br> in defusing arguments. This allows you to help others reach<br> harmony and work together for the greater good. </p>"},
+                        {subject:"RE", content:"<p>Maybe now is the time to explore your old passion for other <br>cultures or philosophies. Why not go on a trip abroad to <br>find out more in person. </p>"},
+                        {subject:"technology", content:"<p>Your love of things technical means you should be <br>better suited in helping others adapt to new items that are <br>common. Why not spend a few days helping those who have issues with new technologies. </p>"},
+                        {subject:"technology", content:"<p>You seem to be a person who enjoys a more hands-on <br>approach to life. If you work can’t be done this why, try an <br>outlet that makes greater use of your skills. </p>"},
+                        {subject:"languages", content:"<p>Your knowledge of other languages is likely to offer<br> you an insight into other cultures. This can be of great <br>boon to yourself and others around you. Don’t be afraid to use those skills. </p>"},
+                        {subject:"languages", content:"<p>Why not utilise your previous love of languages<br> and take a trip abroad in the near future. Not only does this <br>give you a chance to lose stress but also see how different cultures use language. </p>"},
+                        {subject:"general", content:"<p>Your past love of subjects can offer you an escape<br> from the drudgery of the everyday. They could become the thing <br>to revisit for a new outlet or even a new vocation. </p>"},
+                        {subject:"general", content:"<p>Try to find a new way to explore your previous <br>interests in the coming days. It may provide the answer to questions <br>that have stumped you for a while now. </p>"}];
 
 if (!String.prototype.contains) {
     String.prototype.contains = function(s) {
         return this.indexOf(s) > -1
     }
 }
-console.log(horoscopeData);
 var horoscope = TAFFY(horoscopeData);
+
+function userName() 
+{
+    // Grab Value
+    var Fname = document.getElementById('fname').value;
+    // Add to horoscope
+    output += Fname + "- ";
+    console.log(Fname);
+    // Add to HTML
+    $('#FirstName').html('<p>' + Fname + ', Its a pleasure to meet you.</p>');
+}
+
+function typedText(question, cursor) {
+    $(function(){
+$(cursor).typed({
+					// strings: ["Typed.js is a <strong>jQuery</strong> plugin.", "It <em>types</em> out sentences.", "And then deletes them.", "Try it out!"],
+					stringsElement: $(question),
+					typeSpeed: 30,
+					backDelay: 500,
+					loop: false,
+					contentType: 'html', // or text
+					// defaults to false for infinite loop
+					loopCount: false,
+					callback: function(){ foo(); },
+					resetCallback: function() { newTyped(); }
+				});
+
+				$(".reset").click(function(){
+					$(cursor).typed('reset');
+				});
+
+				});
+
+				function newTyped(){ /* A new typed object */ }
+
+				function foo(){ console.log("Callback"); }
+}
+
 
 function toggle_visibility(id) {
        var e = document.getElementById(id);
@@ -96,16 +133,9 @@ function ResetInputs(){
 }
 var output = "";
 
-function userName() 
-{
-    // Grab Value
-    var Fname = document.getElementById('fname').value;
-    // Add to horoscope
-    output += Fname + "- ";
-    console.log(Fname);
-    // Add to HTML
-    document.getElementById('userHello').innerHTML = '<p>Its a pleasure to meet you, ' + Fname + '<br> My name is Dimitri, I will be operating the MirrorMirror today.</p>';
-}
+
+
+
 function userAge()
 {
     // Star sign
@@ -134,7 +164,7 @@ function userAge()
     console.log(userStar);
     console.log(Age);
     // Add to HTML
-    document.getElementById('userSign').innerHTML = '<p>Thanks for that, you are a ' + userStar + ' if i am correct? Wow, i didnt realise you are ' + Age + ', I really need to clean this glass.</p>';
+    $('#userSign').html('<p>Thanks for that, you are a ' + userStar + ' if i am<br> correct?</p><p>Wow, ji </p><p>Wow, i didnt realise you are ' + Age + ', I really need <br>to clean this glass.</p>');
 }
 function userFeelings()
 {
@@ -146,7 +176,7 @@ function userFeelings()
     var averageMood = "ok acceptable agreable adequate passable satisfactory well okay average content fine decent";
     var badMood = "irritated bad sad angry hurt mad hungover poor broke difficult crude retarded annoyed ill sick poorly failure failing rude dirty filthy indecent severe serious";
     // Feelings  (containing the word bank)
-    if (Feelings.contains("happy") || Feelings.contains("pleasured") || Feelings.contains("good") || Feelings.contains("gleeful") || Feelings.contains("delighted") || Feelings.contains("jovial") 
+    if (Feelings.contains("happy") || Feelings.contains("pleasured") || Feelings.contains("well") ||  Feelings.contains("good") || Feelings.contains("gleeful") || Feelings.contains("delighted") || Feelings.contains("jovial") 
                                    || Feelings.contains("jolly")     || Feelings.contains("joking") || Feelings.contains("merry") || Feelings.contains("cheery") 
                                    || Feelings.contains("cheerful")  || Feelings.contains("glowing") || Feelings.contains("radiant") || Feelings.contains("carefree") || Feelings.contains("great") 
                                    || Feelings.contains("fortunate") || Feelings.contains("lucky") || Feelings.contains("amazing") || Feelings.contains("horny") || Feelings.contains("sexy") 
@@ -156,7 +186,7 @@ function userFeelings()
     console.log(Feelings);
     console.log(Mood);
     // Add to HTML
-    document.getElementById('userFeel').innerHTML = '<p>Thanks for letting me know that you are in a ' + Mood + ', that will help when making your horoscope.</p>';
+    $('#userFeel').html('<p>Thanks for letting me know that you<br> are in a ' + Mood + ' mood</p><p>that qil</p><p>that will help when making your horoscope.</p>');
 }
 function userSubject()
 {
@@ -179,7 +209,7 @@ function userSubject()
             output += horoscopeData[62].content;
         }
      console.log(Subject + " after");   
-     document.getElementById('userSub').innerHTML = '<p>Thats cool that you liked ' + Subject + ' at school, I only liked fairytale class myself.</p>';
+     $('#userSub').html('<p>Thats cool that you liked <br>' + Subject + ' at school, I only liked fairytale<br>class myself.</p>');
 }
 // Public so the HTML can see it 
 var Interest;
@@ -214,7 +244,7 @@ function Complete(){
     //Finished
     console.log(Interest);
     
-    document.getElementById("Answer").innerHTML = "<p>" + output + "</p>";
+    $("#userAns").html("<p>" + output + "</p><p>I hope you found that useful, thankyou and goodbye.</p>");
     console.log(output);
 	ResetInputs();
 }

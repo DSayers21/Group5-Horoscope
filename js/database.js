@@ -362,10 +362,19 @@ function userSubject()
 	else if (CheckMood(itBank, Subject)){ Subject = "technology";}
 	else if (CheckMood(languagesBank, Subject)){ Subject = "languages";}
     else {Subject = "general";}
-	console.log(Subject);
-	output += horoscopeData({subject:{is:Subject}}).get()[0].content;
-	console.log(output);  
-    $('#userSub').html(stringOut('<p>Thats cool that you liked <br>' + Subject + ' at school, I only liked fairytale<br>class myself.</p><p>Ive made some cards, but you need to <br>hover on them to see them.</p><p>Do me a favour and pick your favourite? <br> We are nearly finished.</p>'));
+	
+	
+	if(Subject == "general")
+	{
+		$('#userSub').html(stringOut('<p>Sure m8 #yolo. At school, I only liked fairytale<br>class myself.</p><p>Ive made some cards, but you need to <br>hover on them to see them.</p><p>Do me a favour and pick your favourite? <br> We are nearly finished.</p>'));
+	}
+	else
+	{
+		console.log(Subject);
+		output += horoscopeData({subject:{is:Subject}}).get()[0].content;
+		console.log(output);  
+		$('#userSub').html(stringOut('<p>Thats cool that you liked <br>' + Subject + ' at school, I only liked fairytale<br>class myself.</p><p>Ive made some cards, but you need to <br>hover on them to see them.</p><p>Do me a favour and pick your favourite? <br> We are nearly finished.</p>'));
+	}
 }
 // Public so the HTML can see it 
 function Complete(){

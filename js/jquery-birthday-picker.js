@@ -16,7 +16,7 @@ $(function ($)
       if ((selectedYear * selectedMonth * selectedDay) != 0) {
         if (selectedMonth<10) selectedMonth="0"+selectedMonth;
         if (selectedDay<10) selectedDay="0"+selectedDay;
-        hiddenDate = Number(selectedMonth + selectedDay);
+        hiddenDate = ((selectedMonth*100) + selectedDay);
         hiddenYear = (2016 - Number(selectedYear));
         $selector.val(hiddenDate);
 

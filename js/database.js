@@ -134,28 +134,37 @@ function userName()
     // Grab Value
     var Fname = document.getElementById('fname').value;
     // Add to horoscope
-    output += Fname + "- ";
+    
+    if (Fname == '') 
+    {
+        $('#FirstName').html('<p>Sorry, i didnt catch your name. Ill ask you again.</p>');
+    }
+    else
+    {
+    output = Fname + "- ";
     console.log(Fname);
     // Add to HTML
     $('#FirstName').html('<p>' + Fname + ', Its a pleasure to meet you.</p>');
+    }
 }
 function userAge()
 {
     // Star sign
     var Dob = Number(hiddenDate);
     var userStar;
-    if (Dob >= 321 && Dob <= 419) { userStar="Aries"; }
-    else if (Dob >= 420 && Dob <= 520) { userStar="Taurus"; }
-    else if (Dob >= 521 && Dob <= 620) { userStar="Gemini"; }
-    else if (Dob >= 621 && Dob <= 722) { userStar="Cancer"; }
-    else if (Dob >= 723 && Dob <= 822) { userStar="Leo"; }
-    else if (Dob >= 823 && Dob <= 922) { userStar="Virgo"; }
-    else if (Dob >= 923 && Dob <= 1022) { userStar="Libra"; }
-    else if (Dob >= 1023 && Dob <= 1121) { userStar="Scorpio"; }
-    else if (Dob >= 1122 && Dob <= 1221) { userStar="Sagittarius"; }
-    else if (Dob >= 1222 && Dob <= 119) { userStar="Capricorn"; }
-    else if (Dob >= 120 && Dob <= 218) { userStar="Aquarius"; }
-    else if (Dob >= 219 && Dob <= 320) { userStar="Pisces"; }
+    if (Dob <= 419) { userStar="Aries"; }
+    else if (Dob <= 520) { userStar="Taurus"; }
+    else if (Dob <= 620) { userStar="Gemini"; }
+    else if (Dob <= 722) { userStar="Cancer"; }
+    else if (Dob <= 822) { userStar="Leo"; }
+    else if (Dob <= 922) { userStar="Virgo"; }
+    else if (Dob <= 1022) { userStar="Libra"; }
+    else if (Dob <= 1121) { userStar="Scorpio"; }
+    else if (Dob <= 1221) { userStar="Sagittarius"; }
+    else if (Dob >= 1222) { userStar="Capricorn"; }
+    else if (Dob <= 119) { userStar="Capricorn"; }
+    else if (Dob <= 218) { userStar="Aquarius"; }
+    else if (Dob <= 320) { userStar="Pisces"; }
     
 	output += horoscopeData({starsign:{is:userStar.toLowerCase()}}).get()[0].content;
 	var ageLetter;
@@ -166,7 +175,7 @@ function userAge()
     if (Age >= 25 && Age <= 39) {ageLetter = 'c';}    
     if (Age >= 40)              {ageLetter = 'd';}
     // Debug
-	
+	console.log(Dob);
 	output += horoscopeData({age:{is:ageLetter.toLowerCase()}}).get()[0].content;
     console.log(output);
     // Add to HTML
@@ -233,7 +242,7 @@ function Complete(){
 	console.log(output);
 
     
-    $("#userAns").html("<p>" + output + "</p><p>I hope you found that useful, thankyou and goodbye.</p>");
+    $("#userAns").html("<p>" + output + "</p>");
     console.log(output);
 	ResetInputs();
 }

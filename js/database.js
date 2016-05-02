@@ -225,24 +225,43 @@ function ResetInputs(){
 }
 
 //Get Information from user
+function CheckuserName(LastPage, NextPage)
+{
+	if(document.getElementById('fname').value)
+	{
+		userName();
+		toggle_visibility(LastPage);
+		toggle_visibility(NextPage);
+		typedText('#typed-Q2', '#typedQ2');
+	}
+}
 function userName() 
 {
-	
     // Grab Value
     var Fname = document.getElementById('fname').value;
     // Add to horoscope
-    
     if (Fname == '') 
     {
-        $('#FirstName').html('<p>Sorry, i didnt catch your name.</p><p>Ill ask you again.</p>');
+        $('#FirstName').html('<p>Sorry, i didnt catch your name. Ill ask you again.</p>');
     }
     else
     {
-    output = Fname + "- ";
-    console.log(Fname);
-    // Add to HTML
-    $('#FirstName').html(stringOut('<p>' + Fname + ', Its a pleasure to meet you.</p><p>My name is Dimitri, <br>I will be operating the MirrorMirror today.</p><p>Could I ask what is your date of birth? </p><p>I cant quite tell how old you are through<br> this mirror.</p>'));
+		output = Fname + "- ";
+		console.log(Fname);
+		// Add to HTML
+		$('#FirstName').html(stringOut('<p>' + Fname + ', Its a pleasure to meet you.</p><p>My name is Dimitri, <br>I will be operating the MirrorMirror today.</p><p>Could I ask what is your date of birth? </p><p>I cant quite tell how old you are through<br> this mirror.</p>'));
     }
+}
+
+function CheckuserAge(LastPage, NextPage)
+{
+	if(Number(hiddenDate) >= 0 && Number(hiddenDate)>= 0);
+	{
+		userAge();
+		toggle_visibility(LastPage);
+		toggle_visibility(NextPage);
+		typedText('#typed-Q3', '#typedQ3');
+	}
 }
 function userAge()
 {
@@ -278,6 +297,18 @@ function userAge()
     // Add to HTML
     $('#userSign').html(stringOut('<p>Thanks for that, you are a ' + userStar + ' if i am<br> correct?</p><p>Wow, ji </p><p>Wow, i didnt realise you are ' + Age + ', I really need <br>to clean this glass.</p><p>Anyway, How are you feeling? </p>'));
 }
+
+function CheckuserFeelings(LastPage, NextPage)
+{
+	if(document.getElementById('feelings').value)
+	{
+		userFeelings();
+		toggle_visibility(LastPage);
+		toggle_visibility(NextPage);
+		typedText('#typed-Q4', '#typedQ4')
+	}
+}
+
 function userFeelings()
 {
     var Feelings = document.getElementById('feelings').value;

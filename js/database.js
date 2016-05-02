@@ -174,7 +174,7 @@ function CheckMood(MoodArr, CheckStr){
 	{ 
 		for (j = 0; j < Input.length; j++) 
 		{
-			if(MoodArr[i].toLowerCase() == Input[j].toLowerCase()) 
+			if(MoodArr[i].toLowerCase().contains(Input[j].toLowerCase())) 
 			{
 				return true;
 			}
@@ -188,8 +188,12 @@ function typedText(question, cursor) {
 $(cursor).typed({
 		// strings: ["Typed.js is a <strong>jQuery</strong> plugin.", "It <em>types</em> out sentences.", "And then deletes them.", "Try it out!"],
 		stringsElement: $(question),
-		typeSpeed: 50,
-		backDelay: 500,
+		typeSpeed: 60,
+		// typing speed
+        startDelay: (20000 / Number(question.length)),
+        // backspacing speed
+        backSpeed: 40,
+		backDelay: 1000,
 		loop: false,
 		contentType: 'html', // or text
 		// defaults to false for infinite loop
@@ -338,7 +342,7 @@ function userSubject()
 	//Subject Bank
 	var mathsBank = [ "maths", "calculus"];
 	var englishBank = [ "english", "film studies", "literature"];
-	var scienceBank = [ "science", "physics", "chemestry", "biology"];
+	var scienceBank = [ "science", "physics", "chemistry", "biology"];
 	var historyBank = [ "history" ];
 	var artBank = [ "art" ];
 	var geographyBank = [ "geography" ];
@@ -355,7 +359,7 @@ function userSubject()
 	else if (CheckMood(geographyBank, Subject)){ Subject = "geography";}
 	else if (CheckMood(peBank, Subject)){ Subject = "pe";}
 	else if (CheckMood(reBank, Subject)){ Subject = "re";}
-	else if (CheckMood(itBank, Subject)){ Subject = "it";}
+	else if (CheckMood(itBank, Subject)){ Subject = "technology";}
 	else if (CheckMood(languagesBank, Subject)){ Subject = "languages";}
     else {Subject = "general";}
 	console.log(Subject);

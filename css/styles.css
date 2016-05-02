@@ -8,7 +8,7 @@ body {
     padding-top: 0px;
     font-family: "Lucida Handwriting", Times, serif;
     src: url(js/);
-    font-size: 60px;
+    font-size: 45px;
     font-weight: 400;
     color: #cccccc;
 }
@@ -93,7 +93,7 @@ p, span{
 	color: #e6e6e6 !important; 
 	text-align: center;
     font-family: "Lucida Handwriting", Times, serif;
-	font-size: 40px;
+	font-size: 18px;
 	position: relative;
 	margin-left: auto;
     margin-right: auto;
@@ -165,17 +165,12 @@ input, span{
 	Source :: https://davidwalsh.name/css-flip
 */
 .BoxGrid{
-	align: center;
 	display: block;
-	width: 100%;
-	height: 600px;
-
-	position: fixed;
-	top: 50%;
-	left: 0%;
-	margin-top: 10%;
-	margin-left: 5%;
-	margin-right: 35%;
+	width: 80%;
+	position: relative;
+	top: 40%;
+	margin-left: 17%;
+	margin-right: 25%;
 }
 /* entire container, keeps perspective */
 .flip-container {

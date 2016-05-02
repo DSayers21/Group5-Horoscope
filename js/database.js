@@ -116,22 +116,34 @@ var letterData = TAFFY([{original:"a", output:"s"},
 						{original:"W", output:"E"},
 						{original:"X", output:"C"},
 						{original:"Y", output:"T"},
+						{original:"?", output:"?"},
 						{original:" ", output:" "},
 						{original:",", output:","},
 						{original:".", output:"."},
 						{original:"'", output:"'"},
-						{original:"-", output:"-"}
+						{original:"-", output:"-"},
+						{original:"1", output:"1"},
+						{original:"2", output:"2"},
+						{original:"3", output:"3"},
+						{original:"4", output:"4"},
+						{original:"5", output:"5"},
+						{original:"6", output:"6"},
+						{original:"7", output:"7"},
+						{original:"8", output:"8"},
+						{original:"9", output:"9"},
+						{original:"0", output:"0"},
 						]);
 								
 function stringOut(input)
 {
 	console.log(input);
 	var Stop = 0;
-	var Difficulty = 1;
+	var Difficulty = 15;
 	var TypingBad = Math.floor(Math.random() * Difficulty) + 1;
 	var OutPut;
 	for(i = 0; i < input.length; i++)
 	{
+		//console.log(input[i]); Error Checking for grammer missing
 		if(input[i] == '<')
 			Stop = 1;
 		TypingBad = Math.floor(Math.random() * Difficulty) + 1;
@@ -229,7 +241,7 @@ function userName()
     output = Fname + "- ";
     console.log(Fname);
     // Add to HTML
-    $('#FirstName').html(stringOut('<p>' + Fname + ', Its a pleasure to meet you.</p>'));
+    $('#FirstName').html(stringOut('<p>' + Fname + ', Its a pleasure to meet you.</p><p>My name is Dimitri, <br>I will be operating the MirrorMirror today.</p><p>Could I ask what is your date of birth? </p><p>I cant quite tell how old you are through<br> this mirror.</p>'));
     }
 }
 function userAge()
@@ -264,7 +276,7 @@ function userAge()
 	output += horoscopeData({age:{is:ageLetter.toLowerCase()}}).get()[0].content;
     console.log(output);
     // Add to HTML
-    $('#userSign').html(stringOut('<p>Thanks for that, you are a ' + userStar + ' if i am<br> correct?</p><p>Wow, ji </p><p>Wow, i didnt realise you are ' + Age + ', I really need <br>to clean this glass.</p>'));
+    $('#userSign').html(stringOut('<p>Thanks for that, you are a ' + userStar + ' if i am<br> correct?</p><p>Wow, ji </p><p>Wow, i didnt realise you are ' + Age + ', I really need <br>to clean this glass.</p><p>Anyway, How are you feeling? </p>'));
 }
 function userFeelings()
 {
@@ -284,7 +296,7 @@ function userFeelings()
 	output += horoscopeData({mood:{is:MoodNum}}).get()[0].content;
 	console.log(output);
     // Add to HTML
-    $('#userFeel').html(stringOut('<p>Thanks for letting me know that you<br> are in a ' + Mood + ' mood</p><p>that qil</p><p>that will help when making your horoscope.</p>'));
+    $('#userFeel').html(stringOut('<p>Thanks for letting me know that you<br> are in a ' + Mood + ' mood</p><p>that qil</p><p>that will help when making your horoscope.</p><p>When you went to school,</p><p>What was your favourite subject? </p>'));
 }
 function userSubject()
 {
@@ -318,16 +330,13 @@ function userSubject()
 	console.log(Subject);
 	output += horoscopeData({subject:{is:Subject}}).get()[0].content;
 	console.log(output);  
-    $('#userSub').html(stringOut('<p>Thats cool that you liked <br>' + Subject + ' at school, I only liked fairytale<br>class myself.</p>'));
+    $('#userSub').html(stringOut('<p>Thats cool that you liked <br>' + Subject + ' at school, I only liked fairytale<br>class myself.</p><p>Ive made some cards, but you need to <br>hover on them to see them.</p><p>Do me a favour and pick your favourite? <br> We are nearly finished.</p>'));
 }
 // Public so the HTML can see it 
 function Complete(){
     //Interests
 	output += horoscopeData({interest:{is:Interest.toLowerCase()}}).get()[0].content;
 	console.log(output);
-
-    
-    $("#userAns").html(stringOut("<p>" + output + "</p>"));
-    console.log(output);
+    $("#userAns").html(stringOut("<p>" + output + "</p>" + '<p>I hope you found that useful, thankyou and goodbye.</p>'));
 	ResetInputs();
 }

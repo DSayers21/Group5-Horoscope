@@ -255,6 +255,7 @@ select {
 #birthdayPicker {
     position: relative;
     left: 50%;
+    width: 170px;
     margin-left: -70px;
 }
 

@@ -144,7 +144,7 @@ function userName()
     output = Fname + "- ";
     console.log(Fname);
     // Add to HTML
-    $('#FirstName').html('<p>' + Fname + ', Its a pleasure to meet you.</p>');
+    $('#FirstName').html('<p>' + Fname + ', Its a pleasure to meet you.</p><p>My name is Dimitri, <br>I will be operating the MirrorMirror today.</p><p>Could I ask what is your date of birth?</p><p>I cant quite tell how old you are through<br> this mirror..</p>');
     }
 }
 function userAge()
@@ -179,7 +179,7 @@ function userAge()
 	output += horoscopeData({age:{is:ageLetter.toLowerCase()}}).get()[0].content;
     console.log(output);
     // Add to HTML
-    $('#userSign').html('<p>Thanks for that, you are a ' + userStar + ' if i am<br> correct?</p><p>Wow, ji </p><p>Wow, i didnt realise you are ' + Age + ', I really need <br>to clean this glass.</p>');
+    $('#userSign').html('<p>Thanks for that, you are a ' + userStar + ' if i am<br> correct?</p><p>Wow, ji </p><p>Wow, i didnt realise you are ' + Age + ', I really need <br>to clean this glass.</p><p>Anyway, How are you feeling?</p>');
 }
 function userFeelings()
 {
@@ -199,7 +199,7 @@ function userFeelings()
 	output += horoscopeData({mood:{is:MoodNum}}).get()[0].content;
 	console.log(output);
     // Add to HTML
-    $('#userFeel').html('<p>Thanks for letting me know that you<br> are in a ' + Mood + ' mood</p><p>that qil</p><p>that will help when making your horoscope.</p>');
+    $('#userFeel').html('<p>Thanks for letting me know that you<br> are in a ' + Mood + ' mood</p><p>that qil</p><p>that will help when making your horoscope.</p><p>When you went to school,</p><p>What was your favourite subject?</p>');
 }
 function userSubject()
 {
@@ -233,7 +233,7 @@ function userSubject()
 	console.log(Subject);
 	output += horoscopeData({subject:{is:Subject}}).get()[0].content;
 	console.log(output);  
-    $('#userSub').html('<p>Thats cool that you liked <br>' + Subject + ' at school, I only liked fairytale<br>class myself.</p>');
+    $('#userSub').html('<p>Thats cool that you liked <br>' + Subject + ' at school, I only liked fairytale<br>class myself.</p><p>Ive made some cards, but you need to <br>hover on them to see them.</p><p>Doo me a fav</p><p>Do me a favour and pick your favourite?<br> Were nearly finished.</p>');
 }
 // Public so the HTML can see it 
 function Complete(){

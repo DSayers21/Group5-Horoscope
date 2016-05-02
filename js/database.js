@@ -234,7 +234,7 @@ function userName()
     
     if (Fname == '') 
     {
-        $('#FirstName').html('<p>Sorry, i didnt catch your name. Ill ask you again.</p>');
+        $('#FirstName').html('<p>Sorry, i didnt catch your name.</p><p>Ill ask you again.</p>');
     }
     else
     {

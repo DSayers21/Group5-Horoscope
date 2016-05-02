@@ -138,14 +138,11 @@ function stringOut(input)
 		if(TypingBad == Difficulty && Stop == 0)
 		{
 			out = letterData({original:{is:input[i]}}).get()[0].output;
-			console.log(out);
 			OutPut += out;
 		}
 		else
-		{
-			console.log(input[i]);
 			OutPut += input[i];
-		}
+
 		if(input[i] == '>')
 			Stop = 0;
 	}

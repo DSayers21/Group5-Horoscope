@@ -63,7 +63,7 @@ var horoscopeData = TAFFY([{starsign:"aries", content:"Aries will find good news
                         {subject:"general", content:"<p>Your past love of subjects can offer you an escape<br> from the drudgery of the everyday. They could become the thing <br>to revisit for a new outlet or even a new vocation. </p>"},
                         {subject:"general", content:"<p>Try to find a new way to explore your previous <br>interests in the coming days. It may provide the answer to questions <br>that have stumped you for a while now. </p>"}]);								
 var horoscope = TAFFY(horoscopeData);
-var output = "";
+var output = " ";
 var Interest;
 
 if (!String.prototype.contains) {
@@ -201,7 +201,7 @@ function userSubject()
 	//Subject Bank
 	var mathsBank = [ "maths", "calculus"];
 	var englishBank = [ "english", "film studies", "literature"];
-	var scienceBank = [ "science", "physics", "chemestry", "biogoly"];
+	var scienceBank = [ "science", "physics", "chemestry", "biology"];
 	var historyBank = [ "history" ];
 	var artBank = [ "art" ];
 	var geographyBank = [ "geography" ];
@@ -213,7 +213,7 @@ function userSubject()
 	if (CheckMood(mathsBank, Subject)){ Subject = "maths";}
 	else if (CheckMood(englishBank, Subject)){ Subject = "english";}
 	else if (CheckMood(scienceBank, Subject)){ Subject = "science";}
-	else if (CheckMood(historyBank)){ Subject = "history";}
+	else if (CheckMood(historyBank, Subject)){ Subject = "history";}
 	else if (CheckMood(artBank, Subject)){ Subject = "art";}
 	else if (CheckMood(geographyBank, Subject)){ Subject = "geography";}
 	else if (CheckMood(peBank, Subject)){ Subject = "pe";}
@@ -221,8 +221,8 @@ function userSubject()
 	else if (CheckMood(itBank, Subject)){ Subject = "it";}
 	else if (CheckMood(languagesBank, Subject)){ Subject = "languages";}
     else {Subject = "general";}
-	
-	output += horoscopeData({subject:{is:Subject.toLowerCase()}}).get()[0].content;
+	console.log(Subject);
+	output += horoscopeData({subject:{is:Subject}}).get()[0].content;
 	console.log(output);  
     $('#userSub').html('<p>Thats cool that you liked <br>' + Subject + ' at school, I only liked fairytale<br>class myself.</p>');
 }

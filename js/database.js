@@ -62,9 +62,96 @@ var horoscopeData = TAFFY([{starsign:"aries", content:"Aries will find good news
                         {subject:"languages", content:"<p>Why not utilise your previous love of languages<br> and take a trip abroad in the near future. Not only does this <br>give you a chance to lose stress but also see how different cultures use language. </p>"},
                         {subject:"general", content:"<p>Your past love of subjects can offer you an escape<br> from the drudgery of the everyday. They could become the thing <br>to revisit for a new outlet or even a new vocation. </p>"},
                         {subject:"general", content:"<p>Try to find a new way to explore your previous <br>interests in the coming days. It may provide the answer to questions <br>that have stumped you for a while now. </p>"}]);								
-var horoscope = TAFFY(horoscopeData);
 var output = " ";
 var Interest;
+
+var letterData = TAFFY([{original:"a", output:"s"},
+						{original:"b", output:"v"},
+						{original:"c", output:"x"},
+						{original:"d", output:"f"},
+						{original:"e", output:"r"},
+						{original:"f", output:"g"},
+						{original:"g", output:"h"},
+						{original:"h", output:"y"},
+						{original:"i", output:"u"},
+						{original:"j", output:"k"},
+						{original:"k", output:"l"},
+						{original:"l", output:";"},
+						{original:"m", output:"n"},
+						{original:"n", output:"b"},
+						{original:"o", output:"p"},
+						{original:"p", output:"o"},
+						{original:"q", output:"w"},
+						{original:"r", output:"t"},
+						{original:"s", output:"a"},
+						{original:"t", output:"f"},
+						{original:"u", output:"j"},
+						{original:"v", output:"b"},
+						{original:"w", output:"e"},
+						{original:"x", output:"c"},
+						{original:"y", output:"t"},
+						{original:"z", output:"x"},
+						{original:"A", output:"S"},
+						{original:"B", output:"V"},
+						{original:"C", output:"X"},
+						{original:"D", output:"F"},
+						{original:"E", output:"R"},
+						{original:"F", output:"G"},
+						{original:"G", output:"H"},
+						{original:"H", output:"Y"},
+						{original:"I", output:"U"},
+						{original:"J", output:"K"},
+						{original:"K", output:"L"},
+						{original:"L", output:";"},
+						{original:"M", output:"N"},
+						{original:"N", output:"B"},
+						{original:"O", output:"P"},
+						{original:"P", output:"O"},
+						{original:"Q", output:"W"},
+						{original:"R", output:"T"},
+						{original:"S", output:"A"},
+						{original:"T", output:"F"},
+						{original:"U", output:"J"},
+						{original:"V", output:"B"},
+						{original:"W", output:"E"},
+						{original:"X", output:"C"},
+						{original:"Y", output:"T"},
+						{original:" ", output:" "},
+						{original:",", output:","},
+						{original:".", output:"."},
+						{original:"'", output:"'"},
+						{original:"-", output:"-"}
+						]);
+								
+function stringOut(input)
+{
+	console.log(input);
+	var Stop = 0;
+	var Difficulty = 1;
+	var TypingBad = Math.floor(Math.random() * Difficulty) + 1;
+	var OutPut;
+	for(i = 0; i < input.length; i++)
+	{
+		if(input[i] == '<')
+			Stop = 1;
+		TypingBad = Math.floor(Math.random() * Difficulty) + 1;
+		if(TypingBad == Difficulty && Stop == 0)
+		{
+			out = letterData({original:{is:input[i]}}).get()[0].output;
+			console.log(out);
+			OutPut += out;
+		}
+		else
+		{
+			console.log(input[i]);
+			OutPut += input[i];
+		}
+		if(input[i] == '>')
+			Stop = 0;
+	}
+	return OutPut;
+}
+
 
 if (!String.prototype.contains) {
     String.prototype.contains = function(s) {
@@ -90,27 +177,27 @@ function CheckMood(MoodArr, CheckStr){
 function typedText(question, cursor) {
     $(function(){
 $(cursor).typed({
-					// strings: ["Typed.js is a <strong>jQuery</strong> plugin.", "It <em>types</em> out sentences.", "And then deletes them.", "Try it out!"],
-					stringsElement: $(question),
-					typeSpeed: 30,
-					backDelay: 500,
-					loop: false,
-					contentType: 'html', // or text
-					// defaults to false for infinite loop
-					loopCount: false,
-					callback: function(){ foo(); },
-					resetCallback: function() { newTyped(); }
-				});
+		// strings: ["Typed.js is a <strong>jQuery</strong> plugin.", "It <em>types</em> out sentences.", "And then deletes them.", "Try it out!"],
+		stringsElement: $(question),
+		typeSpeed: 30,
+		backDelay: 500,
+		loop: false,
+		contentType: 'html', // or text
+		// defaults to false for infinite loop
+		loopCount: false,
+		callback: function(){ foo(); },
+		resetCallback: function() { newTyped(); }
+	});
 
-				$(".reset").click(function(){
-					$(cursor).typed('reset');
-				});
+	$(".reset").click(function(){
+		$(cursor).typed('reset');
+	});
 
-				});
+	});
 
-				function newTyped(){ /* A new typed object */ }
+	function newTyped(){ /* A new typed object */ }
 
-				function foo(){ console.log("Callback"); }
+	function foo(){ console.log("Callback"); }
 }
 
 function toggle_visibility(id) {
@@ -131,6 +218,7 @@ function ResetInputs(){
 //Get Information from user
 function userName() 
 {
+	
     // Grab Value
     var Fname = document.getElementById('fname').value;
     // Add to horoscope
@@ -144,7 +232,7 @@ function userName()
     output = Fname + "- ";
     console.log(Fname);
     // Add to HTML
-    $('#FirstName').html('<p>' + Fname + ', Its a pleasure to meet you.</p>');
+    $('#FirstName').html(stringOut('<p>' + Fname + ', Its a pleasure to meet you.</p>'));
     }
 }
 function userAge()
@@ -179,7 +267,7 @@ function userAge()
 	output += horoscopeData({age:{is:ageLetter.toLowerCase()}}).get()[0].content;
     console.log(output);
     // Add to HTML
-    $('#userSign').html('<p>Thanks for that, you are a ' + userStar + ' if i am<br> correct?</p><p>Wow, ji </p><p>Wow, i didnt realise you are ' + Age + ', I really need <br>to clean this glass.</p>');
+    $('#userSign').html(stringOut('<p>Thanks for that, you are a ' + userStar + ' if i am<br> correct?</p><p>Wow, ji </p><p>Wow, i didnt realise you are ' + Age + ', I really need <br>to clean this glass.</p>'));
 }
 function userFeelings()
 {
@@ -199,7 +287,7 @@ function userFeelings()
 	output += horoscopeData({mood:{is:MoodNum}}).get()[0].content;
 	console.log(output);
     // Add to HTML
-    $('#userFeel').html('<p>Thanks for letting me know that you<br> are in a ' + Mood + ' mood</p><p>that qil</p><p>that will help when making your horoscope.</p>');
+    $('#userFeel').html(stringOut('<p>Thanks for letting me know that you<br> are in a ' + Mood + ' mood</p><p>that qil</p><p>that will help when making your horoscope.</p>'));
 }
 function userSubject()
 {
@@ -233,7 +321,7 @@ function userSubject()
 	console.log(Subject);
 	output += horoscopeData({subject:{is:Subject}}).get()[0].content;
 	console.log(output);  
-    $('#userSub').html('<p>Thats cool that you liked <br>' + Subject + ' at school, I only liked fairytale<br>class myself.</p>');
+    $('#userSub').html(stringOut('<p>Thats cool that you liked <br>' + Subject + ' at school, I only liked fairytale<br>class myself.</p>'));
 }
 // Public so the HTML can see it 
 function Complete(){
@@ -242,7 +330,7 @@ function Complete(){
 	console.log(output);
 
     
-    $("#userAns").html("<p>" + output + "</p>");
+    $("#userAns").html(stringOut("<p>" + output + "</p>"));
     console.log(output);
 	ResetInputs();
 }

@@ -82,10 +82,12 @@ IMG.CardImg {
 
 .type-wrap {
 	text-align: center;
+    margin: 15px;
 }
 .form {
 	align: center;
     position: relative;
+    margin: 15px;
 }
 p, span{
 	color: #e6e6e6 !important; 

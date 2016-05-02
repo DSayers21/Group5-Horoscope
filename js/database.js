@@ -228,6 +228,12 @@ function ResetInputs(){
 	document.getElementById('interest').value = "";
 }
 
+function InitialMessage()
+{
+	$('#Initital').html(stringOut('<p>Welcome to MirrorMirror,</p><p>No. K<p>No. I am not from snow white, <br>that was my grandfather.</p></p><p>Anyway, i do horoscopes.</p><p>Could i ask what your name is first? </p>'));   
+}
+
+
 //Get Information from user
 function CheckuserName(LastPage, NextPage)
 {

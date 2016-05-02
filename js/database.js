@@ -174,7 +174,7 @@ function CheckMood(MoodArr, CheckStr){
 	{ 
 		for (j = 0; j < Input.length; j++) 
 		{
-			if(MoodArr[i] == Input[j]) 
+			if(MoodArr[i].toLowerCase() == Input[j].toLowerCase()) 
 			{
 				return true;
 			}

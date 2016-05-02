@@ -50,13 +50,11 @@ body {
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 
 .Btn {
-    position: absolute;
 	margin-top: 10%;
 
 	width: 170px;
 	height: 50px;
 	
-	align: center;
     position: relative;
     left: 50%;
     margin-left: -85px;
@@ -68,6 +66,9 @@ body {
 	text-align: center;
     font-family: "Lucida Handwriting", Times, serif;
 	font-size: 20px;
+}
+.Answer > .Btn {
+    margin-left: -45px;
 }
 .Btn:hover {
 	background-color: #1a1a1a;
@@ -93,7 +94,7 @@ p, span{
 	color: #e6e6e6 !important; 
 	text-align: center;
     font-family: "Lucida Handwriting", Times, serif;
-	font-size: 18px;
+	font-size: 16px;
 	position: relative;
 	margin-left: auto;
     margin-right: auto;
@@ -116,7 +117,7 @@ input, span{
 	background-color: #000000;
 	color: #e6e6e6; 
     font-family: "Lucida Handwriting", Times, serif;
-	font-size: 40px;
+	font-size: 30px;
 	white-space: nowrap;
 	overflow: hidden;
 	width: 100%;

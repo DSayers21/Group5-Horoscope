@@ -13,27 +13,17 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
         <script src="js/jquery-birthday-picker.js"></script> 
         <script src="js/combodate.js"></script>
-		
-		 <script>
-			
-
-				
-    </script>
-        
+		 <script>	
+    </script> 
   </head>
-  
-  <body>
-      
-      
+  <body> 
      <div id="Title"> 
          <h3>Group 5</h3>
          <h1>MirrorMirror</h1>
      </div>
-
-	<div id="Start" style="display: block">
+	<div id="Start" style="display: block" onkeydown = "if (event.keyCode == 13) document.getElementById('startBtn').click()">
 		<button type="button" id="startBtn" onclick="toggle_visibility('Start'); toggle_visibility('Q1'); typedText('#typed-strings', '#typed');">Start</button>
 	</div>
-
 	<div id="Q1" style="display: none" class="form">
 		<div class="type-wrap">
             <div id="typed-strings">
@@ -46,10 +36,9 @@
             <span id="typed" style="white-space:pre;"></span>
         </div>
 		
-		Fullname: <input type="text" name="fname" id="fname" autofocus><br>
+		Fullname: <input type="text" name="fname" id="fname" onkeydown = "if (event.keyCode == 13) document.getElementById('Q1Btn').click()" autofocus><br>
 		<button type="button" class="Btn" id="Q1Btn" onclick="toggle_visibility('Q1'); toggle_visibility('Q2'); userName(); typedText('#typed-Q2', '#typedQ2');">Continue</button>			
 	</div>
-	
 	<div id="Q2" style="display: none" class = "form">
 		<div id="userHello"></div>
 		<div class="type-wrap">
@@ -74,7 +63,7 @@
             </div>
             <span id="typedQ3" style="white-space:pre;"></span>
         </div>
-		Feelings: <input type="text" name="feelings" id="feelings" autofocus><br>
+		Feelings: <input type="text" name="feelings" id="feelings" onkeydown = "if (event.keyCode == 13) document.getElementById('Q3Btn').click()" autofocus><br>
 		<button type="button" class="Btn" id="Q3Btn" onclick="toggle_visibility('Q3'); toggle_visibility('Q4'); userFeelings(); typedText('#typed-Q4', '#typedQ4')">Continue</button>
 	</div>
 
@@ -89,7 +78,7 @@
             <span id="typedQ4" style="white-space:pre;"></span>
         </div>
         
-		Subject: <input type="text" name="subject" id="subject" autofocus><br>
+		Subject: <input type="text" name="subject" id="subject" onkeydown = "if (event.keyCode == 13) document.getElementById('Q4Btn').click()" autofocus><br>
 		<button type="button" class="Btn" id="Q4Btn" onclick="toggle_visibility('Q4'); toggle_visibility('Q6'); userSubject(); typedText('#typed-Q5', '#typedQ5')">Continue</button>
 	</div>
 	

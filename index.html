@@ -36,7 +36,7 @@
             <span id="typed" style="white-space:pre;"></span>
         </div>
 		
-		Fullname: <input type="text" name="fname" id="fname" onkeydown = "if (event.keyCode == 13) document.getElementById('Q1Btn').click()" autofocus><br>
+		Fullname: <input type="text" name="fname" id="fname" maxlength="30" onkeydown = "if (event.keyCode == 13) document.getElementById('Q1Btn').click()" autofocus><br>
 		<button type="button" class="Btn" id="Q1Btn" onclick="toggle_visibility('Q1'); toggle_visibility('Q2'); userName(); typedText('#typed-Q2', '#typedQ2');">Continue</button>			
 	</div>
 	<div id="Q2" style="display: none" class = "form">
@@ -59,7 +59,7 @@
             </div>
             <span id="typedQ3" style="white-space:pre;"></span>
         </div>
-		Feelings: <input type="text" name="feelings" id="feelings" onkeydown = "if (event.keyCode == 13) document.getElementById('Q3Btn').click()" autofocus><br>
+		Feelings: <input type="text" name="feelings" id="feelings" maxlength="30" onkeydown = "if (event.keyCode == 13) document.getElementById('Q3Btn').click()" autofocus><br>
 		<button type="button" class="Btn" id="Q3Btn" onclick="toggle_visibility('Q3'); toggle_visibility('Q4'); userFeelings(); typedText('#typed-Q4', '#typedQ4')">Continue</button>
 	</div>
 
@@ -72,7 +72,7 @@
             <span id="typedQ4" style="white-space:pre;"></span>
         </div>
         
-		Subject: <input type="text" name="subject" id="subject" onkeydown = "if (event.keyCode == 13) document.getElementById('Q4Btn').click()" autofocus><br>
+		Subject: <input type="text" name="subject" id="subject" maxlength="30"> onkeydown = "if (event.keyCode == 13) document.getElementById('Q4Btn').click()" autofocus><br>
 		<button type="button" class="Btn" id="Q4Btn" onclick="toggle_visibility('Q4'); toggle_visibility('Q6'); userSubject(); typedText('#typed-Q5', '#typedQ5')">Continue</button>
 	</div>
 	
@@ -184,7 +184,7 @@
             <span id="typedQ6" style="white-space:pre;"></span>
         </div>
 			Start: <input type="text" name="subject" id="subject" onkeydown = "if (event.keyCode == 13) document.getElementById('AnsBtn').click()" autofocus><br>
-			<button type="button" class="Btn" id="AnsBtn" onclick="toggle_visibility('Answer'); toggle_visibility('Start'); location.reload();">Start Again</button>
+			<button type="button" class="Btn" id="AnsBtn" onclick="toggle_visibility('Answer'); toggle_visibility('Start'); location.reload();">Next Person</button>
 	
 	</div>
 

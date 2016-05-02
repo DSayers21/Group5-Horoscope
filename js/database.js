@@ -188,7 +188,7 @@ function typedText(question, cursor) {
 $(cursor).typed({
 		// strings: ["Typed.js is a <strong>jQuery</strong> plugin.", "It <em>types</em> out sentences.", "And then deletes them.", "Try it out!"],
 		stringsElement: $(question),
-		typeSpeed: 50,
+		typeSpeed: 60,
 		backDelay: 500,
 		loop: false,
 		contentType: 'html', // or text

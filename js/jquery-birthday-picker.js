@@ -18,6 +18,10 @@ $(function ($)
         if (selectedDay<10) selectedDay="0"+selectedDay;
         hiddenDate = ((selectedMonth*100) + selectedDay);
         hiddenYear = (2016 - Number(selectedYear));
+		if(selectedMonth >= today.getMonth() + 1 && selectedDay > today.getDate())
+		{
+			hiddenYear = Number(hiddenYear) - 1;
+		}
         $selector.val(hiddenDate);
 
         if (options.callback) {

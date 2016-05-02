@@ -138,7 +138,7 @@ function stringOut(input)
 {
 	console.log(input);
 	var Stop = 0;
-	var Difficulty = 15;
+	var Difficulty = 80;
 	var TypingBad = Math.floor(Math.random() * Difficulty) + 1;
 	var OutPut;
 	for(i = 0; i < input.length; i++)

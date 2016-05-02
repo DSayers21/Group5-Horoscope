@@ -241,6 +241,7 @@ function CheckuserName(LastPage, NextPage)
 }
 function userName() 
 {
+	DisplayAll();
     // Grab Value
     var Fname = document.getElementById('fname').value;
     // Add to horoscope
@@ -381,6 +382,43 @@ function Complete(){
     //Interests
 	output += horoscopeData({interest:{is:Interest.toLowerCase()}}).get()[0].content;
 	console.log(output);
-    $("#userAns").html(stringOut("<p>" + output + "</p>" + '<p>I hope you found that useful, thankyou and goodbye.</p>'));
+    //$("#userAns").html(stringOut("<p>" + output + "</p>" + '<p>I hope you found that useful, thankyou and goodbye.</p>'));
+	$("#userAns").html(DisplayAll());
 	ResetInputs();
+}
+function DisplayAll()
+{
+	var Output = "";
+	var Records = horoscopeData({starsign:{"!is":"----"}}).get();
+	
+	for(i = 0; i < Records.length; i++)
+	{
+		Output += Records[i].content;
+		console.log(Records[i].content);
+    }
+	var Records1 = horoscopeData({mood:{"!is":"----"}}).get();
+	for(i = 0; i < Records1.length; i++)
+	{
+		Output += Records1[i].content;
+		console.log(Records1[i].content);
+    }
+	var Records2 = horoscopeData({age:{"!is":"----"}}).get();
+	for(i = 0; i < Records2.length; i++)
+	{
+		Output += Records2[i].content;
+		console.log(Records2[i].content);
+    }
+	var Records3 = horoscopeData({interest:{"!is":"----"}}).get();
+	for(i = 0; i < Records3.length; i++)
+	{
+		Output += Records3[i].content;
+		console.log(Records3[i].content);
+    }
+	var Records4 = horoscopeData({subject:{"!is":"----"}}).get();
+	for(i = 0; i < Records4.length; i++)
+	{
+		Output += Records4[i].content;
+		console.log(Records4[i].content);
+    }
+	return Output;
 }

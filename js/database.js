@@ -11,7 +11,7 @@ var horoscopeData = TAFFY([{starsign:"aries", content:"<br>Aries will find good 
                         {starsign:"aquarius", content:"<br>Followers of Aquarius should find greater happiness soon.<br>"},                        
                         {starsign:"pisces", content:"<br>Pisces should be on the lookout this week.<br> "},
                         {mood:"1", content:"<p>Your good mood is something you <br>shouldn’t keep to yourself,<br> why not try improving someone else’s day as well. </p>"},
-                        {mood:"1", content:"<p>The happiness that currently flows <br>through you reveals that your<br> doubts are misplaced. Focus on that if they try to appear again.</p> "},
+                        {mood:"1", content:"<p>The happiness that currently flows <br>through you reveals that your<br> doubts are misplaced. Focus on that if<br> they try to appear again.</p> "},
                         {mood:"2", content:"<p>While your current mood might not seem <br>the best it might turn out<br> to simply be a symptom of contentment you currently feel.<br> Don’t look too much into possible negative <br>feelings you have. </p>"},
                         {mood:"2", content:"<p>Though you may not currently feel at your<br> best this isn’t a bad thing.<br> We all experience ups and downs and that means your <br>future looks bright.</p> "},
                         {mood:"3", content:"<p>Your mood may be dark at the current <br>moment but don’t fear as every day<br> offers new opportunities to improve it. Don’t allow <br>your mood to stop you from experiencing those<br> opportunities.</p> "},
@@ -20,8 +20,8 @@ var horoscopeData = TAFFY([{starsign:"aries", content:"<br>Aries will find good 
                         {age:"a", content:"<p>Your current age gives you the most <br>opportunity to try out new things.<br> Don’t miss this chance to find out what you want to<br> do with your life. </p>"},
                         {age:"b", content:"<p>Despite your young age you will be <br>required to make some serious choices in<br> the coming months. Now is the time to show people<br> who you want to be. </p>"},
                         {age:"b", content:"<p>Though you have seen few years you <br>shouldn’t be dissuaded from aiming high.<br> A risk every now and then can make a positive <br>difference in your life. </p>"},
-                        {age:"b", content:"<p>You may sometimes feel you are looked<br> down on due to your youth but fear not.<br> Now is the best time to learn new and skills <br>and make connections that can help you well into the future. </p>"},
-                        {age:"b", content:"<p>Your low number of years and lack of<br> experience may be viewed by many as a<br> weakness but it also allows you the opportunity for<br> fresh ideas and ways of thinking that others may have missed. </p>"},
+                        {age:"b", content:"<p>You may sometimes feel you are looked<br> down on due to your youth but fear not.<br> Now is the best time to learn new and skills <br>and make connections that can help you well <br>into the future. </p>"},
+                        {age:"b", content:"<p>Your low number of years and lack of<br> experience may be viewed by many as a<br> weakness but it also allows you the opportunity for<br> fresh ideas and ways of thinking that others<br> may have missed. </p>"},
                         {age:"c", content:"<p>Now might be the time to seek a <br>change in your life. Complacency can <br>lead to missed opportunities and lost chances. </p>"},
                         {age:"c", content:"<p>By now you have found a sense of <br>stability in your life but that shouldn’t<br> mean you can’t seek new adventures. Maybe it’s time<br> to learn a new skill that could benefit<br> you in the future.</p> "},
                         {age:"c", content:"<p>You probably enjoy the routine of your<br> life but also find yourself anxious<br> to try new experiences. A holiday may benefit you if<br> just for a change of pace. </p>"},
@@ -41,27 +41,27 @@ var horoscopeData = TAFFY([{starsign:"aries", content:"<br>Aries will find good 
                         {interest:"romance", content:"<p>Listen to the person you <br>are closest to in the coming days.<br> They’re likely to have an insight into your <br>current preoccupations. </p>"},
                         {interest:"romance", content:"<p>The person you care for most is likely to know you <br>better than yourself. Listen to their advice in the coming<br> days and head their warnings. </p>"},
                         {subject:"maths", content:"<p>Your positive experience with numbers can be useful <br>in a variety of areas, today is the time for you to use the <br>knowledge you gained in this area towards <br>financial possibilities. </p>"},
-                        {subject:"maths", content:"<p>Your ability with statistics should be useful in many<br> ways you may have overlooked previously. A career in finances<br> could bring substantial rewards your way.</p>"},
-                        {subject:"english", content:"<p>Your study of many texts will provide you great benefit<br> in the coming months. Never fail to look for hidden meaning <br>in what others write as you may ward off <br>negative repercussions in doing so.</p> "},
-                        {subject:"english", content:"<p>You love for the written word offers a great way to<br> escape from the ordinary. Now seems to be a good time to indulge <br>in reading once again.</p> "},
+                        {subject:"maths", content:"<p>Your ability with statistics should be useful in many<br> ways you may have overlooked previously. A career<br> in finances could bring substantial rewards your way.</p>"},
+                        {subject:"english", content:"<p>Your study of many texts will provide you great benefit<br> in the coming months. Never fail to look for <br>hidden meaning in what others write as you may ward off <br>negative repercussions in doing so.</p> "},
+                        {subject:"english", content:"<p>You love for the written word offers a great way to<br> escape from the ordinary. Now seems to be a good time<br> to indulge in reading once again.</p> "},
                         {subject:"science", content:"<p>Though you may prefer <br>looking at how each individual<br> part never lose sight of the whole. The bigger picture can<br> often reveal more information than expected.</p> "},
-                        {subject:"science", content:"<p>You history of looking in depth at how things are<br> made up can be a boon today. Try to understand why key events are in<br> motion and other will be grateful for it.</p> "},
-                        {subject:"history", content:"<p>An interest in the past gives you a unique insight<br> in a world that looks towards the future, today may be a historical<br> day for many people and could be for you i<br>f you offer them your insight.</p> "},
-                        {subject:"history", content:"<p>Your love for things historical provides a calling<br> you may want to pay more attention to. Now could be a great time to<br> visit something archaeological.</p> "},
-                        {subject:"art", content:"<p>Your passion for creativity should help you in coming<br> up with new ways of completing your work or resolving differences with<br> others. While it may seem unorthodox to begin<br> with these new ideas can lead to great rewards.</p> "},
-                        {subject:"art", content:"<p>Your creative nature not only can help solve a variety<br> of problems in ways others might have overlooked but allows you to <br>express yourself in new ways. Now may be the <br>time to let your creativity flow free.</p> "},
-                        {subject:"geography", content:"<p>Whether this interest comes from wanting to travel<br> or not, today might be the day to start planning a voyage, time to<br> tick a box on a list of things to do. </p>"},
-                        {subject:"geography", content:"<p>Your awareness of the things around you gives you<br> an incentive to explore. Why not take a small break sometime soon <br>and go on an adventure. </p>"},
-                        {subject:"pe", content:"<p>Today is your day to be active and work off any stress you<br> currently feel but be careful with over doing it you will <br>need some strength to remain for tomorrow. </p>"},
-                        {subject:"pe", content:"<p>Use your love of sports to try and bring people at your <br>workplace together. This can help to form long lasting bonds <br>but be careful to not overdo it as rivalries can <br>be a major source of negativity. </p>"},
-                        {subject:"re", content:"<p>Your understanding of other views <br>makes you a valuable person<br> in defusing arguments. This allows you to help others reach<br> harmony and work together for the greater<br> good. </p>"},
-                        {subject:"re", content:"<p>Maybe now is the time to explore your old passion for other <br>cultures or philosophies. Why not go on a trip abroad to <br>find out more in person. </p>"},
-                        {subject:"technology", content:"<p>Your love of things technical means you should be <br>better suited in helping others adapt to new items that are <br>common. Why not spend a few days helping <br>those who have issues with new technologies. </p>"},
-                        {subject:"technology", content:"<p>You seem to be a person who enjoys a more hands-on <br>approach to life. If you work can’t be done this why, try an <br>outlet that makes greater use of your skills. </p>"},
-                        {subject:"languages", content:"<p>Your knowledge of other languages is likely to offer<br> you an insight into other cultures. This can be of great <br>boon to yourself and others around you. Don’t be<br> afraid to use those skills. </p>"},
-                        {subject:"languages", content:"<p>Why not utilise your previous love of languages<br> and take a trip abroad in the near future. Not only does this <br>give you a chance to lose stress but also<br> see how different cultures use language. </p>"},
-                        {subject:"general", content:"<p>Your past love of subjects can offer you an escape<br> from the drudgery of the everyday. They could become the thing <br>to revisit for a new outlet or even a new <br>vocation. </p>"},
-                        {subject:"general", content:"<p>Try to find a new way to explore your previous <br>interests in the coming days. It may provide the answer to questions <br>that have stumped you for a while now. </p>"}]);								
+                        {subject:"science", content:"<p>You history of looking in depth at how things are<br> made up can be a boon today. Try to understand why key<br> events are in motion and other will be grateful for it.</p> "},
+                        {subject:"history", content:"<p>An interest in the past gives you a unique insight<br> in a world that looks towards the future, today may be <br>a historical day for many people and could be for you i<br>f you offer them your insight.</p> "},
+                        {subject:"history", content:"<p>Your love for things historical provides a calling<br> you may want to pay more attention to. Now could be a <br>great time to visit something archaeological.</p> "},
+                        {subject:"art", content:"<p>Your passion for creativity should help you in coming<br> up with new ways of completing your work or resolving<br> differences with others. While it may seem unorthodox <br>to begin with these new ideas can lead to great rewards.</p> "},
+                        {subject:"art", content:"<p>Your creative nature not only can help solve a variety<br> of problems in ways others might have overlooked but<br> allows you to express yourself in new ways. Now may be<br> the time to let your creativity flow free.</p> "},
+                        {subject:"geography", content:"<p>Whether this interest comes from wanting to travel<br> or not, today might be the day to start planning <br>a voyage, time to tick a box on a list of things to do. </p>"},
+                        {subject:"geography", content:"<p>Your awareness of the things around you gives you<br> an incentive to explore. Why not take a small break <br>sometime soon and go on an adventure. </p>"},
+                        {subject:"pe", content:"<p>Today is your day to be active and work off any stress you<br> currently feel but be careful with over doing it you<br> will need some strength to remain for tomorrow. </p>"},
+                        {subject:"pe", content:"<p>Use your love of sports to try and bring people at your <br>workplace together. This can help to form long lasting<br> bonds but be careful to not overdo it as rivalries can <br>be a major source of negativity. </p>"},
+                        {subject:"re", content:"<p>Your understanding of other views <br>makes you a valuable person<br> in defusing arguments. This allows you to help<br> others reach harmony and work together for the greater<br> good. </p>"},
+                        {subject:"re", content:"<p>Maybe now is the time to explore your old passion for other <br>cultures or philosophies. Why not go on a trip abroad<br> to find out more in person. </p>"},
+                        {subject:"technology", content:"<p>Your love of things technical means you should be <br>better suited in helping others adapt to new items that<br> are common. Why not spend a few days helping <br>those who have issues with new technologies. </p>"},
+                        {subject:"technology", content:"<p>You seem to be a person who enjoys a more hands-on <br>approach to life. If you work can’t be done this why,<br> try an outlet that makes greater use of your skills. </p>"},
+                        {subject:"languages", content:"<p>Your knowledge of other languages is likely to offer<br> you an insight into other cultures. This can be of <br>great boon to yourself and others around you. Don’t be<br> afraid to use those skills. </p>"},
+                        {subject:"languages", content:"<p>Why not utilise your previous love of languages<br> and take a trip abroad in the near future. Not only does <br>this give you a chance to lose stress but also<br> see how different cultures use language. </p>"},
+                        {subject:"general", content:"<p>Your past love of subjects can offer you an escape<br> from the drudgery of the everyday. They could become the<br> thing to revisit for a new outlet or even a new <br>vocation. </p>"},
+                        {subject:"general", content:"<p>Try to find a new way to explore your previous <br>interests in the coming days. It may provide the answer to <br>questions that have stumped you for a while now. </p>"}]);								
 var output = " ";
 var Interest;
 
@@ -382,8 +382,8 @@ function Complete(){
     //Interests
 	output += horoscopeData({interest:{is:Interest.toLowerCase()}}).get()[0].content;
 	console.log(output);
-    //$("#userAns").html(stringOut("<p>" + output + "</p>" + '<p>I hope you found that useful, thankyou and goodbye.</p>'));
-	$("#userAns").html(DisplayAll());
+    $("#userAns").html(stringOut("<p>" + output + "</p>" + '<p>I hope you found that useful, thankyou and goodbye.</p>'));
+	//$("#userAns").html(DisplayAll());
 	ResetInputs();
 }
 function DisplayAll()

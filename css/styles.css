@@ -7,7 +7,7 @@ body {
     text-align: center;
     padding-top: 0px;
     font-family: "Lucida Handwriting", Times, serif;
-    src: url(js/)
+    src: url(js/);
     font-size: 60px;
     font-weight: 400;
     color: #cccccc;

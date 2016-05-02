@@ -1,4 +1,4 @@
-var horoscopeData = [{starsign:"aries", content:"Aries will find good news in the days ahead.<br> "},                        
+var horoscopeData = TAFFY([{starsign:"aries", content:"Aries will find good news in the days ahead.<br> "},                        
                         {starsign:"taurus", content:"Those from Taurus have fortune in their favour soon.<br> "},                        
                         {starsign:"gemini", content:"Those marked by Gemini could be greatened in the coming days.<br> "},                       
                         {starsign:"cancer", content:"Those under Cancer could find good tidings heading their way.<br> "},                        
@@ -52,33 +52,39 @@ var horoscopeData = [{starsign:"aries", content:"Aries will find good news in th
                         {subject:"art", content:"<p>Your creative nature not only can help solve a variety<br> of problems in ways others might have overlooked but allows you to <br>express yourself in new ways. Now may be the time to let your creativity flow free.</p> "},
                         {subject:"geography", content:"<p>Whether this interest comes from wanting to travel<br> or not, today might be the day to start planning a voyage, time to<br> tick a box on a list of things to do. </p>"},
                         {subject:"geography", content:"<p>Your awareness of the things around you gives you<br> an incentive to explore. Why not take a small break sometime soon <br>and go on an adventure. </p>"},
-                        {subject:"PE", content:"<p>Today is your day to be active and work off any stress you<br> currently feel but be careful with over doing it you will <br>need some strength to remain for tomorrow. </p>"},
-                        {subject:"PE", content:"<p>Use your love of sports to try and bring people at your <br>workplace together. This can help to form long lasting bonds <br>but be careful to not overdo it as rivalries can be a major source of negativity. </p>"},
-                        {subject:"RE", content:"<p>Your understanding of other views <br>makes you a valuable person<br> in defusing arguments. This allows you to help others reach<br> harmony and work together for the greater good. </p>"},
-                        {subject:"RE", content:"<p>Maybe now is the time to explore your old passion for other <br>cultures or philosophies. Why not go on a trip abroad to <br>find out more in person. </p>"},
+                        {subject:"pe", content:"<p>Today is your day to be active and work off any stress you<br> currently feel but be careful with over doing it you will <br>need some strength to remain for tomorrow. </p>"},
+                        {subject:"pe", content:"<p>Use your love of sports to try and bring people at your <br>workplace together. This can help to form long lasting bonds <br>but be careful to not overdo it as rivalries can be a major source of negativity. </p>"},
+                        {subject:"re", content:"<p>Your understanding of other views <br>makes you a valuable person<br> in defusing arguments. This allows you to help others reach<br> harmony and work together for the greater good. </p>"},
+                        {subject:"re", content:"<p>Maybe now is the time to explore your old passion for other <br>cultures or philosophies. Why not go on a trip abroad to <br>find out more in person. </p>"},
                         {subject:"technology", content:"<p>Your love of things technical means you should be <br>better suited in helping others adapt to new items that are <br>common. Why not spend a few days helping those who have issues with new technologies. </p>"},
                         {subject:"technology", content:"<p>You seem to be a person who enjoys a more hands-on <br>approach to life. If you work can’t be done this why, try an <br>outlet that makes greater use of your skills. </p>"},
                         {subject:"languages", content:"<p>Your knowledge of other languages is likely to offer<br> you an insight into other cultures. This can be of great <br>boon to yourself and others around you. Don’t be afraid to use those skills. </p>"},
                         {subject:"languages", content:"<p>Why not utilise your previous love of languages<br> and take a trip abroad in the near future. Not only does this <br>give you a chance to lose stress but also see how different cultures use language. </p>"},
                         {subject:"general", content:"<p>Your past love of subjects can offer you an escape<br> from the drudgery of the everyday. They could become the thing <br>to revisit for a new outlet or even a new vocation. </p>"},
-                        {subject:"general", content:"<p>Try to find a new way to explore your previous <br>interests in the coming days. It may provide the answer to questions <br>that have stumped you for a while now. </p>"}];
+                        {subject:"general", content:"<p>Try to find a new way to explore your previous <br>interests in the coming days. It may provide the answer to questions <br>that have stumped you for a while now. </p>"}]);								
+var horoscope = TAFFY(horoscopeData);
+var output = "";
+var Interest;
 
 if (!String.prototype.contains) {
     String.prototype.contains = function(s) {
-        return this.indexOf(s) > -1
+        return this.indexOf(s) > -1;
     }
 }
-var horoscope = TAFFY(horoscopeData);
 
-function userName() 
-{
-    // Grab Value
-    var Fname = document.getElementById('fname').value;
-    // Add to horoscope
-    output += Fname + "- ";
-    console.log(Fname);
-    // Add to HTML
-    $('#FirstName').html('<p>' + Fname + ', Its a pleasure to meet you.</p>');
+function CheckMood(MoodArr, CheckStr){
+	var Input = CheckStr.split(" ");
+	for (i = 0; i < MoodArr.length; i++) 
+	{ 
+		for (j = 0; j < Input.length; j++) 
+		{
+			if(MoodArr[i] == Input[j]) 
+			{
+				return true;
+			}
+		}
+	}
+	return false;
 }
 
 function typedText(question, cursor) {
@@ -107,7 +113,6 @@ $(cursor).typed({
 				function foo(){ console.log("Callback"); }
 }
 
-
 function toggle_visibility(id) {
        var e = document.getElementById(id);
        if(e.style.display == 'block')
@@ -115,54 +120,55 @@ function toggle_visibility(id) {
        else
           e.style.display = 'block';
     }
-function Complete(){
-	var Fname = document.getElementById('fname').value;
-	var Dob = Number(hiddenDate);
-    var Age = Number(hiddenYear);
-	var Subject = document.getElementById('subject').value;
-	
-	
-	ConsoleTest(Fname, Dob, Feelings, Subject, Interest);
-	ResetInputs();
-}
+
 function ResetInputs(){
 	document.getElementById('fname').value = "";
 	document.getElementById('feelings').value = "";
 	document.getElementById('subject').value = "";
 	document.getElementById('interest').value = "";
 }
-var output = "";
 
-
-
-
+//Get Information from user
+function userName() 
+{
+    // Grab Value
+    var Fname = document.getElementById('fname').value;
+    // Add to horoscope
+    output += Fname + "- ";
+    console.log(Fname);
+    // Add to HTML
+    $('#FirstName').html('<p>' + Fname + ', Its a pleasure to meet you.</p>');
+}
 function userAge()
 {
     // Star sign
     var Dob = Number(hiddenDate);
     var userStar;
-    if (Dob >= 321 && Dob <= 419) { userStar="Aries"; output += horoscopeData[0].content; }
-    else if (Dob >= 420 && Dob <= 520) { userStar="Taurus"; output += horoscopeData[1].content; }
-    else if (Dob >= 521 && Dob <= 620) { userStar="Gemini"; output += horoscopeData[2].content; }
-    else if (Dob >= 621 && Dob <= 722) { userStar="Cancer"; output += horoscopeData[3].content; }
-    else if (Dob >= 723 && Dob <= 822) { userStar="Leo"; output += horoscopeData[4].content; }
-    else if (Dob >= 823 && Dob <= 922) { userStar="Virgo"; output += horoscopeData[5].content; }
-    else if (Dob >= 923 && Dob <= 1022) { userStar="Libra"; output += horoscopeData[6].content; }
-    else if (Dob >= 1023 && Dob <= 1121) { userStar="Scorpio"; output += horoscopeData[7].content; }
-    else if (Dob >= 1122 && Dob <= 1221) { userStar="Sagittarius"; output += horoscopeData[8].content; }
-    else if (Dob >= 1222 && Dob <= 119) { userStar="Capricorn"; output += horoscopeData[9].content; }
-    else if (Dob >= 120 && Dob <= 218) { userStar="Aquarius"; output += horoscopeData[10].content; }
-    else if (Dob >= 219 && Dob <= 320) { userStar="Pisces"; output += horoscopeData[11].content; }
-    // Age
+    if (Dob >= 321 && Dob <= 419) { userStar="Aries"; }
+    else if (Dob >= 420 && Dob <= 520) { userStar="Taurus"; }
+    else if (Dob >= 521 && Dob <= 620) { userStar="Gemini"; }
+    else if (Dob >= 621 && Dob <= 722) { userStar="Cancer"; }
+    else if (Dob >= 723 && Dob <= 822) { userStar="Leo"; }
+    else if (Dob >= 823 && Dob <= 922) { userStar="Virgo"; }
+    else if (Dob >= 923 && Dob <= 1022) { userStar="Libra"; }
+    else if (Dob >= 1023 && Dob <= 1121) { userStar="Scorpio"; }
+    else if (Dob >= 1122 && Dob <= 1221) { userStar="Sagittarius"; }
+    else if (Dob >= 1222 && Dob <= 119) { userStar="Capricorn"; }
+    else if (Dob >= 120 && Dob <= 218) { userStar="Aquarius"; }
+    else if (Dob >= 219 && Dob <= 320) { userStar="Pisces"; }
+    
+	output += horoscopeData({starsign:{is:userStar.toLowerCase()}}).get()[0].content;
+	var ageLetter;
+	// Age
     var Age = Number(hiddenYear);
-    if (Age <= 17)              { output += horoscopeData[18].content; }
-    if (Age >= 18 && Age <= 24) { output += horoscopeData[20].content; }
-    if (Age >= 25 && Age <= 39) { output += horoscopeData[24].content; }    
-    if (Age >= 40)              { output += horoscopeData[28].content; }
+    if (Age <= 17)              {ageLetter = 'a';}
+    if (Age >= 18 && Age <= 24) {ageLetter = 'b';}
+    if (Age >= 25 && Age <= 39) {ageLetter = 'c';}    
+    if (Age >= 40)              {ageLetter = 'd';}
     // Debug
-    console.log(Dob);
-    console.log(userStar);
-    console.log(Age);
+	
+	output += horoscopeData({age:{is:ageLetter.toLowerCase()}}).get()[0].content;
+    console.log(output);
     // Add to HTML
     $('#userSign').html('<p>Thanks for that, you are a ' + userStar + ' if i am<br> correct?</p><p>Wow, ji </p><p>Wow, i didnt realise you are ' + Age + ', I really need <br>to clean this glass.</p>');
 }
@@ -171,78 +177,61 @@ function userFeelings()
     var Feelings = document.getElementById('feelings').value;
     Feelings = Feelings.toLowerCase();
     var Mood;
+	var MoodNum;
     //Word bank
-    var goodMood = "happy pleasured good gleeful delighted jovial jolly joking merry cheery cheerful glowing radiant carefree great fortunate lucky amazing horny sexy fantastic silly funny";
-    var averageMood = "ok acceptable agreable adequate passable satisfactory well okay average content fine decent";
-    var badMood = "irritated bad sad angry hurt mad hungover poor broke difficult crude retarded annoyed ill sick poorly failure failing rude dirty filthy indecent severe serious";
+    var goodMood = ["happy", "pleasured", "good", "gleeful", "delighted", "jovial", "jolly", "joking", "merry", "cheery", "cheerful", "glowing", "radiant", "carefree", "great", "fortunate", "lucky", "amazing", "horny", "sexy", "fantastic", "silly", "funny"];
+    var averageMood = ["ok", "acceptable", "agreable", "adequate", "passable", "satisfactory", "well", "okay", "average", "content", "fine", "decent"];
+    var badMood = ["irritated", "bad", "sad", "angry", "hurt", "mad", "hungover", "poor", "broke", "difficult", "crude", "retarded", "annoyed", "ill", "sick", "poorly", "failure", "failing", "rude", "dirty", "filthy", "indecent", "severe", "serious"];
     // Feelings  (containing the word bank)
-    if (Feelings.contains("happy") || Feelings.contains("pleasured") || Feelings.contains("well") ||  Feelings.contains("good") || Feelings.contains("gleeful") || Feelings.contains("delighted") || Feelings.contains("jovial") 
-                                   || Feelings.contains("jolly")     || Feelings.contains("joking") || Feelings.contains("merry") || Feelings.contains("cheery") 
-                                   || Feelings.contains("cheerful")  || Feelings.contains("glowing") || Feelings.contains("radiant") || Feelings.contains("carefree") || Feelings.contains("great") 
-                                   || Feelings.contains("fortunate") || Feelings.contains("lucky") || Feelings.contains("amazing") || Feelings.contains("horny") || Feelings.contains("sexy") 
-                                   || Feelings.contains("fantastic") || Feelings.contains("silly") || Feelings.contains("funny")) { Mood = "good"; output += horoscopeData[12].content; }
-    else if (Feelings.contains(averageMood)) { Mood = "average"; output += horoscopeData[14].content; }
-    else if (Feelings.contains(badMood)) { Mood = "bad"; output += horoscopeData[16].content; }
-    console.log(Feelings);
-    console.log(Mood);
+    if (CheckMood(goodMood, Feelings)){ Mood = "good"; MoodNum = "1"; }
+	else if (CheckMood(averageMood, Feelings)){ Mood = "average"; MoodNum = "2"; }
+	else if (CheckMood(badMood, Feelings)){ Mood = "bad"; MoodNum = "3"; }
+	
+	output += horoscopeData({mood:{is:MoodNum}}).get()[0].content;
+	console.log(output);
     // Add to HTML
     $('#userFeel').html('<p>Thanks for letting me know that you<br> are in a ' + Mood + ' mood</p><p>that qil</p><p>that will help when making your horoscope.</p>');
 }
 function userSubject()
 {
+	//subject
     var Subject = document.getElementById('subject').value;
     Subject = Subject.toLowerCase();
     console.log(Subject + " before");
-     //Subjects
-    if (Subject.contains("maths")) { Subject = "maths"; output += horoscopeData[42].content; }
-    else if (Subject.contains("english")) { Subject = "english"; output += horoscopeData[44].content; }
-    else if (Subject.contains("science")) { Subject = "science"; output += horoscopeData[46].content; }
-    else if (Subject.contains("history")) { Subject = "history"; output += horoscopeData[48].content; }
-    else if (Subject.contains("art")) { Subject = "art"; output += horoscopeData[50].content; }
-    else if (Subject.contains("geography")) { Subject = "geography"; output += horoscopeData[52].content; }
-    else if (Subject.contains("pe")) { Subject = "PE"; output += horoscopeData[54].content; }
-    else if (Subject.contains("religion")) { Subject = "RE" ; output += horoscopeData[56].content; }
-         if (Subject.contains("technology") || Subject.contains("it") || Subject.contains("ict") || Subject.contains("computer science")) { Subject = "IT"; output += horoscopeData[58].content; } // Catch for science 
-    else if (Subject.contains("french") || Subject.contains("german") || Subject.contains("latin")) { Subject = "languages"; output += horoscopeData[60].content; }
-        else
-        {
-            output += horoscopeData[62].content;
-        }
-     console.log(Subject + " after");   
-     $('#userSub').html('<p>Thats cool that you liked <br>' + Subject + ' at school, I only liked fairytale<br>class myself.</p>');
+	//Subject Bank
+	var mathsBank = [ "maths", "calculus"];
+	var englishBank = [ "english", "film studies", "literature"];
+	var scienceBank = [ "science", "physics", "chemestry", "biogoly"];
+	var historyBank = [ "history" ];
+	var artBank = [ "art" ];
+	var geographyBank = [ "geography" ];
+	var peBank = [ "pe" ];
+	var reBank = [ "re", "philosophy" ];
+	var itBank = [ "technology", "it", "ict", "computing" ];
+	var languagesBank = [ "french", "german", "latin", "spanish"];
+    //Subjects 
+	if (CheckMood(mathsBank, Subject)){ Subject = "maths";}
+	else if (CheckMood(englishBank, Subject)){ Subject = "english";}
+	else if (CheckMood(scienceBank, Subject)){ Subject = "science";}
+	else if (CheckMood(historyBank)){ Subject = "history";}
+	else if (CheckMood(artBank, Subject)){ Subject = "art";}
+	else if (CheckMood(geographyBank, Subject)){ Subject = "geography";}
+	else if (CheckMood(peBank, Subject)){ Subject = "pe";}
+	else if (CheckMood(reBank, Subject)){ Subject = "re";}
+	else if (CheckMood(itBank, Subject)){ Subject = "it";}
+	else if (CheckMood(languagesBank, Subject)){ Subject = "languages";}
+    else {Subject = "general";}
+	
+	output += horoscopeData({subject:{is:Subject.toLowerCase()}}).get()[0].content;
+	console.log(output);  
+    $('#userSub').html('<p>Thats cool that you liked <br>' + Subject + ' at school, I only liked fairytale<br>class myself.</p>');
 }
 // Public so the HTML can see it 
-var Interest;
-
 function Complete(){
     //Interests
-    
-    if (Interest == 'nature')
-    {
-        output += horoscopeData[31].content;
-    }
-    if (Interest == 'music')
-    {
-        output += horoscopeData[33].content;
-    }
-    if (Interest == 'sport')
-    {
-        output += horoscopeData[34].content;
-    }
-    if (Interest == 'knowledge')
-    {
-        output += horoscopeData[36].content;
-    }
-    if (Interest == 'family')
-    {
-        output += horoscopeData[38].content;
-    }
-    if (Interest == 'romance')
-    {
-        output += horoscopeData[40].content;
-    }
-    //Finished
-    console.log(Interest);
+	output += horoscopeData({interest:{is:Interest.toLowerCase()}}).get()[0].content;
+	console.log(output);
+
     
     $("#userAns").html("<p>" + output + "</p><p>I hope you found that useful, thankyou and goodbye.</p>");
     console.log(output);

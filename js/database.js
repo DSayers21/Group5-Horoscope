@@ -189,11 +189,15 @@ $(cursor).typed({
 		// strings: ["Typed.js is a <strong>jQuery</strong> plugin.", "It <em>types</em> out sentences.", "And then deletes them.", "Try it out!"],
 		stringsElement: $(question),
 		typeSpeed: 60,
+<<<<<<< HEAD
 		// typing speed
         startDelay: (20000 / Number(question.length)),
         // backspacing speed
         backSpeed: 40,
 		backDelay: 1000,
+=======
+		backDelay: 500,
+>>>>>>> origin/master
 		loop: false,
 		contentType: 'html', // or text
 		// defaults to false for infinite loop

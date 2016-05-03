@@ -16,12 +16,15 @@
 		 <script>	
     </script> 
   </head>
-  <body> 
+  <body>
      <div id="Title"> 
          <h3>Group 5</h3>
          <h1>MirrorMirror</h1>
      </div>
 	<div id="Start" style="display: block" onkeydown = "if (event.keyCode == 13) document.getElementById('startBtn').click()">
+        <div id="video">
+          <video width="100%" height="90%" name="smoke" autoplay="autoplay" src="img/video.mov"></video> 
+          </div>
 		<button type="button" id="startBtn" onclick="toggle_visibility('Start'); toggle_visibility('Q1'); typedText('#typed-strings', '#typed');">Start</button>
 	</div>
 	<div id="Q1" style="display: none" class="form">
@@ -36,7 +39,7 @@
 		Fullname: <input type="text" name="fname" id="fname" onkeydown = "if (event.keyCode == 13) document.getElementById('Q1Btn').click()" autofocus><br>
 		<button type="button" class="Btn" id="Q1Btn" onclick="CheckuserName('Q1', 'Q2');">Continue</button>			
 	</div>
-	<div id="Q2" style="display: none" class = "form">
+	<div id="Q2" style="display: none" class ="form">
 		<div id="userHello"></div>
 		<div class="type-wrap">
             <div id="typed-Q2">

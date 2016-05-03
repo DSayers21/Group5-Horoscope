@@ -4,10 +4,11 @@ body {
 }
 
 #Title {
+    position: relative;
+    z-index: 999;
     text-align: center;
     padding-top: 0px;
     font-family: "Lucida Handwriting", Times, serif;
-    src: url(js/);
     font-size: 45px;
     font-weight: 400;
     color: #cccccc;
@@ -16,16 +17,22 @@ body {
     font-size: 30px;
     padding-top: 30px;
 }
+#video {
+    position: fixed;
+    width: 100%;
+    top:0;
+    z-index: -1;
+}
 #Start {
-    position: absolute;
+    position: relatve;
     text-align: center;
-    top: 50%;
-    left: 50%;
+    z-index: 998;
 }
 #startBtn {
-    margin-left: -100%;
 	width: 170px;
 	height: 50px;
+    top: 50%;
+    left: 50%;
 	background-color: black;
 	color: #e6e6e6; 
 	border-style: solid;

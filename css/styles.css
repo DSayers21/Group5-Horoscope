@@ -87,10 +87,7 @@ video {
 	text-align: center;
     font-family: "Lucida Handwriting", Times, serif;
 	font-size: 20px;
-}
-#Answer > .Btn {
-    margin-left: -45px;
-}
+	
 .Btn:hover {
 	background-color: #1a1a1a;
 }

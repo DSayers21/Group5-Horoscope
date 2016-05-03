@@ -74,7 +74,7 @@ body {
     font-family: "Lucida Handwriting", Times, serif;
 	font-size: 20px;
 }
-.Answer > .Btn {
+#Answer > .Btn {
     margin-left: -45px;
 }
 .Btn:hover {

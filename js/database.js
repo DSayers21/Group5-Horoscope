@@ -139,7 +139,7 @@ function stringOut(input)
 {
 	console.log(input);
 	var Stop = 0;
-	var Difficulty = 80;
+	var Difficulty = 85;
 	var TypingBad = Math.floor(Math.random() * Difficulty) + 1;
 	var OutPut;
 	for(i = 0; i < input.length; i++)
@@ -246,11 +246,14 @@ function CheckuserName(LastPage, NextPage)
 		typedText('#typed-Q2', '#typedQ2');
 	}
 }
+
+var Fname;
+
 function userName() 
 {
 	DisplayAll();
     // Grab Value
-    var Fname = document.getElementById('fname').value;
+    Fname = document.getElementById('fname').value;
     // Add to horoscope
     if (Fname == '') 
     {
@@ -351,13 +354,14 @@ function userFeelings()
 	console.log(output);
     // Add to HTML
 
-    $('#userFeel').html(stringOut('<p>Thanks for letting me know that you<br> are ' + Mood + ' mood<br>that will help when making your horoscope.</p><p>When you went to school,<br>What was your favourite subject? </p>'));
+    $('#userFeel').html(stringOut('<p>Thanks for letting me know that you<br> are ' + Mood + ' mood<br>that will help when making your horoscope.</p><p>When you went to school,<br>what was your favourite subject? </p>'));
 	
 }
 function userSubject()
 {
 	//subject
     var Subject = document.getElementById('subject').value;
+	var SubResponse;
     Subject = Subject.toLowerCase();
     console.log(Subject + " before");
 	//Subject Bank
@@ -367,27 +371,27 @@ function userSubject()
 	var historyBank = [ "history" ];
 	var artBank = [ "art" ];
 	var geographyBank = [ "geography" ];
-	var peBank = [ "pe" ];
+	var peBank = [ "pe", "sport" ];
 	var reBank = [ "re", "philosophy" ];
 	var itBank = [ "technology", "it", "ict", "computing" ];
 	var languagesBank = [ "french", "german", "latin", "spanish"];
     //Subjects 
-	if (CheckMood(mathsBank, Subject)){ Subject = "maths";}
-	else if (CheckMood(englishBank, Subject)){ Subject = "english";}
-	else if (CheckMood(scienceBank, Subject)){ Subject = "science";}
-	else if (CheckMood(historyBank, Subject)){ Subject = "history";}
-	else if (CheckMood(artBank, Subject)){ Subject = "art";}
-	else if (CheckMood(geographyBank, Subject)){ Subject = "geography";}
-	else if (CheckMood(peBank, Subject)){ Subject = "pe";}
-	else if (CheckMood(reBank, Subject)){ Subject = "re";}
-	else if (CheckMood(itBank, Subject)){ Subject = "technology";}
-	else if (CheckMood(languagesBank, Subject)){ Subject = "languages";}
+	if (CheckMood(mathsBank, Subject)){ Subject = "maths"; SubResponse = "THE NUMBERS!!! WHAT DO THEY MEAN!?!?!?";}
+	else if (CheckMood(englishBank, Subject)){ Subject = "english"; SubResponse = "A fan of literature then? Very sophisticated";}
+	else if (CheckMood(scienceBank, Subject)){ Subject = "science"; SubResponse = "Ahh, you were a lover of science. <br>We need more people like that";}
+	else if (CheckMood(historyBank, Subject)){ Subject = "history"; SubResponse = "Oh so you were a bit of a historian then? That's cool.";}
+	else if (CheckMood(artBank, Subject)){ Subject = "art"; SubResponse = "Oh so you were an artist? <br>Awesome, I love the work of Monet.";}
+	else if (CheckMood(geographyBank, Subject)){ Subject = "geography"; SubResponse = "Geography! My favourite!";}
+	else if (CheckMood(peBank, Subject)){ Subject = "pe"; SubResponse = "You were quite active then? <br>I don't exercise very much to be honest";}
+	else if (CheckMood(reBank, Subject)){ Subject = "re"; SubResponse = "Awesome, I worship Kevin Jacques";}
+	else if (CheckMood(itBank, Subject)){ Subject = "technology"; SubResponse = "So you're a nerd then. <br>I never understood that coding stuff.";}
+	else if (CheckMood(languagesBank, Subject)){ Subject = "language"; SubResponse = "Bonjour, j'adore les langues";}
     else {Subject = "general";}
 	
 	
 	if(Subject == "general")
 	{
-		$('#userSub').html(stringOut('<p>Oh, I dont think I know that one. At school, I only liked fairytale<br>class myself.</p><p>Ive made some cards, but you need to <br>hover on them to see them.</p><p>Do me a favour and pick your favourite? <br> We are nearly finished.</p>'));
+		$('#userSub').html(stringOut('<p>Oh... <br>I dont think I know that one. <br>Personally, I only liked magic class myself.</p><p>Anyway, would you do me a favour and pick a card? <br>We are nearly finished.</p>'));
 	}
 	else
 	{
@@ -397,7 +401,7 @@ function userSubject()
 		output += Record[RecordCount].content;
 		
 		console.log(output);  
-		$('#userSub').html(stringOut('<p>Thats cool that you liked <br>' + Subject + ' at school, I only liked fairytale<br>class myself.</p><p>Ive made some cards, but you need to <br>hover on them to see them.</p><p>Do me a favour and pick your favourite? <br> We are nearly finished.</p>'));
+		$('#userSub').html(stringOut('<p>' + SubResponse + '</p><p>Anyway, would you do me a favour and pick a card? <br>We are nearly finished.</p>'));
 	}
 }
 // Public so the HTML can see it 

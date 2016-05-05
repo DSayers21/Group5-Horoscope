@@ -1,22 +1,23 @@
-var horoscopeData = TAFFY([{starsign:"aries", content:"<br>Aries will find good news in the days ahead.<br> "},                        
-                        {starsign:"taurus", content:"<br>Those from Taurus have fortune in their favour soon.<br> "},                        
-                        {starsign:"gemini", content:"<br>Those marked by Gemini could be greatened in the coming days.<br> "},                       
-                        {starsign:"cancer", content:"<br>Those under Cancer could find good tidings heading their way.<br> "},                        
-                        {starsign:"leo", content:"<br>Those of Leo may find joy in the next few days.<br> "},                        
-                        {starsign:"virgo", content:"<br>Don’t worry Virgo as your luck is on the up.<br> "},                        
-                        {starsign:"libra", content:"<br>Libra will be bringing you news in the coming weeks.<br> "},                        
-                        {starsign:"scorpio", content:"<br>Scorpios should hold their heads high today.<br> "},                        
-                        {starsign:"sagittarius", content:"<br>Sagittarius will be the bearer of fortune in the days ahead.<br> "},                        
-                        {starsign:"capricorn", content:"<br>There's good news for capricorns this week.<br> "},                        
-                        {starsign:"aquarius", content:"<br>Followers of Aquarius should find greater happiness soon.<br>"},                        
-                        {starsign:"pisces", content:"<br>Pisces should be on the lookout this week.<br> "},
+var horoscopeData = TAFFY([{starsign:"aries", content:"<br>Aries will find good news in the days ahead."},                        
+                        {starsign:"taurus", content:"<br>Those from Taurus have fortune in their <br>favour soon."},                        
+                        {starsign:"gemini", content:"<br>Those marked by Gemini could be greatened in the <br>coming days."},                       
+                        {starsign:"cancer", content:"<br>Those under Cancer could find good tidings heading <br>their way."},                        
+                        {starsign:"leo", content:"<br>Those of Leo may find joy in the next few days."},                        
+                        {starsign:"virgo", content:"<br>Don’t worry Virgo as your luck is on the up."},                        
+                        {starsign:"libra", content:"<br>Libra will be bringing you news in the coming weeks."},                        
+                        {starsign:"scorpio", content:"<br>Scorpios should hold their heads high today."},                        
+                        {starsign:"sagittarius", content:"<br>Sagittarius will be the bearer of fortune <br>in the days ahead."},                        
+                        {starsign:"capricorn", content:"<br>There's good news for Capricorns this week."},                        
+                        {starsign:"aquarius", content:"<br>Followers of Aquarius should find greater <br>happiness soon."},                        
+                        {starsign:"pisces", content:"<br>Pisces should be on the lookout this week."},
                         {mood:"1", content:"<p>Your good mood is something you <br>shouldn’t keep to yourself,<br> why not try improving someone else’s day as well. </p>"},
                         {mood:"1", content:"<p>The happiness that currently flows <br>through you reveals that your<br> doubts are misplaced. Focus on that if<br> they try to appear again.</p> "},
                         {mood:"2", content:"<p>While your current mood might not seem <br>the best it might turn out<br> to simply be a symptom of contentment you currently feel.<br> Don’t look too much into possible negative <br>feelings you have. </p>"},
                         {mood:"2", content:"<p>Though you may not currently feel at your<br> best this isn’t a bad thing.<br> We all experience ups and downs and that means your <br>future looks bright.</p> "},
                         {mood:"3", content:"<p>Your mood may be dark at the current <br>moment but don’t fear as every day<br> offers new opportunities to improve it. Don’t allow <br>your mood to stop you from experiencing those<br> opportunities.</p> "},
                         {mood:"3", content:"<p>Though things right now may seem bleak<br> don’t fret. Everyone experiences<br> bad days and understand how it can be. Why not spend <br>times with your friends and loved ones to see<br> if your mood improves. </p>"},
-                        {age:"a", content:"<p>You may often find yourself cursing your<br> youthful nature but you shouldn’t<br> take it for granted. These are your most <br>responsibility-free years of your life<br> and you’re unlikely to ever be so carefree again.</p> "},
+						{mood:"4", content:"<p>Hold your head high as good things<br> are coming your way.<br> Make sure you take advantage of <br>things to come.</p> "},
+						{age:"a", content:"<p>You may often find yourself cursing your<br> youthful nature but you shouldn’t<br> take it for granted. These are your most <br>responsibility-free years of your life<br> and you’re unlikely to ever be so carefree again.</p> "},
                         {age:"a", content:"<p>Your current age gives you the most <br>opportunity to try out new things.<br> Don’t miss this chance to find out what you want to<br> do with your life. </p>"},
                         {age:"b", content:"<p>Despite your young age you will be <br>required to make some serious choices in<br> the coming months. Now is the time to show people<br> who you want to be. </p>"},
                         {age:"b", content:"<p>Though you have seen few years you <br>shouldn’t be dissuaded from aiming high.<br> A risk every now and then can make a positive <br>difference in your life. </p>"},
@@ -192,7 +193,7 @@ $(cursor).typed({
 		// typing speed
         startDelay: (20000 / Number(question.length)),
         // backspacing speed
-        backSpeed: 40,
+        backSpeed: 20,
 		backDelay: 1000,
 		loop: false,
 		contentType: 'html', // or text
@@ -230,7 +231,7 @@ function ResetInputs(){
 
 function InitialMessage()
 {
-	$('#Initital').html(stringOut('<p>Welcome to MirrorMirror,</p><p>No. K<p>No. I am not from snow white, <br>that was my grandfather.</p></p><p>Anyway, i do horoscopes.</p><p>Could i ask what your name is first? </p>'));   
+	$('#Initital').html(stringOut('<p>Welcome to MirrorMirror,</p><p>No. I am not from snow white, <br>that was my grandfather.</p></p><p>Anyway, i do horoscopes.</p><p>Could i ask what your name is first? </p>'));   
 }
 
 
@@ -260,7 +261,7 @@ function userName()
 		output = Fname + "- ";
 		console.log(Fname);
 		// Add to HTML
-		$('#FirstName').html(stringOut('<p>' + Fname + ', Its a pleasure to meet you.</p><p>My name is Dimitri, <br>I will be operating the MirrorMirror today.</p><p>Could I ask what is your date of birth? </p><p>I cant quite tell how old you are through<br> this mirror.</p>'));
+		$('#FirstName').html(stringOut('<p>' + Fname + ', Its a pleasure to meet you.</p><p>My name is Dimitri, <br>I will be operating the MirrorMirror today.</p><p>Could I ask what is your date of birth? <br>I cant quite tell how old you are through<br> this mirror.</p>'));
     }
 }
 
@@ -293,7 +294,10 @@ function userAge()
     else if (Dob <= 218) { userStar="Aquarius"; }
     else if (Dob <= 320) { userStar="Pisces"; }
     
-	output += horoscopeData({starsign:{is:userStar.toLowerCase()}}).get()[0].content;
+	var Record = horoscopeData({starsign:{is:userStar.toLowerCase()}}).get();
+	var RecordCount = Math.floor(Math.random() * Record.length);
+	output += Record[RecordCount].content;
+	
 	var ageLetter;
 	// Age
     var Age = Number(hiddenYear);
@@ -303,10 +307,15 @@ function userAge()
     if (Age >= 40)              {ageLetter = 'd';}
     // Debug
 	console.log(Dob);
-	output += horoscopeData({age:{is:ageLetter.toLowerCase()}}).get()[0].content;
+	
+	Record = horoscopeData({age:{is:ageLetter.toLowerCase()}}).get();
+	RecordCount = Math.floor(Math.random() * Record.length);
+	output += Record[RecordCount].content;
+	
     console.log(output);
     // Add to HTML
-    $('#userSign').html(stringOut('<p>Thanks for that, you are a ' + userStar + ' if i am<br> correct?</p><p>Wow, ji </p><p>Wow, i didnt realise you are ' + Age + ', I really need <br>to clean this glass.</p><p>Anyway, How are you feeling? </p>'));
+	
+    $('#userSign').html(stringOut('<p>Thanks for that, you are a ' + userStar + ' if i am<br> correct? </p><p>Wow, i didnt realise you are ' + Age + ', I really need <br>to clean this glass.</p><p>Anyway, How are you feeling? </p>'));
 }
 
 function CheckuserFeelings(LastPage, NextPage)
@@ -316,7 +325,7 @@ function CheckuserFeelings(LastPage, NextPage)
 		userFeelings();
 		toggle_visibility(LastPage);
 		toggle_visibility(NextPage);
-		typedText('#typed-Q4', '#typedQ4')
+		typedText('#typed-Q4', '#typedQ4');
 	}
 }
 
@@ -327,18 +336,23 @@ function userFeelings()
     var Mood;
 	var MoodNum;
     //Word bank
-    var goodMood = ["happy", "pleasured", "good", "gleeful", "delighted", "jovial", "jolly", "joking", "merry", "cheery", "cheerful", "glowing", "radiant", "carefree", "great", "fortunate", "lucky", "amazing", "horny", "sexy", "fantastic", "silly", "funny"];
-    var averageMood = ["ok", "acceptable", "agreable", "adequate", "passable", "satisfactory", "well", "okay", "average", "content", "fine", "decent"];
+    var goodMood = ["happy", "excited", "pleasured", "good", "gleeful", "delighted", "jovial", "jolly", "joking", "merry", "cheery", "cheerful", "glowing", "radiant", "carefree", "great", "fortunate", "lucky", "amazing", "horny", "sexy", "fantastic", "silly", "funny"];
+    var averageMood = ["ok", "bored", "acceptable", "agreable", "adequate", "passable", "satisfactory", "well", "okay", "average", "content", "fine", "decent"];
     var badMood = ["irritated", "bad", "sad", "angry", "hurt", "mad", "hungover", "poor", "broke", "difficult", "crude", "retarded", "annoyed", "ill", "sick", "poorly", "failure", "failing", "rude", "dirty", "filthy", "indecent", "severe", "serious"];
     // Feelings  (containing the word bank)
-    if (CheckMood(goodMood, Feelings)){ Mood = "good"; MoodNum = "1"; }
-	else if (CheckMood(averageMood, Feelings)){ Mood = "average"; MoodNum = "2"; }
-	else if (CheckMood(badMood, Feelings)){ Mood = "bad"; MoodNum = "3"; }
+    if (CheckMood(goodMood, Feelings)){ Mood = "in a good"; MoodNum = "1"; }
+	else if (CheckMood(averageMood, Feelings)){ Mood = "in an average"; MoodNum = "2"; }
+	else if (CheckMood(badMood, Feelings)){ Mood = "in a bad"; MoodNum = "3"; }
+ 	else {Mood = "unsure of your"; MoodNum = "4";}
+	var Record = horoscopeData({mood:{is:MoodNum}}).get();
+	var RecordCount = Math.floor(Math.random() * Record.length);
+	output += Record[RecordCount].content;
 	
-	output += horoscopeData({mood:{is:MoodNum}}).get()[0].content;
 	console.log(output);
     // Add to HTML
-    $('#userFeel').html(stringOut('<p>Thanks for letting me know that you<br> are in a ' + Mood + ' mood</p><p>that qil</p><p>that will help when making your horoscope.</p><p>When you went to school,</p><p>What was your favourite subject? </p>'));
+
+    $('#userFeel').html(stringOut('<p>Thanks for letting me know that you<br> are ' + Mood + ' mood<br>that will help when making your horoscope.</p><p>When you went to school,<br>What was your favourite subject? </p>'));
+	
 }
 function userSubject()
 {
@@ -373,12 +387,15 @@ function userSubject()
 	
 	if(Subject == "general")
 	{
-		$('#userSub').html(stringOut('<p>Sure m8 #yolo. At school, I only liked fairytale<br>class myself.</p><p>Ive made some cards, but you need to <br>hover on them to see them.</p><p>Do me a favour and pick your favourite? <br> We are nearly finished.</p>'));
+		$('#userSub').html(stringOut('<p>Oh, I dont think I know that one. At school, I only liked fairytale<br>class myself.</p><p>Ive made some cards, but you need to <br>hover on them to see them.</p><p>Do me a favour and pick your favourite? <br> We are nearly finished.</p>'));
 	}
 	else
 	{
 		console.log(Subject);
-		output += horoscopeData({subject:{is:Subject}}).get()[0].content;
+		var Record = horoscopeData({subject:{is:Subject}}).get();
+		var RecordCount = Math.floor(Math.random() * Record.length);
+		output += Record[RecordCount].content;
+		
 		console.log(output);  
 		$('#userSub').html(stringOut('<p>Thats cool that you liked <br>' + Subject + ' at school, I only liked fairytale<br>class myself.</p><p>Ive made some cards, but you need to <br>hover on them to see them.</p><p>Do me a favour and pick your favourite? <br> We are nearly finished.</p>'));
 	}
@@ -386,7 +403,10 @@ function userSubject()
 // Public so the HTML can see it 
 function Complete(){
     //Interests
-	output += horoscopeData({interest:{is:Interest.toLowerCase()}}).get()[0].content;
+	var Record = horoscopeData({interest:{is:Interest.toLowerCase()}}).get();
+	var RecordCount = Math.floor(Math.random() * Record.length);
+	output += Record[RecordCount].content;
+
 	console.log(output);
     $("#userAns").html(stringOut("<p>" + output + "</p>" + '<p>I hope you found that useful, thankyou and goodbye.</p>'));
 	//$("#userAns").html(DisplayAll());

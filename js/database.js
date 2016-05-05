@@ -343,10 +343,10 @@ function userFeelings()
     var averageMood = ["ok", "bored", "acceptable", "agreable", "adequate", "passable", "satisfactory", "well", "okay", "average", "content", "fine", "decent"];
     var badMood = ["irritated", "bad", "sad", "angry", "hurt", "mad", "hungover", "poor", "broke", "difficult", "crude", "retarded", "annoyed", "ill", "sick", "poorly", "failure", "failing", "rude", "dirty", "filthy", "indecent", "severe", "serious"];
     // Feelings  (containing the word bank)
-    if (CheckMood(goodMood, Feelings)){ Mood = "in a good"; MoodNum = "1"; }
-	else if (CheckMood(averageMood, Feelings)){ Mood = "in an average"; MoodNum = "2"; }
-	else if (CheckMood(badMood, Feelings)){ Mood = "in a bad"; MoodNum = "3"; }
- 	else {Mood = "unsure of your"; MoodNum = "4";}
+    if (CheckMood(goodMood, Feelings)){ Mood = "That's awesome, I'm often in that mood myself. <br>That "; MoodNum = "1"; }
+	else if (CheckMood(averageMood, Feelings)){ Mood = "Could be worse though right? <br>This "; MoodNum = "2"; }
+	else if (CheckMood(badMood, Feelings)){ Mood = "Oh, I'm sorry to hear that. <br>However, that "; MoodNum = "3"; }
+ 	else {Mood = "Oh, fair enough. <br>This "; MoodNum = "4";}
 	var Record = horoscopeData({mood:{is:MoodNum}}).get();
 	var RecordCount = Math.floor(Math.random() * Record.length);
 	output += Record[RecordCount].content;
@@ -354,7 +354,7 @@ function userFeelings()
 	console.log(output);
     // Add to HTML
 
-    $('#userFeel').html(stringOut('<p>Thanks for letting me know that you<br> are ' + Mood + ' mood<br>that will help when making your horoscope.</p><p>When you went to school,<br>what was your favourite subject? </p>'));
+    $('#userFeel').html(stringOut('<p>' + Mood + 'will help when making your horoscope.</p><p>When you went to school,<br>what was your favourite subject? </p>'));
 	
 }
 function userSubject()

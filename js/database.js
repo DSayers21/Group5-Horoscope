@@ -383,9 +383,9 @@ function userSubject()
 	else if (CheckMood(artBank, Subject)){ Subject = "art"; SubResponse = "Oh so you were an artist? <br>Awesome, I love the work of Monet.";}
 	else if (CheckMood(geographyBank, Subject)){ Subject = "geography"; SubResponse = "Geography! My favourite!";}
 	else if (CheckMood(peBank, Subject)){ Subject = "pe"; SubResponse = "You were quite active then? <br>I don't exercise very much to be honest";}
-	else if (CheckMood(reBank, Subject)){ Subject = "re"; SubResponse = "Awesome, I worship Kevin Jacques";}
+	else if (CheckMood(languagesBank, Subject)){ Subject = "languages"; SubResponse = "Bonjour, " + Fname + " j'adore les langues.";}
+	else if (CheckMood(reBank, Subject)){ Subject = "re"; SubResponse = "Awesome, I worship Kevin Jacques.";}
 	else if (CheckMood(itBank, Subject)){ Subject = "technology"; SubResponse = "So you're a nerd then. <br>I never understood that coding stuff.";}
-	else if (CheckMood(languagesBank, Subject)){ Subject = "language"; SubResponse = "Bonjour, j'adore les langues";}
     else {Subject = "general";}
 	
 	

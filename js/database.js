@@ -340,7 +340,7 @@ function userFeelings()
 	var MoodNum;
     //Word bank
     var goodMood = ["happy", "excited", "pleasured", "good", "gleeful", "delighted", "jovial", "jolly", "joking", "merry", "cheery", "cheerful", "glowing", "radiant", "carefree", "great", "fortunate", "lucky", "amazing", "horny", "sexy", "fantastic", "silly", "funny"];
-    var averageMood = ["ok", "bored", "acceptable", "agreable", "adequate", "passable", "satisfactory", "well", "okay", "average", "content", "fine", "decent"];
+    var averageMood = ["ok", "bored", "acceptable", "mediocre", "agreable", "adequate", "passable", "satisfactory", "well", "okay", "average", "content", "fine", "decent"];
     var badMood = ["irritated", "bad", "sad", "angry", "hurt", "mad", "hungover", "poor", "broke", "difficult", "crude", "retarded", "annoyed", "ill", "sick", "poorly", "failure", "failing", "rude", "dirty", "filthy", "indecent", "severe", "serious"];
     // Feelings  (containing the word bank)
     if (CheckMood(goodMood, Feelings)){ Mood = "That's awesome, I'm often in that mood myself. <br>That "; MoodNum = "1"; }

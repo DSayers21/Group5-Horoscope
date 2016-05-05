@@ -139,7 +139,7 @@ function stringOut(input)
 {
 	console.log(input);
 	var Stop = 0;
-	var Difficulty = 85;
+	var Difficulty = 90;
 	var TypingBad = Math.floor(Math.random() * Difficulty) + 1;
 	var OutPut;
 	for(i = 0; i < input.length; i++)
@@ -193,8 +193,8 @@ $(cursor).typed({
 		// typing speed
         startDelay: (20000 / Number(question.length)),
         // backspacing speed
-        backSpeed: 20,
-		backDelay: 1000,
+        backSpeed: 15,
+		backDelay: 800,
 		loop: false,
 		contentType: 'html', // or text
 		// defaults to false for infinite loop
@@ -365,27 +365,27 @@ function userSubject()
     Subject = Subject.toLowerCase();
     console.log(Subject + " before");
 	//Subject Bank
-	var mathsBank = [ "maths", "calculus"];
-	var englishBank = [ "english", "film studies", "literature"];
-	var scienceBank = [ "science", "physics", "chemistry", "biology"];
+	var mathsBank = [ "math", "calculus", "economics", "finance", "banking", "marketing" ];
+	var englishBank = [ "english", "film studies", "literature", "journalism" ];
+	var scienceBank = [ "science", "physics", "chemistry", "biology", "psychology", "sociology", "geology", "criminology", "engineer", "vet", "forensic", "nurs", "pharmacy" ];
 	var historyBank = [ "history" ];
-	var artBank = [ "art" ];
+	var artBank = [ "art", "illustration", "textiles", "animation", "architecture", "product design", "music", "drama", "fashion", "photography" ];
 	var geographyBank = [ "geography" ];
-	var peBank = [ "pe", "sport" ];
-	var reBank = [ "re", "philosophy" ];
-	var itBank = [ "technology", "it", "ict", "computing" ];
-	var languagesBank = [ "french", "german", "latin", "spanish"];
+	var peBank = [ "pe", "sport", "exercise" ];
+	var reBank = [ "re", "philosophy", "religion" ];
+	var itBank = [ "technology", "it", "ict", "computing", "computer science" ];
+	var languagesBank = [ "french", "german", "latin", "spanish", "italian", "russian", "arabic" ];
     //Subjects 
 	if (CheckMood(mathsBank, Subject)){ Subject = "maths"; SubResponse = "THE NUMBERS!!! WHAT DO THEY MEAN!?!?!?";}
+	else if (CheckMood(itBank, Subject)){ Subject = "technology"; SubResponse = "So you're a nerd then. <br>I never understood that coding stuff.";}
 	else if (CheckMood(englishBank, Subject)){ Subject = "english"; SubResponse = "A fan of literature then? Very sophisticated";}
-	else if (CheckMood(scienceBank, Subject)){ Subject = "science"; SubResponse = "Ahh, you were a lover of science. <br>We need more people like that";}
 	else if (CheckMood(historyBank, Subject)){ Subject = "history"; SubResponse = "Oh so you were a bit of a historian then? That's cool.";}
 	else if (CheckMood(artBank, Subject)){ Subject = "art"; SubResponse = "Oh so you were an artist? <br>Awesome, I love the work of Monet.";}
 	else if (CheckMood(geographyBank, Subject)){ Subject = "geography"; SubResponse = "Geography! My favourite!";}
-	else if (CheckMood(peBank, Subject)){ Subject = "pe"; SubResponse = "You were quite active then? <br>I don't exercise very much to be honest";}
 	else if (CheckMood(languagesBank, Subject)){ Subject = "languages"; SubResponse = "Bonjour, " + Fname + " j'adore les langues.";}
+	else if (CheckMood(scienceBank, Subject)){ Subject = "science"; SubResponse = "Ahh, you were a lover of science. <br>We need more people like that";}
+	else if (CheckMood(peBank, Subject)){ Subject = "pe"; SubResponse = "You were quite active then? <br>I don't exercise very much to be honest";}
 	else if (CheckMood(reBank, Subject)){ Subject = "re"; SubResponse = "Awesome, I worship Kevin Jacques.";}
-	else if (CheckMood(itBank, Subject)){ Subject = "technology"; SubResponse = "So you're a nerd then. <br>I never understood that coding stuff.";}
     else {Subject = "general";}
 	
 	
